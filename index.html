@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<script type="text/javascript" src="jquery.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function()
+	{
+		var el = $('.menu a'),
+		color = el.css('backgroundColor');
+		$('.menu a').mouseenter(function(){
+			$(this).css('paddingLeft','5px');
+		}).mouseleave(function(){
+			$(this).css('paddingLeft','0px');
+		});
+
+		$('.menu').each(function(index){
+			var randomnumber = 1000+(Math.random()*(1500-1000));
+			$(this).animate({height:'510'},randomnumber);
+		});
+	});
+	</script>
+
+	<title>Start Page</title>
+
+</head>
+<body>
+	<div id="one">
+		<div  class="menu">
+			<div class="number">01</div>
+			<div class="title">Social</div>
+			<a href="https://twitter.com/">Twitter</a><br />
+			<a href="https://www.linkedin.com/">LinkedIN</a><br />
+			<a href="https://www.facebook.com/">Facebook</a><br />
+			<a href="https://www.pinterest.com/">Pinterest</a><br />
+			<a href="https://www.pay.reddit.com/">Reddit</a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+		</div>
+	</div>
+	<div id="two">
+		<div class="menu">
+			<div class="number">02</div>
+			<div class="title">Linux</div>
+			<a href="http://masammich.wordpress.com/">MaSammich Wordpress</a><br />
+			<a href="http://www.jupiterbroadcasting.com/tag/linux-action-show/">LAS</a><br />
+			<a href="http://www.unixmen.com/">Unixmen</a><br />
+			<a href="http://www.linux.org/forums/advanced-tutorials.55/">Advanced Tutorials</a><br />
+			<a href="http://httpd.apache.org/">Apache HTTP</a><br />
+			<a href="http://www.tecmint.com/18-tar-command-examples-in-linux/">18 Tar Commands</a><br />
+			<a href="http://docstore.mik.ua/orelly/unix/upt/index/idx_0.htm"></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+		</div>
+	</div>
+
+	<div id="three">
+		<div class="menu">
+			<div class="number">03</div>
+			<div class="title">Random</div>
+			<a href="http://www.theuselessweb.com/">The Useless Web!</a><br />
+			<a href="http://folk.uib.no/hnohf/qcourse.htm">Learn Quenya</a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+		</div>
+	</div>
+
+	<div id="four">
+		<div class="menu">
+			<div class="number">05</div>
+			<div class="title">Development</div>
+			<!-- Change this to your own if you want to use yours -->
+			<a href="https://github.com/hackinginformation">GitHub - HackInfo</a><br />
+			<a href="http://exercism.io/">Exercism.IO</a><br />
+			<a href="https://codeanywhere.com/">Code Anywhere</a><br />
+			<a href="https://www.digitalocean.com/">Digital Ocean</a><br />
+			<a href=""></a><br />
+		</div>
+	</div>
+
+	<div id="five">
+		<div class="menu">
+			<div class="number">08</div>
+			<div class="title">Python</div>
+			<a href="http://interactivepython.org/runestone/static/thinkcspy/index.html">Think like a Computer</a><br />
+			<a href="http://inventwithpython.com/pygame/chapters/">PyGame Online</a><br />
+			<a href="http://www.learnpython.org/">Learn Python</a><br />
+			<a href=""></a><br />
+		</div>
+	</div>
+
+	<div id="six">
+		<div class="menu">
+			<div class="number">13</div>
+			<div class="title">Ruby</div>
+			<a href="http://rubykoans.com/">Koans</a><br />
+			<a href="https://www.ruby-lang.org/en/">Ruby Lang</a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+		</div>
+	</div>
+
+	<div id="seven">
+		<div class="menu">
+			<div class="number">21</div>
+			<div class="title">General Programming</div>
+			<a href="http://docstore.mik.ua/orelly/bookshelf.html">O'Reilly Books Online</a><br />
+			<a href="https://pragprog.com/book/bmsft/everyday-scripting-with-ruby">Everyday Scripting</a><br />
+			<a href="http://tryruby.org/levels/1/challenges/0">Try Ruby</a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+		</div>
+	</div>	
+
+	<div id="eight">
+		<div class="menu">
+			<div class="number">34</div>
+			<div class="title">Subreddits</div>
+			<a href="http://www.reddit.com/r/vim/">/r/vim</a><br />
+			<a href="http://www.reddit.com/r/unixporn/">/r/unixporn</a><br />
+			<a href="http://www.reddit.com/r/MechanicalKeyboards/">/r/MechKeys</a><br />
+			<a href="http://www.reddit.com/r/LinuxActionShow/">/r/LAS</a><br />
+			<a href="http://www.reddit.com/r/incremental_games/">/r/incremental</a><br />
+			<a href="http://www.reddit.com/r/greentext/">/r/greentext</a><br />
+			<a href="http://www.reddit.com/r/baalsarchive/">/r/my_archive</a><br />
+			<a href="http://www.reddit.com/r/linux4noobs/">/r/linux4n00bs</a><br />
+			<a href="http://www.reddit.com/r/IT_CERT_STUDY/">/r/cert_study</a><br />
+			<a href="http://www.reddit.com/r/homelab/">/r/homelab</a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+		</div>
+	</div>
+
+	<div id="nine">
+		<div class="menu">
+			<div class="number">55</div>
+			<div class="title">Games</div>
+			<a href="http://candies.aniwey.net/">CandyBox</a><br />
+			<a href="http://candybox2.net/">CandyBox 2</a><br />
+			<a href="http://adarkroom.doublespeakgames.com/">A Dark Room</a><br />
+			<a href="http://www.taylorcalderone.com/MiniTES/game.html">MiniTES(idle)</a><br />
+			<a href="http://shimage.net/megamiquest/en.html">Megami Quest</a><br />	
+			<a href="http://minmaxia.com/clickpocalypse/">ClickPocalypse</a><br />
+			<a href="http://orteil.dashnet.org/cookieclicker/">CookieClicker</a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />	
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />			
+		</div>
+	</div>	
+	
+	<div id="ten">
+		<div class="menu">
+			<div class="number">89</div>
+			<div class="title">Eye Bleach</div>
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+			<a href=""></a><br />
+		</div>
+	</div>	
+</body>
+</html>

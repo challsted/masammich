@@ -22,3 +22,9 @@ p {
 ul li:hover ul{
     display: block;
 }
+
+.well-black {
+	background-image: none;
+	border-color: rgb(35, 35, 35);
+	display: block;
+}

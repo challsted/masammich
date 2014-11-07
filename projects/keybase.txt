@@ -1,0 +1,65 @@
+==================================================================
+https://keybase.io/hackinginfo
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://masammich.technoanomaly.com
+  * I am hackinginfo (https://keybase.io/hackinginfo) on keybase.
+  * I have a public key with fingerprint A874 0740 0B5D 4E7A 17CD  A7DA 3E7A 14A6 0AD0 7945
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "a87407400b5d4e7a17cda7da3e7a14a60ad07945",
+            "host": "keybase.io",
+            "key_id": "3e7a14a60ad07945",
+            "uid": "4949d3466783c348830af65d2362a400",
+            "username": "hackinginfo"
+        },
+        "service": {
+            "hostname": "masammich.technoanomaly.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1415332877,
+    "expire_in": 157680000,
+    "prev": "9c06964ef256276dedabdd7ee1e80fa982a666ddcbbb5dbbb528ea57744a6670",
+    "seqno": 5,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v1.1.3
+Comment: https://keybase.io/crypto
+
+yMH2AnicbVFtSFNRGN4yUxdGHzIwCuQmoaZ2t/u5JYqSEZIKqX2YOM6958xd3e5d
+dx85zRQjCcFsPwP7kUSlhQw0EgtyLhDKzGFJKEEFOvCHWdH8gKJzxf51OJz3nPd9
+3ud5z/u+Sk3QGfSFLWkPDDOBUv2bcIJPV113MrWVEBQYIKytRBPaMnZJbkCqW5Vk
+L2ElAM/RJN6kwEAaccDEiRBwEFDanQYsCSDJWWiGyCUcikfLwDQC8KB8ScE+/LBJ
+EHv/g/dtBWgLbYEUzbIcT4kUzfMUCewsA80UawZYVwN6kCoDF8JoBxCbcH2SbFeI
+tlwCB/ySiLSyNfVtkAt4gMsliY58LxIdsgJkxQWcgXxRcWE2t6p4FVFxamxer9uq
+8XgDbi3xChJs25Q2QZIhVsIJfqR6JEUmrCaMFL2SpmGiTQxFmXmOyyVQs1tSkU3S
+EAzH8iRemgzyY0qLSLIWlkZ2M8OaORYiCAQIOYRMiCftwMKbAcuyEIqCgDusHWYe
+AYbjaNwsltO+70GXZYWwMrhM0IApPVKDDLw+FRFtE+N1O3V6g25X4g5tljpDyt5/
+E362L1k3lJJ1fX44OioeLk//kkrY6rNL7lW1j688LCsKBzM7q2p7eyo71buLH5eL
+P6zVhpf0U8mJjUdOxSfshwocB4Z/5AxVl85cmNzMnP8e6YiPRuHqo093LubkVa7W
+x540js3uXsx6vz41crQ4njHddSPSE3sbC6W0xxr5KWvFWIR7vZmc9zh69ZgvnBYv
+Mb5Y6J5+d7x7aWCPI7ReVJE++rzwVs3ppuZaI+tQJm8OPg31ddUY5v6M3W/Z6O+1
+nXlpvO30J0UGjPDgibL9/Wu+8plg2WTl7MrX0Oa3YFZfwSXTz/NJHQuDTvnsyOe5
+7LmBwpZf1+Jry+e431F/xkRJcOMvcwgfAw==
+=1XtE
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/hackinginfo
+
+==================================================================

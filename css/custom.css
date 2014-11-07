@@ -28,3 +28,13 @@ ul li:hover ul{
 	border-color: rgb(35, 35, 35);
 	display: block;
 }
+
+.codeOutput {
+	color: red;
+	background-color: #333;
+}
+
+.codeInput {
+	color: lime;
+	background-color: black;
+}

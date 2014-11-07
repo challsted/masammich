@@ -23,7 +23,7 @@ Phase 1: Build a skeleton with bare essentials and a little bit of test pages  c
 
 	4) ~~get a darker theme then default~~ 
 
-Phase 2: ~~Get index.html page to a working state of more then just a header/footer, and get a contact though email working~~  complete!
+Phase 2: Get index.html page to a working state of more then just a header/footer, and get a contact though email working complete!
 
 	1) ~~add some columns with generic info as a place holder and tell viewers about the page~~ 
 

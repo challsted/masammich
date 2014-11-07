@@ -9,27 +9,27 @@ I will use this area to list my current goals, there sub-goals, and the the prog
 
 ##Currently in Phase 3
 
-Phase 1: Build a skeleton with bare essentials and a little bit of test pages &check; complete!
+Phase 1: Build a skeleton with bare essentials and a little bit of test pages  complete!
 
-	1) get an index page working with BS &check;
+	1) ~~get an index page working with BS~~ 
 
-	2) get a good looking header with BS &check;
+	2) ~~get a good looking header with BS~~ 
 
-		2.1) use js to include header to the page instead of header on every page &check;
+		2.1) ~~use js to include header to the page instead of header on every page~~ 
 
-	3) get a footer that shows license &check;
+	3) ~~get a footer that shows license~~ 
 
-		3.1) use js to include header to the page instead of header on every page &check;
+		3.1) ~~use js to include header to the page instead of header on every page~~ 
 
-	4) get a darker theme then default &check;
+	4) ~~get a darker theme then default~~ 
 
-Phase 2: Get index.html page to a working state of more then just a header/footer, and get a contact though email working &check; complete!
+Phase 2: ~~Get index.html page to a working state of more then just a header/footer, and get a contact though email working~~  complete!
 
-	1) add some columns with generic info as a place holder and tell viewers about the page &check;
+	1) ~~add some columns with generic info as a place holder and tell viewers about the page~~ 
 
-	2) get a contact page up with fields to add info &check;
+	2) ~~get a contact page up with fields to add info~~ 
 
-	3) make contact page actually send email &check;
+	3) ~~make contact page actually send email~~ 
 
 
 Phase 3: Convert a large chunk or all of the origonal blog from WP to here and get the code fixed to look better then the way it currently does on WP
@@ -39,7 +39,7 @@ Phase 3: Convert a large chunk or all of the origonal blog from WP to here and g
 	2) start copying the "html" from Wordpress and add it to the new html files
 
 	3) fix the to look better on my site (get them looking good not nesecarily perfect)
-	
+
 	4) fix the "code" to actually look like its something to type not just bold/italics (css)
 
 Phase 4: Get index to allow for imported content (dynamically hopefully) of any posts added (iframe?)

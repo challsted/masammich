@@ -29,14 +29,14 @@
 
 		First off, if you don't already have one, you should probably make it with the below command
 
-		<p><span style="color: #339966;"><code>mkdir -p ~/.ssh/authorized_keys &amp;&amp; chmod -R 700 ~/.ssh &amp;&amp; cd ~/.ssh</code></span></p>
+		<p><span style="color: #339966;"><code class="codeInput">mkdir -p ~/.ssh/authorized_keys &amp;&amp; chmod -R 700 ~/.ssh &amp;&amp; cd ~/.ssh</code></span></p>
 
 		This will create the folders you need, change the permissions so that only your user can access/use them, and cd into the main folder.
 		So, now we got our very own .ssh folder (if you didn't already have one)
 
 		We can make our own ssh key "pair" by running the following:
 
-		<p><span style="color: #339966;"><code>ssh-keygen -t rsa -b 2048 -C "$(whoami)@$(hostname)-$(date -I)"</code></span></p>
+		<p><span style="color: #339966;"><code class="codeInput">ssh-keygen -t rsa -b 2048 -C "$(whoami)@$(hostname)-$(date -I)"</code></span></p>
 
 		It will ask you what you want to name your key ("id_rsa" by default), i suggest you name is something other than that. Example, "MainDesktop_rsa" or "KitchenComputer_rsa" (hehe) you can also give it an exact path to save this to (be careful if this is not your first key, it will suggest a previous key by default if one is found)
 
@@ -49,25 +49,25 @@
 		So, with this, you can literally "authorize" certain PUBLIC keys to be able to access your computer/server.  This might not be very useful to you on a desktop, but it's very useful to a remote computer you connect to frequently. This is a way for a server owner to allow access to his server via a key AND a password, or maybe only a key (disable password logins for this).
 
 		So, now were going to create a "config" file. So lets vi that baby and add the bare minimum so that you can figure out how to add stuff in the future, and we will also add an example that wont actually work, but you can edit it to make it work if you have a server to SSH to.
-				<p><code>
-				cd ~/.ssh<br/>
-				vi config<br/>
-				i</code><em> (go to insert mode)</em><br/>
+				<p>
+				<code class="codeInput">cd ~/.ssh</code><br/>
+				<code class="codeInput">vi config</code><br/>
+				<code class="codeInput">i</code><em> (go to insert mode)</em><br/>
 
-				<code>#Host worker<br/>
-				#HostName worker.example.com</em></strong>#IdentityFile ~/.ssh/kitchencomputer_rsa</code> <em>(private key)</em><br/>
+				<code class="codeInput">#Host worker</code><br/>
+				<code class="codeInput">#HostName worker.example.com</em></strong>#IdentityFile ~/.ssh/kitchencomputer_rsa</code> <em>(private key)</em><br/>
 
-				<code> #User joeshmoe</code> <em>(User ID on remote system)</em><br/>
+				<code class="codeInput"> #User joeshmoe</code> <em>(User ID on remote system)</em><br/>
 				<br/>
 
-				<code>ESC</code> <em>(hit the escape key)</em><br/>
+				<code class="codeInput">ESC</code> <em>(hit the escape key)</em><br/>
 
-				<code>:wq<br/>
-				cat config<br/>
-				</code></p>
+				<code class="codeInput">:wq</code><br/>
+				<code class="codeInput">cat config</code><br/>
+				</p>
 
 		Now, what we just did was we create a "config" file with an example in it (i suggest not removing the example, just always adding to the end).
-		The options i gave here would allow you to simply type "ssh worker" and it will authenticate you as "joeshmoe" on the remote server "worker.example.com" and it will use the private key "kitchencomputer_rsa" (this is the equivalent of <p><span style="color: #339966;"><code>ssh joeshmoe@worker.example.com -i ~/.ssh/kitchencomputer_rsa</code></span>)<br/>
+		The options i gave here would allow you to simply type "ssh worker" and it will authenticate you as "joeshmoe" on the remote server "worker.example.com" and it will use the private key "kitchencomputer_rsa" (this is the equivalent of <p><span style="color: #339966;"><code class="codeInput">ssh joeshmoe@worker.example.com -i ~/.ssh/kitchencomputer_rsa</code></span>)<br/>
 
 		<em>TIP: So, want to make it even easier? Add this to your .bashrc .fishrc or .zshrc "alias worker="ssh worker"</em><br/>
 

@@ -60,3 +60,10 @@ ul li:hover ul{
     background-color: rgba(135, 135, 135, 0.50);
 }
 /* End "Back To Top" Navbar */
+*[id]:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -75px; 
+  height: 75px; 
+  visibility: hidden; 
+}

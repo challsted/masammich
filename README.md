@@ -31,14 +31,18 @@ I will use this area to list my current goals, there sub-goals, and the the prog
 	</ol>
 <li>Phase 3: Convert a large chunk or all of the origonal blog from WP to here and get the code fixed to look better then the way it currently does on WP</li>
 	<ol>
-		<li>**pre-make the html files from a template**</li>
-		<li>**start copying the "html" from Wordpress and add it to the new html files**</li>
-		<li>fix the to look better on my site (get them looking good not nesecarily perfect)</li>
-		<li>fix the "code" to actually look like its something to type not just bold/italics (css)</li>
+		<li>~~pre-make the html files from a template**</li>
+		<li>~~start copying the "html" from Wordpress and add it to the new html files~~</li>
+		<li>~~fix the to look better on my site (get them looking good not nesecarily perfect)~~</li>
+		<li>~~fix the "code" to actually look like its something to type not just bold/italics (css)~~</li>
+		<li>**Add BS specific code to allow for text to look better formatted with columns**</li>
+		<li>**Research advertiseing and google ads**</li>
+		<li>
 	</ol>
 <li>Phase 4: Get index to allow for imported content (dynamically hopefully) of any posts added (iframe?)</li>
 	<ol>
-		<li></li>
+		<li>research iframe and potential other options and deside if needed or not</li>
+		<li>(optional)if iframe or similar option is no longer wanted, go with wordpress?</li>
 	</ol>
 <li>Phase 5: Work to remove all the extra bootstrap and convert to the .min version of code to speed up the code</li>
 	<ol>

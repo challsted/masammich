@@ -38,3 +38,25 @@ ul li:hover ul{
 	color: lime;
 	background-color: black;
 }
+
+.content-container {
+	margin: 0 3%;
+}
+
+/* Start "Back To Top" Navbar */
+.back-to-top {
+    position: fixed;
+    bottom: 2em;
+    right: 0px;
+    text-decoration: none;
+    color: #000000;
+    background-color: rgba(235, 235, 235, 0.80);
+    font-size: 12px;
+    padding: 1em;
+    display: none;
+}
+
+.back-to-top:hover {    
+    background-color: rgba(135, 135, 135, 0.50);
+}
+/* End "Back To Top" Navbar */

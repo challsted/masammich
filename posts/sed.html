@@ -83,18 +83,18 @@ You will probably notice above that I use // to replace something with nothing, 
 Escapes are important if you are editing text with symbols in it.<br/>
 
 So, for example, you have a file with a bunch of java variables that are delimited by a \ so that they become MUCH more readable.<br/>
-<code class="codeInput">$cat java_variables.conf</code><br/>
-<code class="codeInput">JAVA_OPTS="-Xmx1024m \</code><br/>
-<code class="codeInput">- Xms512m \</code><br/>
-<code class="codeInput">-XX:GCLogFileSize=10m \</code><br/>
+<code class="codeInput">cat java_variables.conf</code><br/>
+<code class="codeOutput">JAVA_OPTS="-Xmx1024m \</code><br/>
+<code class="codeOutput">- Xms512m \</code><br/>
+<code class="codeOutput">-XX:GCLogFileSize=10m \</code><br/>
 So you want to add another line using sed? <strong>No problem! </strong><br/>
 <code class="codeInput">sed -i 's/- Xms512m \\/ Xms512m \\\n-XX:NumberOfGCLogFiles=5 \\/g' java_variables.conf</code><br/>
 Now if we cat this imaginary java file:<br/>
-<code class="codeInput">$cat java_variables.conf</code><br/>
-<code class="codeInput">JAVA_OPTS="-Xmx1024m \</code><br/>
-<code class="codeInput">-Xms512m \</code><br/>
-<code class="codeInput">-XX:NumberOfGCLogFiles=5 \</code><br/>
-<code class="codeInput">XX:GCLogFileSize=10m \</code><br/>
+<code class="codeInput">cat java_variables.conf</code><br/>
+<code class="codeOutput">JAVA_OPTS="-Xmx1024m \</code><br/>
+<code class="codeOutput">-Xms512m \</code><br/>
+<code class="codeOutput">-XX:NumberOfGCLogFiles=5 \</code><br/>
+<code class="codeOutput">XX:GCLogFileSize=10m \</code><br/>
 YAY! It worked!
 
 <h3>So, to break down what i just did</h3>

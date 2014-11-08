@@ -19,13 +19,31 @@
 			$('#footer').load('../headfoot/footer.html');
 		});
 	</script>
+	<script>
+		jQuery(document).ready(function() {
+		    var offset = 220;
+		    var duration = 500;
+		    jQuery(window).scroll(function() {
+		        if (jQuery(this).scrollTop() > offset) {
+		            jQuery('.back-to-top').fadeIn(duration);
+		        } else {
+		            jQuery('.back-to-top').fadeOut(duration);
+		        }
+		    });
+		    
+		    jQuery('.back-to-top').click(function(event) {
+		        event.preventDefault();
+		        jQuery('html, body').animate({scrollTop: 0}, duration);
+		        return false;
+		    })
+		});
+	</script>
 
 </head>
 
 <body>
 	<div id="header"></div>
-
-<p>
+	<div class="content-container">
 
 Ok, so before i go into details, I chose to use VI, i have never given emacs a try, and i hate nano/pico.<br/>
 If you have no idea what I'm talking about, just ignore that! It's a huge war apparently going on and from what i personally see, VI is winning.<br/>
@@ -74,8 +92,7 @@ Also, its not really a "game" so to say, but it will help you create a tiny Linu
 
 Its called "<a href="http://nixsrv.com/llthw">Learn Linux the Hard Way</a>", but it looks to me like its only pulling your tail. It gives you a tiny Linux environment with minimal tools and teach's you to use various commands. Go check em out, if you don't know what I'm talking about, scroll down to the bottom of the page. The layout isn't the greatest, so at the bottom is exercise 0-30.<br/>
 
-</p>
-
+	</div>
 	<div id="footer"></div>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 </body>

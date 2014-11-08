@@ -19,13 +19,32 @@
 			$('#footer').load('../headfoot/footer.html');
 		});
 	</script>
+	<script>
+		jQuery(document).ready(function() {
+		    var offset = 220;
+		    var duration = 500;
+		    jQuery(window).scroll(function() {
+		        if (jQuery(this).scrollTop() > offset) {
+		            jQuery('.back-to-top').fadeIn(duration);
+		        } else {
+		            jQuery('.back-to-top').fadeOut(duration);
+		        }
+		    });
+		    
+		    jQuery('.back-to-top').click(function(event) {
+		        event.preventDefault();
+		        jQuery('html, body').animate({scrollTop: 0}, duration);
+		        return false;
+		    })
+		});
+	</script>
 
 </head>
 
 <body>
 	<div id="header"></div>
+	<div class="content-container">
 
-<p>
 <h3><em><strong>Who doesn't love games?</strong></em></h3>
 What if you could learn Linux, while playing a type of game? No, there isn't pretty graphics, but just like any other game, you get instant gratification and a great feeling of accomplishment. Depending on the site/layout you might even get points, leader boards, achievements, avatars.... some of the high end and popular ones even have cash prizes! Sound fun? Lets take a look at what a wargame is first, then where to find them and a few recommendations.<br/>
 
@@ -92,8 +111,7 @@ If i find anymore information on good sites or if I find a some more that I pers
 
 Have fun, and don't do anything stupid! The stupid will be punished. I am not responsible if you choose to be one of the stupid.<br/>
 
-</p>
-
+	</div>
 	<div id="footer"></div>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 </body>

@@ -19,14 +19,32 @@
 			$('#footer').load('../headfoot/footer.html');
 		});
 	</script>
+	<script>
+		jQuery(document).ready(function() {
+		    var offset = 220;
+		    var duration = 500;
+		    jQuery(window).scroll(function() {
+		        if (jQuery(this).scrollTop() > offset) {
+		            jQuery('.back-to-top').fadeIn(duration);
+		        } else {
+		            jQuery('.back-to-top').fadeOut(duration);
+		        }
+		    });
+		    
+		    jQuery('.back-to-top').click(function(event) {
+		        event.preventDefault();
+		        jQuery('html, body').animate({scrollTop: 0}, duration);
+		        return false;
+		    })
+		});
+	</script>
 
 </head>
 
 <body>
 	<div id="header"></div>
-
-<p>
-
+	<div class="content-container">
+	
 <h3>sed - Stream Line Editor - A powerful cryptic text editor</h3>
 
 So, as promised, I am creating an article about "sed" which is mainly a GNU program (as in there is a rewrite that is non GNU that I ran into on some very old AIX box's...)<br/>

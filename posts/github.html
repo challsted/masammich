@@ -19,13 +19,32 @@
 			$('#footer').load('../headfoot/footer.html');
 		});
 	</script>
+	<script>
+		jQuery(document).ready(function() {
+		    var offset = 220;
+		    var duration = 500;
+		    jQuery(window).scroll(function() {
+		        if (jQuery(this).scrollTop() > offset) {
+		            jQuery('.back-to-top').fadeIn(duration);
+		        } else {
+		            jQuery('.back-to-top').fadeOut(duration);
+		        }
+		    });
+		    
+		    jQuery('.back-to-top').click(function(event) {
+		        event.preventDefault();
+		        jQuery('html, body').animate({scrollTop: 0}, duration);
+		        return false;
+		    })
+		});
+	</script>
 
 </head>
 
 <body>
 	<div id="header"></div>
 
-<p>
+<div class="content-container">
 	<h2>Github - The best way to publically share and store your code online!</h2>
 
 	<img title="taken from TechCrunch" src="http://tctechcrunch2011.files.wordpress.com/2010/07/github-logo.png?w=400" alt="github-logo" style="float: right">
@@ -134,7 +153,7 @@
 		<li>(Optional) Give a description of what you plan on doing with the repository</li>
 		<li>(Optional) Change the repo to be "private", this requries a paid account to do</li>
 		<li>(Optional) Click the checkbox to add a "README" file (I always do this)</li>
-		<li>(Optional) Create a .gitignore this is useful if you know there are certain files you want to put into your repo, that you wont want git to put into the repo. For example, i have a ".project" folder that is only on my local due to it will not benefit anyone out there to have this info. Its for a local only GUI program that im expereimenting with at the moment called "GitEye". 
+		<li>(Optional) Create a .gitignore this is useful if you know there are certain files you want to put into your repo, that you wont want git to put into the repo. For example, i have a ".project" folder that is only on my local due to it will not benefit anyone out there to have this info. Its for a local only GUI program that im expereimenting with at the moment called "GitEye".</li>
 		<li>(Optional) Give the repo a license. If you need to know more about licenses, there is a small "i" with a circle that takes you to a place that explains what each license does and is used for.</li>
 		<li>Click "Create Repopository"</li>
 	</ol>
@@ -203,6 +222,7 @@
 
 	<p>
 		The main thing i use cloneing for, is if i want to have local copie(s) of my code on a local machine, or on a server or my RPi. You can pre-write the little clone command, and give it to friends so they can simply copy pasta and get your code. You can use it in scripts to copy down code from GH, execute something against it, then delete it, or what ever you need. Its a very simple, yet very awesome little command.
+	</p>
 
 	<h4 id="now-fork">Forking</h4>
 
@@ -217,10 +237,8 @@
 		Now, lets say that you were forking a project, with the intention of pushign it back to the master repo! You would do this for a few reasons, 1 of which is due to you have tried your hand at patching something, or at adding a feature, but you are not one of the colaborators. <br/>
 		After you fork their repo, make the changes you need to, push the code back to your forked repo on GH. You can go to the origional repo, and click "create pull request". It will ask you to put in comments on what your doing. This is where you say "i added X feature" or "Fixed Y bug" its best if you identify bugs by the issued code if its a known bug. You should be able to get this information from the "issues" tab (im assumging you know what im talking about if your contributeing to opensource projects right now). Then the owner of the repo (when they have time) can look though your changes, and if they feel its good enough, they can "merge" it back in. If this happens, congradulations! You made a chagne to someone else's code :D
 	</p>
-
-</p>
+</div>
 
 	<div id="footer"></div>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
 </html>

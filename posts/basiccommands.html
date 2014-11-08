@@ -19,13 +19,33 @@
 			$('#footer').load('../headfoot/footer.html');
 		});
 	</script>
+	<script>
+		jQuery(document).ready(function() {
+		    var offset = 220;
+		    var duration = 500;
+		    jQuery(window).scroll(function() {
+		        if (jQuery(this).scrollTop() > offset) {
+		            jQuery('.back-to-top').fadeIn(duration);
+		        } else {
+		            jQuery('.back-to-top').fadeOut(duration);
+		        }
+		    });
+		    
+		    jQuery('.back-to-top').click(function(event) {
+		        event.preventDefault();
+		        jQuery('html, body').animate({scrollTop: 0}, duration);
+		        return false;
+		    })
+		});
+	</script>
 
 </head>
 
 <body>
 	<div id="header"></div>
+	<div class="content-container">
 
-<p><h3>Commands</h3>
+<h3>Commands</h3>
 <ol>
 	<li><a href="#cd">cd</a></li>
 	<li><a href="#ls">ls</a></li>
@@ -369,9 +389,7 @@ This will actually install the file using pacman.<br/>
 
 Good luck with Arch! <em><strong> </strong></em><br/>
 
-
-</p>
-
+	</div>
 	<div id="footer"></div>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 </body>

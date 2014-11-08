@@ -1,44 +1,38 @@
-.largeIcon {
-	padding-left: 20px;
-	padding-right: 20px;
-}
 
+/* nav bar padding so text dosnt go behind the nav bar */
 nav {
 	padding: 30px;
 }
-
-.largeIcon {
-	font-size: 50px;
-}
-
+/* This might be deprecated by turning footer into column 12 */
 footer {
 	float: bottom;
 }
-
+/* Slight indent of paragraphs */
 p {
 	padding-left: 10px;
 }
-
+/* dont remeber what this is for... */
 ul li:hover ul{
     display: block;
 }
-
+/* some blocks didnt convert over with the theme, this is used so that the theme is more comlete */
 .well-black {
 	background-image: none;
 	border-color: rgb(35, 35, 35);
 	display: block;
 }
-
+/* for code tags, used for "output" */
 .codeOutput {
 	color: red;
 	background-color: #333;
 }
-
+/* for code tags, used for "input" */
 .codeInput {
 	color: lime;
 	background-color: black;
 }
-
+/* Indents everything inside of a of this container div tag
+3% on both left and right sides but not top and bottom */
 .content-container {
 	margin: 0 3%;
 }
@@ -60,6 +54,8 @@ ul li:hover ul{
     background-color: rgba(135, 135, 135, 0.50);
 }
 /* End "Back To Top" Navbar */
+
+/* Makes id="" links work properly */
 *[id]:before { 
   display: block; 
   content: " "; 

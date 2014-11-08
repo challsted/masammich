@@ -64,16 +64,32 @@
 		Github IS a place for developers and hackers alike to share code, talk about the code that is written or planned to be written, and utalize opensource
 	</p>
 
-	<h3 id="what-git">What is Git?</h3>
+	<h4 id="what-git">What is Git?</h4>
 
 	<p>
 		Another question you might be asking is <em>Why is git better then SVN or CVS or any other similar language?</em><br/>
 		While I'll try to not show my obvious bias towards git in this explination here it goes:<br/>
 		With most other version control clients, there is a central repository somewhere, in the cloud or on a server at work, or on a vm in a rack stored in a closet you dont use much. That repository is the only repository there is, you might be able to branch from it, and push to branches, but this dosnt feel very normal, and its hard to use and keep updated. When you update code, it updates the master repository. Your only option if you want to have a test bed, is to make a copy of the origonal, and push to the copy for testing. Then when you want to add stable code to the main, you then copy the code over to a different folder struture, and push it up. Sure, it works, and it has worked well for many years, but its old and useless now a days. <br/>
+	</p>
 
+	<p>
+		As pointed out to me when researching this article, prior to github, if you wanted to contribute to an opensource project there was a huge pain in the but way for doing it.<br/>
+		First you had to download the origional source code (which possibly is behind what the developer is activly working on).<br/>
+		Go though the code till you find where the fix you want to implement needs to be added, test to make sure that the code your adding actually fixes what you want, and dosnt break anything else<br/>
+		Create whats known as a "patch" which lists all of your changes, then submit that patch to the owner(s)/maintaner(s) of the project.<br/>
+		They would then have to look though your patch, make sure its not melicious in any way<br/>
+		Patch a copy of there code with your patch (if they deemed it good)<br/>
+		Make sure it fixes what you say the patch is there to fix, make sure it dosnt break any other features they have then add it to what ever source code repo they have so they can push out your patch with the next release. <br/>
+		<br/>
+		This can be a HUGE pain for the main developer, if its a popular project they might recieve 10-1,000 emails a day with patches, bug reports, complaints, legal issues, what ever it is. This takes away from the time they can actually develop. Also, you might be the 3rd person that week who has sent in a patch to the exact same issue you sent in. So then the developer has to chose WHO's patch to accept. Honestly, im not sure how some projects made it with all of that. <br/>
+	</p>
+
+	<p>
 		With GIT, you "clone" the repository to your local machine, you edit everything on your local machine, test to make sure its all good locally, then you push it back up to origin.<br/>
 		Branching feels normal, switching between branches makes since and can be easily followed, pushing branches back up to github (or where ever) feels good, and everyone can see whats going on in what branch.<br/>
 		The act of commiting (while can be worked around) is forced. While being forced to do something normaly would be a bad thing, in this case its not, when you commit code, you have to give a short (~100 or less characters) of what you did. So if you are an editor, and you fixed some spelling errors in the document, you can put "fixed spelling errors". Or if your a developer and you finally fixed that darn bug that keeps dumping your tables, you could comit "fixed bug 1c487"<br/>
+		If you want to contribute to an opensource project, but your not part of the developer team, you can <a href="now-fork">fork</a> their code, make the changes on your local machine, then submit whats known as a "pull" request back to the owner. This pull request can be reviewed by many eyes, or at least the owner's. He can quickly see what changes you made to his code because the system is built to do all of that for you. He can copy down your changes, make sure they work, then push them back in.<br/>
+		Does this remove the pain of dealing with other people fixing/updateing your code? Not at all, but it makes the whole process a lot easier, much more visual, and allows for more people to know whats going on. 
 	</p>
 
 	<p>
@@ -88,6 +104,96 @@
 		This is the beauity of Github, Git and Version Control, and why everyone should use it. If your a developer, or if you just write scripts for personal scripts. Or if your like me, you run linux and you have a small collection of "dotfiles" (future article on these) and you want a place to store them, or a place to share them because you think yours are awesome. Github is the best place to store what ever it is your doing!
 	</p>
 
+	<h3 id="how">How do I start useing Github?</h3>
+
+	<p>
+		So, first, you will need to get git.<br/>
+		On linux, this is in every repository ive ever used, so it should be as simple as just running what ever your package manager's command to install something then "git". For example: <br/>
+		<code class="codeInput">sudo apt-get install git</code> &lt;-- this will install git on Ubuntu/Debian Based Linux Distros<br/>
+		<code class="codeInput">pacman -S git</code> &lt;-- this will install git on Arch Linux<br/>
+	</p>
+
+	<p>
+		You should also sign up for a free github account <a href="https://github.com/">here</a>(you only have to pay if you want private reositorys which is optional).<br/>
+		Once your in you need to actually setup your account. 
+	</p>
+
+	<h4 id="how-cli">CLI</h4>
+
+	<p>
+		So, we fire up a terminal as always and we type the following (green text = input, red text = output)<br/>
+		<code class="codeInput">git config --global user.name  "John Doe"</code> Replace John Doe with your username you created on github! Keep the Quotation Marks though!<br/>
+		<code class="codeInput">git config --global user.email "johndoe@foobar.com"</code> Replace the email with your email! Keep the Quotation Marks though!<br/>
+		(Optional)<code class="codeInput">git config --global core.editor "vim"</code> By default it opens in Emacs you can also set it to Nano by useing "nano -w"<br/>
+		(Optional)<code class="codeInput">git difftool --global --tool=vimdiff</code> By default it uses "meld"<br/>
+		<br/>
+		Now that your account is on your local machine, and you have git installed lets get a empty repositry started. Ill show you how preform this.
+	</p>
+		
+	<p>GUI Way (The way i always do it)</p>
+	<ol>
+		<li>Log into your account at github.com</li>
+		<li>In the top right, to the right of your user name, click the "+", then click "New Repository"</li>
+		<li>Type in a name for the repository</li>
+		<li>(Optional) Give a description of what you plan on doing with the repository</li>
+		<li>(Optional) Change the repo to be "private", this requries a paid account to do</li>
+		<li>(Optional) Click the checkbox to add a "README" file (I always do this)</li>
+		<li>(Optional) Create a .gitignore this is useful if you know there are certain files you want to put into your repo, that you wont want git to put into the repo. For example, i have a ".project" folder that is only on my local due to it will not benefit anyone out there to have this info. Its for a local only GUI program that im expereimenting with at the moment called "GitEye". 
+		<li>(Optional) Give the repo a license. If you need to know more about licenses, there is a small "i" with a circle that takes you to a place that explains what each license does and is used for.</li>
+		<li>Click "Create Repopository"</li>
+	</ol>
+
+	<p>
+		Now your repository is created, its on GitHub, and if you selected the option to create a README file its also available to pull down to your local imediatly. After i explain how to do this all via CLI ill explain how to clone the repo localally also. 
+	</p>
+
+	<p>Clone your new Repository</p>
+	<ol>
+		<li>If your not already, log into GitHub, and click on your username up in the top right (this is your profile)</li>
+		<li>Click on your new repository, if you have a file here already your ready to clone your repo (if not you need to create one)</li>
+		<li>On the right side, towards the middle or bottom, you will see "HTTPS Clone URL" click in this box and copy manually, or click the little copy icon to the right of that to copy to your clipboard</li>
+		<li>From your terminal, create a folder (i always create a folder called "git" at my home) and go inside of the folder.</li>
+		<li>Run the following command <code class="codeInput">git clone https://github.com/user.name/repo.git</code> replace the URL with the one you just copied</li>
+	</ol>
+
+	<p>
+		You now have a repository on your local machine, if you want to make sure your able to upload/download code as needed. Lets do a quick exercise.<br/>
+
+		<code class="codeInput">touch file1.txt &amp;&amp; cat "HELLO WORLD!" &gt; file1.txt</code><br/>
+
+		This should create a file called file1.txt and put the words "HELLO WORLD!" into the file. <br/>
+
+		<code class="codeInput">git add file1.txt</code><br/> 
+
+		This adds the 1 file "file1" to be sent back to github, you can also specifiy multipul files at a time (file1, file2, file3).<br/>
+		You can also use <code class="codeInput">git add .</code> this will add everything in the current folder (and subfolders) not just 1 or file. <br/>
+
+		<code class="codeInput">git commit -m "Testing Access"</code><br/>
+		This preforms a "commit" you are commiting a the files in that are curerntly part of the "add" but not yet "commited" with the following message (-m) if you dont add -m and a message it will pop up a box asking you to type your commit message. If you set the optonal core.editor above it will use the editor you chose, other wise it uses emacs. <br/>
+
+		<code class="codeInput">git push</code><br/>
+		This "pushes" everything that is currently commited back to where you cloned it (in this case "master")<br/>
+		<br>
+		Assuming you dont see any errors preforming the above, lets go back to github, and refresh our repository, if you see that "file1.txt" is now listed inside of the repo, then contradulations! It worked!<br/>
+		<br/>
+		If not you need to troubleshoot. You can send me an email if needed via the contact options above, ill try to help you. But beware i do all of this in my sparetime, so im not sure how fast i will be able to reply. Make sure you put an email you can check into the email box also. 
+	</p>
+
+	<h4 id="how-gui">GUI</h4>
+
+	<p>Details coming soon (i need to learn how to use a GUI for git first....)</p>
+
+	<h3 id="now">Ok, now what?</h3>
+
+	<p></p>
+
+	<h4 id="now-fork">Forking</h4>
+
+	<p></p>
+
+	<h4 id="now-clone">Cloneing</h4>
+
+	<p></p>
 
 </p>
 

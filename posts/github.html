@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Welcome to the page!</title>
+
+	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link type="text/css" rel="stylesheet" href="../css/bootstrap.css">
+	<link type="text/css" rel="stylesheet" href="../css/bootstrap-theme.css">
+	<link type="text/css" rel="stylesheet" href="../css/custom.css">
+	<link type="text/css" rel="stylesheet" href="../css/font-awesome.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		$(function(){
+			$('#header').load('../headfoot/header.html');
+			$('#footer').load('../headfoot/footer.html');
+		});
+	</script>
+
+</head>
+
+<body>
+	<div id="header"></div>
+
+<p>
+	<h2>Github - The best way to publically share and store your code online!</h2>
+
+	<img title="taken from TechCrunch" src="http://tctechcrunch2011.files.wordpress.com/2010/07/github-logo.png?w=400" alt="github-logo" style="float: right">
+
+	<ol>
+		<li><a href="#what">What is Github?</a></li>
+		<ol>
+			<li><a href="#what-git">What is Git?</a></li>
+		</ol>
+		<li><a href="#how">How can I start useing it?</a></li>
+		<ol>
+			<li><a href="how-cli">CLI</a></li>
+			<li><a href="how-gui">GUI</a></li>
+		</ol>
+		<li><a href="#now">Ok, now what?</a></li>
+		<ol>
+			<li><a href="now-fork">Forking</a></li>
+			<li><a href="now-clone">Cloneing</a></li>
+		</ol>
+	</ol>
+
+	<h3 id="what">What is Github?</h3>
+
+	<p>
+		Well, a simple google search can give us an answer to that: <br/>
+		<em><strong>GitHub</strong> is a Git repository web-based hosting service, which offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features.</em><br/>
+	</p>
+
+	<p>
+		So, that might make since to some of you, but Ill admit, ive been useing github for almost a year as of this writeing, and out of that year, about the last 4 months ive used it A LOT, and even then, the Google deffinition is a little hard to understand. So I will attempt to put my own spin on what was writen above but with a lot more claification. </p>
+
+	<p>
+		<em><strong>Github</strong> is a cloud based code repository which utalizes the version control language of "git".</em> Ill get into what is "git" more soon, and what "version control" is also, but for now lets just talk about what Github actually is. 
+
+		Github IS a online, cloud based repository accessable by the public, but also has private repositorys. 
+		Github IS a place for developers and hackers alike to share code, talk about the code that is written or planned to be written, and utalize opensource
+	</p>
+
+	<h3 id="what-git">What is Git?</h3>
+
+	<p>
+		Another question you might be asking is <em>Why is git better then SVN or CVS or any other similar language?</em><br/>
+		While I'll try to not show my obvious bias towards git in this explination here it goes:<br/>
+		With most other version control clients, there is a central repository somewhere, in the cloud or on a server at work, or on a vm in a rack stored in a closet you dont use much. That repository is the only repository there is, you might be able to branch from it, and push to branches, but this dosnt feel very normal, and its hard to use and keep updated. When you update code, it updates the master repository. Your only option if you want to have a test bed, is to make a copy of the origonal, and push to the copy for testing. Then when you want to add stable code to the main, you then copy the code over to a different folder struture, and push it up. Sure, it works, and it has worked well for many years, but its old and useless now a days. <br/>
+
+		With GIT, you "clone" the repository to your local machine, you edit everything on your local machine, test to make sure its all good locally, then you push it back up to origin.<br/>
+		Branching feels normal, switching between branches makes since and can be easily followed, pushing branches back up to github (or where ever) feels good, and everyone can see whats going on in what branch.<br/>
+		The act of commiting (while can be worked around) is forced. While being forced to do something normaly would be a bad thing, in this case its not, when you commit code, you have to give a short (~100 or less characters) of what you did. So if you are an editor, and you fixed some spelling errors in the document, you can put "fixed spelling errors". Or if your a developer and you finally fixed that darn bug that keeps dumping your tables, you could comit "fixed bug 1c487"<br/>
+	</p>
+
+	<p>
+		Version control is the next big thing to explain. Version control is a history of the codes, adds and removes. For example, this blog post your viewing, is written on my local machine, every now and then I save. Every save is saved to a copy of the full repository on my local machine. Once i get to a point where i feel its got enough content to where if i lost it I would be angry, I push it up to a branch and in the commit i say WIP which is short for Work In Progress. Once im complete with all of what i think needs to be done, i commit it as "Review" and contact my editor and ask him to review the document. If hes happy with it he tells me so, if not he simply fixes what ever errors i have, or he asks me to work on certain areas. This continues until he says its good. I then "merge" that branch into the master. Merging a branch is a litle advanced for this paragraph but ill try to cover it soon or in a future article. For now, just know that it pulls all of the code (in this case text) i put into the branch into the master. Once i have a full new post, or what ever the goal was (fixed bug, new post, updated piece of code...) i then log onto the server, pull the code down, and copy the new parts over to the apache webserver. A few minutes later i refresh the live page and check it there to make sure it looks good.<br>
+
+		So, thats great, sure, but what does thtat have to do with version control?<br/>
+
+		Lets say im fixing something, refactoring code, adding a feature, updateing a post, what ever it is. I commit, and i realize, wait a minute, this whole sectioin here is pointless now i just removed its need, or i refactored it. I commit that new piece up, everything looks good, but then we find out that the page dosnt work on Chrome, or when i refactored the code i added a bug that was worse then the origional bug or what ever. I can then roll back to a previous version of the code in a snap! Everyone who views my code can see exactly what lines i added, what lines i removed, maybe when i look at the old and new code that was changed side by side i can see what i did wrong, and fix it, or i can only revert back half of it. <br/>
+	</p>
+
+	<p>
+		This is the beauity of Github, Git and Version Control, and why everyone should use it. If your a developer, or if you just write scripts for personal scripts. Or if your like me, you run linux and you have a small collection of "dotfiles" (future article on these) and you want a place to store them, or a place to share them because you think yours are awesome. Github is the best place to store what ever it is your doing!
+	</p>
+
+
+</p>
+
+	<div id="footer"></div>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+</html>

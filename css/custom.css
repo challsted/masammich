@@ -6,21 +6,21 @@ nav {
 /* This might be deprecated by turning footer into column 12 */
 footer {
 	float: bottom;
-}
+}*/
 /* Slight indent of paragraphs */
 p {
 	padding-left: 10px;
 }
-/* dont remeber what this is for... */
+/* dont remeber what this is for... 
 ul li:hover ul{
     display: block;
-}
-/* some blocks didnt convert over with the theme, this is used so that the theme is more comlete */
+}*/
+/* some blocks didnt convert over with the theme, this is used so that the theme is more comlete
 .well-black {
 	background-image: none;
 	border-color: rgb(35, 35, 35);
 	display: block;
-}
+}*/
 /* for code tags, used for "output" */
 .codeOutput {
 	color: red;

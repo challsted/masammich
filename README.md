@@ -35,14 +35,14 @@ I will use this area to list my current goals, there sub-goals, and the the prog
 		<li>~~start copying the "html" from Wordpress and add it to the new html files~~</li>
 		<li>~~fix the to look better on my site (get them looking good not nesecarily perfect)~~</li>
 		<li>~~fix the "code" to actually look like its something to type not just bold/italics (css)~~</li>
-		<li>**Add BS specific code to allow for text to look better formatted with columns**</li>
-		<li>**Research advertiseing and google ads**</li>
-		<li>
+		<li>~~Add BS specific code to allow for text to look better formatted with columns~~</li>
+		<li>~~Research advertiseing and google ads~~</li>
 	</ol>
-<li>Phase 4: Get index to allow for imported content (dynamically hopefully) of any posts added (iframe?)</li>
+<li>Phase 4: Get index to allow for imported content (dynamically hopefully)</li>
 	<ol>
-		<li>research iframe and potential other options and deside if needed or not</li>
-		<li>(optional)if iframe or similar option is no longer wanted, go with wordpress?</li>
+		<li>**Found a way to do it with just HTML but its not dynamic**</li>
+		<li>**Add more content to the front page now that i can**</li>
+		<li>Work on adding a carucel</li>
 	</ol>
 <li>Phase 5: Work to remove all the extra bootstrap and convert to the .min version of code to speed up the code</li>
 	<ol>

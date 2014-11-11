@@ -61,18 +61,18 @@
 
 <h3>Basics</h3>
 
-Installing Wget: If your on Linux, you probably already have it (you can find out by typing "which wget", if you /usr/bin/wget or something similar your good, if you get "no wget in ..." you don't have it)<br/>
-If your on another distro, then please google for something like "installing wget on windows" or "installing wget on osx"<br/>
+Installing Wget: If you’re on Linux, you probably already have it (you can find out by typing "which wget", if you /usr/bin/wget or something similar your good, if you get "no wget in ..." you don't have it)<br/>
+If you’re on another distro, then please google for something like "installing wget on windows" or "installing wget on osx"<br/>
 
-Lets start with the most basic thing you can do, download a whole page!<br/>
+Let’s start with the most basic thing you can do, download a whole page!<br/>
 
 <code class="codeInput"><em><strong>wget http://www.google.com</strong></em></code> - This will download the website "google.com" into a the folder you are currently at, but under a folder of the name you gave (in this case www.google.com)<br/>
 
-Now, lets throw in some switches! <code class="codeInput"><em><strong>--mirror</strong></em></code> and <code class="codeInput"><em><strong>--recursive</strong></em></code> are 2 very popular ones, which can be shortened down to the first letter if you want (easier to type).<br/>
+Now, let's throw in some switches! <code class="codeInput"><em><strong>--mirror</strong></em></code> and <code class="codeInput"><em><strong>--recursive</strong></em></code> are 2 very popular ones, which can be shortened down to the first letter if you want (easier to type).<br/>
 
-<code class="codeInput"><em><strong>wget -r -m http://www.random-website.org/random_uploaded_images</strong>/</em></code> - This will both mirror the whole directory structure into yours, as well as "recursively" dive into any folders that are under this place. So in this example, from where you ran the command will be a folder called "www.random-website.org" and inside of it will be a folder called "random_uploaded_images" and under that will be all the images in that folder, and if there was folders, they would also be there, with any content under those folders also. As you might be able to imagine, this can become a LOT of files very fast if you're not careful.<br/>
+<code class="codeInput"><em><strong>wget -r -m http://www.random-website.org/random_uploaded_images</strong>/</em></code> - This will both mirror the whole directory structure into yours, as well as "recursively" dive into any folders that are under this place. So in this example, from where you ran the command will be a folder called "www.random-website.org" and inside of it will be a folder called "random_uploaded_images" and under that will be all the images in that folder, and if there were folders, they would also be there, with any content under those folders also. As you might be able to imagine, this can become a LOT of files very fast if you're not careful.<br/>
 
-Sometimes you will be trying to download a whole folder or a directory structure, and you will notice that some of the files are not being  mirrored. This is due to something called "robots.txt" is on the server, which tells all search engines and spiders to not look in certain folders on a web server. wget has the option to ignore that file. it's called <code class="codeInput"><strong>"<em>-e robots=off</em>"</strong></code><br/>
+Sometimes you will be trying to download a whole folder or a directory structure, and you will notice that some of the files are not being mirrored. This is due to something called "robots.txt" is on the server, which tells all search engines and spiders to not look in certain folders on a web server. wget has the option to ignore that file. It’s called <code class="codeInput"><strong>"<em>-e robots=off</em>"</strong></code><br/>
 
 You can also user the <code class="codeInput"><em><strong>-nc</strong></em></code> switch (<code class="codeInput"><em><strong>--no-clobber</strong></em></code>) this is an AWESOME switch that is used to not overwrite files that already exist! So, if you download a list of files, and then go to download them all again, but this time add the -nc flag. You will only download any NEW files not any of the old files! Also, you can add the <code class="codeInput"><em><strong>--backups=X</strong></em></code> is cool, you can back up all files that would have been overwritten instead of not downloading them. <em>X would be a number</em>, so it would replace old file with filename.1 then if you did it again, .1 would become .2, and previous would become 1, then the new one would just become filename. The number of X would be the max number of backups. So if X was 5, it would make 5 backups of every file it needed to overwrite, then after that it would just remove them.<br/>
 
@@ -80,11 +80,11 @@ If you want everything under a certain directory, but nothing above it you can a
 
 The <code class="codeInput"><em><strong>-t </strong></em></code><strong>X</strong> (<code class="codeInput"><em><strong>--tries=</strong></em></code><strong>X)</strong> flag is useful, it will tell wget to only attempt to download something X number of times. So <code class="codeInput"><em><strong>--tries=5</strong></em></code> would attempt to download 5 times, after that it will skip.<br/>
 
-If you for some reason lose your connection to a file, and its only partially downloaded, you can add the -c option to "continue" downloading from where you left off. Example <code class="codeInput"><em><strong>wget -c http://www.randomwarez.com/randomrpm.rpm</strong></em></code><br/>
+If you for some reason lose your connection to a file, and it's only partially downloaded, you can add the -c option to "continue" downloading from where you left off. Example <code class="codeInput"><em><strong>wget -c http://www.randomwarez.com/randomrpm.rpm</strong></em></code><br/>
 
 <h3>A Little Advanced</h3>
 
-So, now that we can download whole websites, make sure we don't download things that we have already downloaded, and make sure we only download folders below where we are and not higher. Lets make it so we ONLY download a certain file format, or we only dosent so many levels/folders.<br/>
+So, now that we can download whole websites, make sure we don't download things that we have already downloaded, and make sure we only download folders below where we are and not higher. Lets make it so we ONLY download a certain file format, or we only doesn’t so many levels/folders.<br/>
 
 So, <code class="codeInput"><strong><em>--accept</em></strong></code>as you can see takes file formats exactly. So if you're downloading a full folder, but you ONLY want .mp3's or you ONLY want .gif's then you can add <code class="codeInput"><em><strong>--accept mp3</strong></em></code> or <code class="codeInput"><em><strong>--accept gif </strong></em></code>you can also combine these with a comma and no space like <code class="codeInput"><em><strong><em>--accept jpg,gif,bmp</em></strong></em></code><br/>
 

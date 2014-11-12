@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<meta name="description" content="A homegrown blog about Linux and Learning">
+    <meta name="author" content="Chase Hallsted">
+	<title>Github</title>
+	<!-- Bootstrap Core CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/clean-blog.min.css">
+    <link type="text/css" rel="stylesheet" href="../css/custom.css">
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Custom Favicon -->
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		$(function(){
+			$('#header').load('../headfoot/header.html');
+			$('#footer').load('../headfoot/footer.html');
+		});
+	</script>
+	<script>
+		jQuery(document).ready(function() {
+		    var offset = 220;
+		    var duration = 500;
+		    jQuery(window).scroll(function() {
+		        if (jQuery(this).scrollTop() > offset) {
+		            jQuery('.back-to-top').fadeIn(duration);
+		        } else {
+		            jQuery('.back-to-top').fadeOut(duration);
+		        }
+		    });
+		    
+		    jQuery('.back-to-top').click(function(event) {
+		        event.preventDefault();
+		        jQuery('html, body').animate({scrollTop: 0}, duration);
+		        return false;
+		    })
+		});
+	</script>
+
+</head>
+
+<body>
+	<div id="header"></div>
+	<div class="content-container">
+
+<h2>WGET the CLI Downloaeder you probably dont know how to use!</h2>
+
+<center><img title="made at imgflip.com" src="https://i.imgflip.com/b5h3k.jpg" alt="wget DOWNLOAD ALL THE THINGS"></center><br/>
+
+<strong>wget</strong> is an awesome command line utility that is very often overlooked, but it gives a lot of power to scripts and other shell utility's. wget supports FTP, HTTPS, and HTTP, it is used to download something from a "network" aka the internet. I will go over some very basic syntax and a little more advanced stuff also. So let's get to it!<br/>
+
+<h3>Basics</h3>
+
+Installing Wget: If your on Linux, you probably already have it (you can find out by typing "which wget", if you /usr/bin/wget or something similar your good, if you get "no wget in ..." you don't have it)<br/>
+If your on another distro, then please google for something like "installing wget on windows" or "installing wget on osx"<br/>
+
+Lets start with the most basic thing you can do, download a whole page!<br/>
+
+<code class="codeInput"><em><strong>wget http://www.google.com</strong></em></code> - This will download the website "google.com" into a the folder you are currently at, but under a folder of the name you gave (in this case www.google.com)<br/>
+
+Now, lets throw in some switches! <code class="codeInput"><em><strong>--mirror</strong></em></code> and <code class="codeInput"><em><strong>--recursive</strong></em></code> are 2 very popular ones, which can be shortened down to the first letter if you want (easier to type).<br/>
+
+<code class="codeInput"><em><strong>wget -r -m http://www.random-website.org/random_uploaded_images</strong>/</em></code> - This will both mirror the whole directory structure into yours, as well as "recursively" dive into any folders that are under this place. So in this example, from where you ran the command will be a folder called "www.random-website.org" and inside of it will be a folder called "random_uploaded_images" and under that will be all the images in that folder, and if there was folders, they would also be there, with any content under those folders also. As you might be able to imagine, this can become a LOT of files very fast if you're not careful.<br/>
+
+Sometimes you will be trying to download a whole folder or a directory structure, and you will notice that some of the files are not being  mirrored. This is due to something called "robots.txt" is on the server, which tells all search engines and spiders to not look in certain folders on a web server. wget has the option to ignore that file. it's called <code class="codeInput"><strong>"<em>-e robots=off</em>"</strong></code><br/>
+
+You can also user the <code class="codeInput"><em><strong>-nc</strong></em></code> switch (<code class="codeInput"><em><strong>--no-clobber</strong></em></code>) this is an AWESOME switch that is used to not overwrite files that already exist! So, if you download a list of files, and then go to download them all again, but this time add the -nc flag. You will only download any NEW files not any of the old files! Also, you can add the <code class="codeInput"><em><strong>--backups=X</strong></em></code> is cool, you can back up all files that would have been overwritten instead of not downloading them. <em>X would be a number</em>, so it would replace old file with filename.1 then if you did it again, .1 would become .2, and previous would become 1, then the new one would just become filename. The number of X would be the max number of backups. So if X was 5, it would make 5 backups of every file it needed to overwrite, then after that it would just remove them.<br/>
+
+If you want everything under a certain directory, but nothing above it you can add the <code class="codeInput"><em><strong>-np</strong></em></code> (<code class="codeInput"><em><strong>--no-parent</strong></em></code>) flag.<br/>
+
+The <code class="codeInput"><em><strong>-t </strong></em></code><strong>X</strong> (<code class="codeInput"><em><strong>--tries=</strong></em></code><strong>X)</strong> flag is useful, it will tell wget to only attempt to download something X number of times. So <code class="codeInput"><em><strong>--tries=5</strong></em></code> would attempt to download 5 times, after that it will skip.<br/>
+
+If you for some reason lose your connection to a file, and its only partially downloaded, you can add the -c option to "continue" downloading from where you left off. Example <code class="codeInput"><em><strong>wget -c http://www.randomwarez.com/randomrpm.rpm</strong></em></code><br/>
+
+<h3>A Little Advanced</h3>
+
+So, now that we can download whole websites, make sure we don't download things that we have already downloaded, and make sure we only download folders below where we are and not higher. Lets make it so we ONLY download a certain file format, or we only dosent so many levels/folders.<br/>
+
+So, <code class="codeInput"><strong><em>--accept</em></strong></code>as you can see takes file formats exactly. So if you're downloading a full folder, but you ONLY want .mp3's or you ONLY want .gif's then you can add <code class="codeInput"><em><strong>--accept mp3</strong></em></code> or <code class="codeInput"><em><strong>--accept gif </strong></em></code>you can also combine these with a comma and no space like <code class="codeInput"><em><strong><em>--accept jpg,gif,bmp</em></strong></em></code><br/>
+
+Similar to --accept you can also <code class="codeInput"><em><strong>--reject </strong></em></code><strong>X,G,K</strong>. This is usually used for 1 of 2 things. One is if you want to download everything EXCEPT a certain format, so if you want to download everything except .html pages. The other common use of --reject is to specify you dont want certain files. So for example <code class="codeInput"><em><strong>--reject 'index.html'</strong></em><br/>
+
+<code class="codeInput"><strong><em>--level=</em></code>X </strong></code>where "X" is a number of folders you want to drop down so many "levels". So if you did <code class="codeInput"><em><strong>--level=3</strong></em></code> it would download the parent, and it would only dive as far as 3 levels into the share.<br/>
+
+<code class="codeInput"><em><strong>-i $FILE </strong></em></code>(<code class="codeInput"><em><strong>--input-file=file</strong></em></code>) can also be used if you have a text file with a list (1 per line) of address's you want to download. This can be useful if you need to download a lot of things from several sites or several specific files.<br/>
+
+<h3>Advanced</h3>
+
+Here is an example of using a for loop to run a wget.<br/>
+
+<code class="codeInput"><em><strong>FOR z IN A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; DO wget -e robots=off -r -level=0 -nc -np --accept txt http://textfiles.com/textfiles/%z; done</strong></em></code><br/>
+
+That would be a one-liner, if you wanted to make it look better you could do<br/>
+
+<code class="codeInput"><em><strong>FOR z IN</strong></em></code><br/>
+<code class="codeInput"><em><strong>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z;</code><br/>
+<code class="codeInput">DO wget -e robots=off -r -level=0 -nc -np --accept txt http://textfiles.com/textfiles/%z;</code><br/>
+<code class="codeInput">done</strong></em></code><br/>
+
+So to break this all down for you, it's simply a for loop, using the variable z, to search for any directory that starts with the letter A-Z , under ../textfiles/, and every time it finds any of those it performs a recursive wget that doesn't overwrite existing files, doesn't pop up a directory, doesn't go down a directory, only downloads .txt format and ignores robots.txt which tells it what files to ignore.<br/>
+
+	</div>
+    <!-- Footer -->
+    <div id="footer"></div>
+    <!-- jQuery -->
+    <script src="../../js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../js/bootstrap.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../../js/clean-blog.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<meta name="description" content="A homegrown blog about Linux and Learning">
+    <meta name="author" content="Chase Hallsted">
+	<title>Github</title>
+	<!-- Bootstrap Core CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/clean-blog.min.css">
+    <link type="text/css" rel="stylesheet" href="../css/custom.css">
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Custom Favicon -->
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		$(function(){
+			$('#header').load('../headfoot/header.html');
+			$('#footer').load('../headfoot/footer.html');
+		});
+	</script>
+	<script>
+		jQuery(document).ready(function() {
+		    var offset = 220;
+		    var duration = 500;
+		    jQuery(window).scroll(function() {
+		        if (jQuery(this).scrollTop() > offset) {
+		            jQuery('.back-to-top').fadeIn(duration);
+		        } else {
+		            jQuery('.back-to-top').fadeOut(duration);
+		        }
+		    });
+		    
+		    jQuery('.back-to-top').click(function(event) {
+		        event.preventDefault();
+		        jQuery('html, body').animate({scrollTop: 0}, duration);
+		        return false;
+		    })
+		});
+	</script>
+
+</head>
+
+<body>
+	<div id="header"></div>
+	<div class="content-container">
+	
+<h3>sed - Stream Line Editor - A powerful cryptic text editor</h3>
+
+So, as promised, I am creating an article about "sed" which is mainly a GNU program (as in there is a rewrite that is non GNU that I ran into on some very old AIX box's...)<br/>
+
+What is "sed", so ill just open my local server, and pull up the man doc for sed.<br/>
+<br/>
+<code class="codeOutput">NAME<br/>
+sed - stream editor for filtering and transforming text<br/>
+SYNOPSIS<br/>
+sed [OPTION]... {script-only-if-no-other-script} [input-file]...<br/>
+ESCRIPTION<br/>
+Sed is a stream editor. A stream editor is used to perform basic text<br/>
+transformations on an input stream (a file or input from a pipeline).<br/>
+While in some ways similar to an editor which permits scripted edits<br/>
+(such as ed), sed works by making only one pass over the input(s), and<br/>
+is consequently more efficient. But it is sed's ability to filter text<br/>
+in a pipeline which particularly distinguishes it from other types of<br/>
+editors.</code><br/>
+<br/>
+
+"<strong><em>But what the heck does that mean?</em></strong>"<br/>
+What its saying is that it edits text. It can be used in a script (direct input file) or it can take piped in text.<br/>
+
+Sed is considered a regex text editor, which is the best way I can explain it.<br/>
+
+I personally only ever use sed for find/replace.<br/>
+This might sound dumb/unnecessary. But I guarantee you, if you want to take text and pipe out all the stuff you don't want, and don't want to write a giant chain of piping grep and grep -v together then you want to learn how to use sed.<br/>
+
+Lets get this party started, so how do you read sed?<br/>
+<code class="codeInput"><strong>sed -i 's/find/replace/g' file.out</strong></code><br/>
+Lets break this baby apart!<br/>
+<code class="codeInput"><strong>sed</strong></code> &lt;-- this tells the shell what is to follow, in this case, a regex of some type<br/>
+<code class="codeInput"><strong>-i</strong></code> &lt;-- this is the "inline" flag i will explain soon why this is very important and saves you A LOT of time<br/>
+<code class="codeInput"><strong>'s</strong></code> &lt;-- This is the "search for the following regex" flag<br/>
+<code class="codeInput"><strong>/</strong></code> &lt;-- This first / represents the beginning of the regex<br/>
+<code class="codeInput"><strong>find</strong></code> &lt;-- find this word in the input file<br/>
+<code class="codeInput"><strong>/</strong></code> &lt;-- This 2nd / represents the end of the search term<br/>
+<code class="codeInput"><strong>replace</strong></code> &lt;-- This will replace the word find with the word replace in the document<br/>
+<code class="codeInput"><strong>/</strong></code> &lt; -- The 3rd / represents the end of the expression.<br/>
+<code class="codeInput"><strong>g'</strong></code> &lt;-- this is the "global" flag due to its inside of the ' marks, it represents do this regex globally<br/>
+<code class="codeInput"><strong>file.out</strong></code> &lt;-- this is the file that the sed statement will be run on.<br/>
+<code class="codeInput"><strong>-i</strong></code> is a special flag that is only available in GNU sed! What it does is edit "inline". This might sound basic or dumb but the other option is for every statement, you print to a tmp file, then over write the original file, then delete the temp file. Yep, that's dumb! But that's one of the issues you will sometimes see with very old software.<br/>
+
+You can also use * in file names and in regex. * represents any number of characters to the end but has limits.<br/>
+You can also use $ to represent from the end of a word and ^ to represent from the beginning of a word<br/>
+You can also combine these together like this.<br/>
+<code class="codeInput"><strong>sed -i 's/..$//g' text.txt</strong></code>  &lt;-- This will remove the last 2 characters from every line in the file "text.txt"<br/>
+<code class="codeInput"><strong>sed -i 's/^...//g' test_file.conf</strong></code> &lt;-- This will remove the first 3 characters from every line in the file "test_file.conf"<br/>
+<code class="codeInput"><strong>sed -i 's/player/..$/g' flavaflave.r</strong></code> &lt;-- This will remove the letters "er" from every word "player" in the file "flavaflave.r"<br/>
+You will probably notice above that I use // to replace something with nothing, not even a space.
+
+<h3>Next you need to learn about "escapes".</h3>
+
+Escapes are important if you are editing text with symbols in it.<br/>
+
+So, for example, you have a file with a bunch of java variables that are delimited by a \ so that they become MUCH more readable.<br/>
+<code class="codeInput">cat java_variables.conf</code><br/>
+<code class="codeOutput">JAVA_OPTS="-Xmx1024m \</code><br/>
+<code class="codeOutput">- Xms512m \</code><br/>
+<code class="codeOutput">-XX:GCLogFileSize=10m \</code><br/>
+So you want to add another line using sed? <strong>No problem! </strong><br/>
+<code class="codeInput">sed -i 's/- Xms512m \\/ Xms512m \\\n-XX:NumberOfGCLogFiles=5 \\/g' java_variables.conf</code><br/>
+Now if we cat this imaginary java file:<br/>
+<code class="codeInput">cat java_variables.conf</code><br/>
+<code class="codeOutput">JAVA_OPTS="-Xmx1024m \</code><br/>
+<code class="codeOutput">-Xms512m \</code><br/>
+<code class="codeOutput">-XX:NumberOfGCLogFiles=5 \</code><br/>
+<code class="codeOutput">XX:GCLogFileSize=10m \</code><br/>
+YAY! It worked!
+
+<h3>So, to break down what i just did</h3>
+
+<code class="codeInput"><strong>sed -i 's/</strong></code> &lt;-- we know what this did already, it's an inline search<br/>
+<code class="codeInput"><strong>- Xms512m \\/</strong></code> &lt;-- You basically know what this is doing, it's looking for a line, but this line ends in a special character (backslash \ ) so we have to "escape" it with another backslash (the escape character). The escape character tells the regex to assume the next character is exactly what it looks like, aka NOT a function. Another thing i want to point out, is I copied the spaces before the text also, so it does a full replace, and it keeps spacing (important when you're doing this).<br/>
+<code class="codeInput"><strong>- Xms512m \\\n-XX:NumberOfGCLogFiles=5 \\/ </strong></code>&lt;-- This is the cool part! Your replacing the line, with its self (you want to keep the line!), escaping the \ at the end, then we do something special. We add \n . This is a special sequence for "new line". Which is just like hitting the "enter" key on your keyboard. In this case it inserts the new line right after the \ at the end of the java statement. It then adds the spacing needed for next line (important, not to sed, but to the readability of the java), and then adds the actual new java statement and adds a \ to the end (we escape it also!).<br/>
+<code class="codeInput"><strong>g' java_variables.conf </strong></code>&lt;-- We already know what this does, just a global replace on the file "java_variables.conf"<br/>
+Characters that need to be escaped for sed if you want to use them literally.<br/>
+<code class="codeInput"><strong>/, \, $, ", ?, *, ., &lt;, &gt;, [, ]</strong></code><br/>
+
+Some characters can not be escaped or they will be thought of as special when normally they are not.<br/>
+
+For example, if you escape a "n" it will insert a new line, if you escape a "D" it will delete the whole line that the pattern was matched on, if you match a "p" it will print every time it matches the pattern...<br/>
+
+A note of cation, escaping can sometimes prevent your pattern from matching, it will also sometimes do thing you didn't want it to do. I highly suggest testing your expression against a copy of the file you plan to edit first, or backing up the file before you edit it.<br/>
+
+As always, the best way to learn sed, is to get some text files on a Linux box, open up the man doc for sed (man sed) and play with it!<br/>
+
+<h3>"Those who never failed have never tried anything new" - Einstein</h3></p>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <!-- jQuery -->
+    <script src="../../js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../js/bootstrap.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../../js/clean-blog.min.js"></script>
+</body>
+</html>

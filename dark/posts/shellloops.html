@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<meta name="description" content="A homegrown blog about Linux and Learning">
+    <meta name="author" content="Chase Hallsted">
+	<title>Github</title>
+	<!-- Bootstrap Core CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap-dark.css">
+    <!-- Custom CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/clean-blog-dark.css">
+    <link type="text/css" rel="stylesheet" href="../css/custom.css">
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Custom Favicon -->
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		$(function(){
+			$('#header').load('../headfoot/header.html');
+			$('#footer').load('../headfoot/footer.html');
+		});
+	</script>
+	<script>
+		jQuery(document).ready(function() {
+		    var offset = 220;
+		    var duration = 500;
+		    jQuery(window).scroll(function() {
+		        if (jQuery(this).scrollTop() > offset) {
+		            jQuery('.back-to-top').fadeIn(duration);
+		        } else {
+		            jQuery('.back-to-top').fadeOut(duration);
+		        }
+		    });
+		    
+		    jQuery('.back-to-top').click(function(event) {
+		        event.preventDefault();
+		        jQuery('html, body').animate({scrollTop: 0}, duration);
+		        return false;
+		    })
+		});
+	</script>
+
+</head>
+
+<body>
+	<div id="header"></div>
+	<div class="content-container">
+
+<h3>The main meat and cheese of most programs are called "Loops"</h3>
+
+So, as mentioned in my <a href="http://masammich.wordpress.com/2014/09/15/how-to-start-scripting/" target="_blank">previous</a> article which is meant as a very basic introduction, this article will be about "loops".<br/>
+They are called this because they "loop" or iterate though data or instructions until they are no longer true. To be able to understand what I mean by "until they are no longer true", you must understand what is known as "Boolean Logic".<br/>
+Boolean logic (very simplified) is a "true or false" "1 or 0" "left or right", basically, its always one way or the other. There are very in depth guides on how this works and more details if you want to look it up, but to help you understand the basics.
+So, boolean logic is very simple, everything is either true or false, and it usually evaluates to 1 or 0. So an example would be:<br/>
+<code class="codeInput">1 &lt; 0 = 0 (False)</code><br/>
+<code class="codeInput">0 &gt; 1 = 0 (False)</code><br/>
+<code class="codeInput">0 &lt; 1 = 1 (True)</code><br/>
+<code class="codeInput">1 &gt; 0 = 1 (True)</code><br/>
+
+So as an example if loop, <code class="codeInput">if [ i &lt; h ]; then</code> this will only do something "IF "i" is less then "h".
+So if we set "i" to 1 and "h" to 0. Then it would preform what ever we setup. This is only meant to be very basic, so I think this is all you need for now.
+
+<h3>Types of loops</h3>
+
+There are several types of loops, and each type has a different purpose, we will be covering the following types of loops.
+
+<ul>
+	<li><a href="#if">if</a></li>
+	<li><a href="while">while</a></li>
+	<li><a href="#for">for</a></li>
+</ul>
+
+<h3 id="if">"if" loops</h3>
+
+So, we covered an example if loop above, but this is just the tip of what we can do with if loops. As we already know, loops will only do something if they are true. So we can code like this.<br/>
+<code class="codeInput">if [ $KNOWLEDGE == $POWER ]; then</code><br/>	 	 
+&nbsp;&nbsp;<code class="codeInput">print "Science Rules!n"</code><br/> 
+<code class="codeInput">fi</code><br/>
+
+So, as you might be able to tell from above, I am doing a simple comparison.<br/>
+Its saying "if the value of knowledge is equal to the value of power then print "Science Rules" with a newline character at the end (enter).<br/>
+You should also notice the semantics of this, it opens with "if" it then has a bracket [, it then gives the first value that we want to check, which is $KNOWLEDGE, it then asks "is it equal to" with ==, the second value $POWER, end bracket ].<br/>
+Now, it gets slightly program looking from here on, it has a simi colon! So it says "if this previous is true, then do this!" So it would only print "Science Rules" IF knowledge is equal to power. Other wise it will not do anything.<br/>
+Then to end it, we reverse the word that opened it, so "if" backwards is "fi". This is a common thing in Linux, but not a standard, so don’t expect it to always be this way.<br/>
+<strong>So what if we want to check if the 2 values are not equal to each other?</strong> We can do this several ways, for example,
+* We can say "not" in the if statement with a "!" like this <br/>
+<code class="codeInput">if [ ! $KNOWLEDGE == $POWER ]; then</code><br/>
+&nbsp;&nbsp;<code class="codeInput">print "Learn More Stuff!"</code><br/>	 
+<code class="codeInput">fi</code><br/>
+
+Or we can do an "else" statement inside of the "if loop"<br/>
+ 	 
+<code class="codeInput">if [ $KNOWLEDGE == $POWER ]; then</code><br/>
+&nbsp;&nbsp;<code class="codeInput">print "Science, Learning, Books, thats your calling!"</code><br/>
+<code class="codeInput">else</code><br/>
+&nbsp;&nbsp;<code class="codeInput">print "Learn More Stuff!"</code><br/>
+<code class="codeInput">fi</code><br/>
+The first example above does is sometimes called "not the following" or "the opposite of the following", basically its just checks if the next thing is no, then it will then cause it to be yes. That may be confusing, so lets say it a different way. A == B, B == C, and C != D, so if I ask, is A = C? The answer would be true. Then if i ask, is A not equal to D? The answer would be true. A is NOT equal to D.<br/>
+The 2nd example above is using an "optional" statement, in this case its an else. Else only works if the "if" is false. So in this case, it will only print "Learn More Stuff" if the 2 values are not equal.<br/>
+You can also put multiple if statements into a single if<br/>
+
+<h3 id="while">"while" loops</h3>
+
+<h3 id="for">"for" loops</h3>
+
+</p>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <!-- jQuery -->
+    <script src="../../js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../js/bootstrap.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../../js/clean-blog.min.js"></script>
+</body>
+</html>

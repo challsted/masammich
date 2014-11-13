@@ -89,11 +89,123 @@
                     <ol>
                         <li><a href="#plugins-where">Where do I find them?</a></li>
                         <li><a href="#plugins-how">How do I install them?</a></li>
+                        <ol>
+                            <li><a href="#how-manual">Manual</a></li>
+                            <li><a href="#how-manager">Managers</a></li>
+                            <ol>
+                                <li><a href="#manager-vimplug">Vim-Plug</a></li>
+                                <li><a href="#manager-vundle">Vundle</a></li>
+                                <li><a href="#manager-pathogen">Pathogen</a></li>
+                            </ol>
+                        </ol>
                         <li><a href="#plugins-suggested">Suggested Plugins</a></li>
                     </ol>
                 </ol>
+                <hr class="medium">
+                <p>
+                    My previous article on VIM was rather lacking, it presented a game, some links to articles that puked data on to your lap, and I did little to try to assit you in your learning. I appoligize for that, and I shall attempt to rectafy that here, (excuse the puke though...)
+                </p>
+                <!-- Section 2 (b/c sect 1 is a outer link)-->
+                <h3 id="commands">VIM Commands</h3>
+                <p>
+                </p>
 
-			
+                <h4 id="commands-beginner">Beginner Commands</h4>
+                <p>
+                </p>
+
+                <h4 id="commands-intermediate">Intermediate Commands</h4>
+                <p>
+                </p>
+                
+                <h4 id="commands-advanced">Advanced Commands</h4>
+                <p>
+                </p>
+
+                <!-- Section 3 -->
+                <h3 id="vimrc">.vimrc</h3>
+                <p>
+                    You can look at my own personal .vimrc on github by going <a href="https://github.com/hackinginformation/dotfiles/blob/master/vim/.vimrc" style="text-decoration: underline">here.</a>.<br/>
+
+                    You can download it for your personal use or just as a playtoy if you want by useing wget like this: <br/>
+
+                    <code class="codeInput">wget https://github.com/hackinginformation/dotfiles/blob/master/vim/.vimrc</code><br/>
+
+                    If you go back a few directorys to the <a href="https://github.com/hackinginformation/dotfiles" style="text-decoration: underline">dotfiles repo</a> you can see I publicaly host all of my dot file information for vim and zsh (An extrealy awesome shell that will soon be an article). <em>As of the time of this writeing, the "install.sh" script is broken, please do not use it.</em>
+                </p>
+
+                <h4 id="vimrc-set">:set commands</h4>
+                <p>
+                </p>
+
+                <h4 id="vimrc-color">:colorscheme</h4>
+                <p>
+                </p>
+                
+                <h4 id="vimrc-remap">:remap &amp; :noremap</h4>
+                <p>
+                </p>
+
+                <!-- Section 4 -->
+                <h3 id="plugins">PLUG-INS!</h3>
+                <p>
+                </p>
+
+                <h4 id="plugins-where">Where can I find Plug-ins?</h4>
+                <p>
+                    A google search will teach you a lot! But here are a few links, i personally prefer to look though GitHub, and a few differnt reddit pages. <br>
+                    <br/>
+                    <a href="https://github.com/search?utf8=%E2%9C%93&q=vim+plugin" style="text-decoration: underline">GitHub Search</a><br/>
+                    GitHub is where almost all plugins are hosted these days<br/>
+                    <a href="https://www.reddit.com/r/vimplugins" style="text-decoration: underline">Reddit VimPlugins</a><br/>
+                    This is not a super "active" subreddit, but it still gets frequent hits.<br/>
+                    If you like reddit you can also look into <a href="http://www.reddit.com/user/HackingInfo/m/vim" style="text-decoration: underline">this multireddit</a><br/>
+                    <a href="http://vim.wikia.com/wiki/Category:Plugin" style="text-decoration: underline">VIM Wiki</a><br/>
+                    The vim wiki is both liked and hated by many. It is a true wikia, anyone can edit it, and yet only a few do. Its quite out of date in places and yet seeminly goes on forever, never ending, alwasy more info in it from somewhere that wasnt linked properly that can only be found by hitting the random article button...<br/>
+                    
+                </p>
+
+                <h4 id="plugins-how">How do I install these?</h4>
+                <p>
+                    There are several ways to do this. You can do it manually, or you can use a plugin manager (recomended) to do it all for you. 
+                    <p id="how-manual">
+                        <strong>Manual</strong> although there is nothing wrong with doing it this way, if you plan on having more then a small number of plugins, it might be a good idea to use a plugin manager. But I will still list this way for research, and knowledge.<br/>
+                        <br/>
+                        So first you need to create a directory, then a few directorys underneth that, I'm not sure if this is 100% needed, but the way I will list here, is the way i was taught, and i always see others doing it this same way (even with a manager).<br/>
+                        So, first create a folder called ".vim" at your home directory.<br/>
+                        <code class="codeInput">mkdir ~/.vim</code><br/>
+                        Now go into that directory and we need to create several more dirctorys, I'll explain what each one is for so you can not create them or just remove them if you dont want them.<br/>
+                        <code class="codeInput">mkdir -p ~/.vim/{autoload,colors,plugged,swaps,spell}</code><br/>
+                        The above will create 5 sub-directorys underneth ~/.vim. Each of these direcorys has a specific purpose.<br/>
+                        <strong>autoload</strong> - If you want a certain file to load as soon as vim loads (at the same time) this is where you want to put the .vim file. This is mainly used to put what ever plugin manager you use (you put the manager's .vim file here) so you may or may not want it. Im leaving it in here because Im going to assume you want to just learn how it works, not actually doing allt his your self. <br/>
+                        <strong>colors</strong> - This is used for all of your color schemes, being 100% honest, I have 179 colorschemes located in this file right now... I dont even know how I got this many... I probably downloaded a zip of them when i was playing with vim and forgot ... (i have several files still here that dont see to have been touched in ~a year...). I will suggest you wget or git clone your favorate colorscheme into this folder. Once vim sees you have a .vim, it seems to start referenceing it from that point on. So forexample, i LOVE the molokai color scheme, so i cloned it into my ~/.vim/colors dir so i can reference it with my .vimrc.<br/>
+                        <strong>plugged</strong> - Put all of your pluggin files here <br/>
+                        <strong>swaps</strong> - You need to set in your .vimrc to use this for swap files. Its more convient then having random .~filename floating everywhere you forgot to save or quit properly and left a shadow file behind... <br/>
+                        <!-- ADD HOW TO DO THIS -->
+                        <strong>spell</strong> - If you chose to turn on spell check in vim, this is where it will save your spell file. Which is where it saves all the words you add or tell it to ignore in a little file.<br/>
+                        <br/>
+                        Thats about it, you either wget or git clone the .vim file's into the appropriate place. Colorscheme into the "colors" dir, plugins into the "plugged" dir, files to load on launch into the "autoload" dir and the others you setup to have files put into automatically.<br/>
+                    </p>
+                    <hr class="medium">
+                    <p id="how-manager">
+                        <strong>Manager</strong> This is highly recamended, it makes your life far easier due to it takes the process of updateing, and placeing files where they need to go out of the picture. 
+
+                        <p id="manager-vimplug">
+                            <strong><a href="https://github.com/junegunn/vim-plug" style="text-decoration: underline">Vim-Plug</a></strong>
+                        </p>
+                        <p id="manager-vundle">
+                            <strong><a href="https://github.com/gmarik/Vundle.vim" style="text-decoration: underline">Vundle</a></strong>
+                        </p>
+                        <p id="manager-pathogen">
+                            <strong><a href="https://github.com/tpope/vim-pathogen" style="text-decoration: underline">Pathogen</a></strong>
+                        </p>
+                    </p>
+                </p>
+                
+                <h4 id="plugins-suggested">Got any suggested plugins?</h4>
+                <p>
+                </p>
+
 		</div>
 	</div>
 

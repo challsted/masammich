@@ -153,7 +153,7 @@ Use:<br/>
 
 <code class="codeInput">cp -p /home/user1/mystuff/ /home/user2/user1_stuff</code> - This copys the folder "mystuff" and everything inside of it also.<br/>
 
-This is the time where useing -v is helpful so it would be better to type:<br/>
+This is the time where using -v is helpful so it would be better to type:<br/>
 
 <code class="codeInput">cp -p -v /home/user1/mystuff/ /home/user2/user1_stuff</code> - This will copy everything inside of the folder, and print out everything that is being copied also. Other wise it will just sit there for a while, while it copy's and you have no idea whats going on.<br/>
 <hr width="50%">
@@ -202,7 +202,7 @@ Use:<br/>
 
 <code class="codeInput">grep -i "string" textfile.txt</code>  - Searches the file "textfile.txt" for the term "string" but due to -i it will return things that don't match in case (so it will return String, sTring, STRING and so on)<br/>
 
-<code class="codeInput">find ~/music -name "*.mp3" | grep -i "aqua" | grep -iv "remix"</code> - Ok so this one is a little complicated, but i can break it out for you. First it uses the <a href="#find">find</a> command (explained above) to find all files that end in .mp3 inside of your personal music folder. It then finds all files that end in .mp3, and have the word "aqua" in it with insensitive case (Aqua, AQUA and aqua will all return). Then it finds all files with the word "remix" and it removes them from your results, so you wont get all those german remix's of "Aqua - Barbie Girl". I actually use similar commands to this one my self.<br/>
+<code class="codeInput">find ~/music -name "*.mp3" | grep -i "aqua" | grep -iv "remix"</code> - Ok so this one is a little complicated, but i can break it out for you. First it uses the <a href="#find">find</a> command (explained above) to find all files that end in .mp3 inside of your personal music folder. It then finds all files that end in .mp3, and have the word "aqua" in it with insensitive case (Aqua, AQUA and aqua will all return). Then it finds all files with the word "remix" and it removes them from your results, so you wont get all those German remixes of "Aqua - Barbie Girl". I actually use similar commands to this one my self.<br/>
 
 <code class="codeInput">grep -n "function" program.c</code>  - This will find what ever function you give it in the program.c file, and it will also include a line number for every instance it finds. Why is this helpful? Well it's mostly helpful to coders, or admins who look though logs a lot. This will find a certain string and will give you the line number to go fix it. So if you compile your code and you see that a certain function isn't working, or if you need to find all 404's that hit your web server. You can find them easily!<br/>
 <hr width="50%">
@@ -281,7 +281,7 @@ So Ubuntu, and Ubuntu's offspring (like Linux Mint) all share similar syntax whe
 <em><strong>To answer the first part,</strong></em> sudo is short for "Super User DO". What does that mean? Super user is like an admin, the super user (known as the root account) has permissions to do anything to anyones stuff on the whole computer no matter what you say about it (yes, this can be curbed/thwarted). So when you type "sudo" your telling the CLI that the next thing you type (everything after it) will be done with super user powers. So "sudo cd .." is kind of dumb, why move backwards a directory using super user powers? But "sudo apt-get install vlc" is necessary due to your telling the computer to use the super user account to install a program called VLC, and that will require system wide changes!<br/>
 So to summarize, "<code class="codeInput">sudo</code>" is simply a short word for when you want to do something, with admin powers, but not use an admin account.<br/>
 
-<em><strong>To answer the second part.</strong></em> "apt-get" is the short name of the "package-manager" in ubuntu (well, for debian based OS's... ill cover this later). "apptitute get" was the original syntax but you can simply type "apt-get" now. "Aptitude" is the full name, your telling aptitude to get what ever package your telling it to. Whether it be to install, remove, or add a repository, it's all done though getting information with aptitude!<br/>
+<em><strong>To answer the second part.</strong></em> "apt-get" is the short name of the "package-manager" in Ubuntu (well, for Debian based OS's... ill cover this later). "aptitude get" was the original syntax but you can simply type "apt-get" now. "Aptitude" is the full name, your telling aptitude to get what ever package your telling it to. Whether it be to install, remove, or add a repository, it's all done though getting information with aptitude!<br/>
 
 <strong><em>So, now that that's out of the way.</em> </strong><br/>
 
@@ -304,7 +304,7 @@ This is perfectly ok and normal, just stay calm, assuming you typed everything o
 
 <strong>So, just for a quick comparison:</strong><br/>
 <strong>In Linux</strong> you opened a terminal, you typed 1 command (<code class="codeInput">sudo apt-get install vlc</code>) then typed your password, waited a second or two, hit the enter key to accept the download, then waited again and its done. You now have VLC installed and (hopefully) fully functional on your computer!<br/>
-If you were to do this same thing <strong>in windows</strong>, you would have to open a browser, go to your favorite search engine (or use a search tool bar (<em>shudder....</em>) type in "vlc" then using what ever search engine you choose search though possibly many hundreds of millions of links, hoping that the top result is the one you want. You then look around the website for a "downloads" button or something of that nature, you download it and hope it's not filled with virus's. You then wait for your virus scanner to scan the package for known virus's, you then open up your download's folder, double-click the vlc.exe icon, next, next, next finish though the install prompt, then open your start menu and you have VLC installed on your computer! <br/>Congradulations!<br/>
+If you were to do this same thing <strong>in windows</strong>, you would have to open a browser, go to your favorite search engine (or use a search tool bar (<em>shudder....</em>) type in "vlc" then using what ever search engine you choose search though possibly many hundreds of millions of links, hoping that the top result is the one you want. You then look around the website for a "downloads" button or something of that nature, you download it and hope it's not filled with virus's. You then wait for your virus scanner to scan the package for known virus's, you then open up your downloads folder, double-click the vlc.exe icon, next, next, next finish though the install prompt, then open your start menu and you have VLC installed on your computer! <br/>Congratulations!<br/>
 
 See how much simpler this is on Linux??? This is just 1 example, I have more!<br/>
 
@@ -324,9 +324,9 @@ This will purge all settings, and dependency that it had (that your computer doe
 
 <em><strong>Ok, last thing I want to tell you about Ubuntu is PPA's</strong></em><br/>
 
-PPA (Personal Package Archive) is a neat little way to get software that Ubuntu would not normally support, and keep it up-to-date though the package manager! So if you're trying to install a piece of software, that Ubuntu does not nativly support, or maybe a version of a piece of software that Ubuntu doesn't have in their repository. Then  you would use a PPA.<br/>
+PPA (Personal Package Archive) is a neat little way to get software that Ubuntu would not normally support, and keep it up-to-date though the package manager! So if you're trying to install a piece of software, that Ubuntu does not natively support, or maybe a version of a piece of software that Ubuntu doesn't have in their repository. Then  you would use a PPA.<br/>
 
-So for example, Ubuntu does not have the Cinnamon Desktop located in their repository's. So you search the internet and you find this:<br/>
+So for example, Ubuntu does not have the Cinnamon Desktop located in their repository's. So you search the Internet and you find this:<br/>
 
 <code class="codeInput">sudo add-apt-repository ppa:gwendal-lebihan-dev/cinnamon-stable</code><br/>
 

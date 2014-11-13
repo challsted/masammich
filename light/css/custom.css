@@ -27,6 +27,8 @@ ul li:hover ul{
 	display: block;
 }*/
 /* for code tags, used for "output" */
+/***********************************************
+NEED to make codeOutput codeInput look better on a light background!!! */
 .codeOutput {
 	color: red;
 	background-color: #333;

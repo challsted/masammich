@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<meta name="description" content="A homegrown blog about Linux and Learning">
+    <meta name="author" content="Chase Hallsted">
+	<title>Github</title>
+	<!-- Bootstrap Core CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap-dark.css">
+    <!-- Custom CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/clean-blog-dark.css">
+    <link type="text/css" rel="stylesheet" href="../css/custom.css">
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Custom Favicon -->
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		$(function(){
+			$('#header').load('../headfoot/header.html');
+			$('#footer').load('../headfoot/footer.html');
+		});
+	</script>
+	<script>
+		jQuery(document).ready(function() {
+		    var offset = 220;
+		    var duration = 500;
+		    jQuery(window).scroll(function() {
+		        if (jQuery(this).scrollTop() > offset) {
+		            jQuery('.back-to-top').fadeIn(duration);
+		        } else {
+		            jQuery('.back-to-top').fadeOut(duration);
+		        }
+		    });
+		    
+		    jQuery('.back-to-top').click(function(event) {
+		        event.preventDefault();
+		        jQuery('html, body').animate({scrollTop: 0}, duration);
+		        return false;
+		    })
+		});
+	</script>
+
+</head>
+
+<body>
+	<div id="header"></div>
+		<div class="content-container">
+
+		<h1> This is just a place for me to talk about upcoming articles i plan on writing</h1>
+
+		<ol>
+			<li>Arch Linux - How to install, whats its good for, idelogy and all that</li>
+			<li>LFS (Linux Fro Scratch) - What is for, why you might want to build it</li>
+			<li>Team Viewer - Free Cross Platform Remote Desktop thats very easy to use</li>
+			<li>Gentoo - How to install, how to use</li>
+			<li>Another Vim Article on the "vimrc", vim plugins, and maybe something about "neovim!"</li>
+			<li>Sublime Text - yes, i know its not vim, but its got a good purpose and not everyone wants cli edits</li>
+			<li>ZSH - THE BEST Shell ever!</li>
+			<li>Linux Kernel - Many don't understand what a kernel is, how it works, or what it does</li>
+			<li>And More, look forward to the above and anything else i come up with :P</li>
+		</ol>
+	
+	</div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <!-- jQuery -->
+    <script src="../../js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../js/bootstrap.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../../js/clean-blog.min.js"></script>
+</body>
+</html>

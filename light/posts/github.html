@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<meta name="description" content="A homegrown blog about Linux and Learning">
+    <meta name="author" content="Chase Hallsted">
+	<title>Github</title>
+	<!-- Bootstrap Core CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/clean-blog.min.css">
+    <link type="text/css" rel="stylesheet" href="../css/custom.css">
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Custom Favicon -->
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		$(function(){
+			$('#header').load('../headfoot/header.html');
+			$('#footer').load('../headfoot/footer.html');
+		});
+	</script>
+	<script>
+		jQuery(document).ready(function() {
+		    var offset = 220;
+		    var duration = 500;
+		    jQuery(window).scroll(function() {
+		        if (jQuery(this).scrollTop() > offset) {
+		            jQuery('.back-to-top').fadeIn(duration);
+		        } else {
+		            jQuery('.back-to-top').fadeOut(duration);
+		        }
+		    });
+		    
+		    jQuery('.back-to-top').click(function(event) {
+		        event.preventDefault();
+		        jQuery('html, body').animate({scrollTop: 0}, duration);
+		        return false;
+		    })
+		});
+	</script>
+
+</head>
+
+<body>
+	<div id="header"></div>
+	<div class="content-container">
+
+	<h2>GitHub - The best way to publicly share and store your code on line!</h2>
+
+	<img title="taken from TechCrunch" src="http://tctechcrunch2011.files.wordpress.com/2010/07/github-logo.png?w=400" alt="github-logo" style="float: right">
+
+	<ol>
+		<li><a href="#what">What is GitHub?</a></li>
+		<ol>
+			<li><a href="#what-git">What is Git?</a></li>
+		</ol>
+		<li><a href="#how">How can I start using it?</a></li>
+		<li><a href="#now">Ok, now what?</a></li>
+		<ol>
+			<li><a href="#now-fork">Forking</a></li>
+			<li><a href="#now-clone">Cloning</a></li>
+		</ol>
+	</ol>
+
+	<h3 id="what">What is GitHub?</h3>
+
+	<p>
+		Well, a simple google search can give us an answer to that: <br/>
+
+		<em><strong>GitHub</strong> is a Git repository web-based hosting service, which offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features.</em><br/>
+
+	</p>
+	<p>
+		So, that might make since to some of you, but Ill admit, I've been using GitHub for almost a year as of this writing, and out of that year, about the last 4 months I've used it A LOT, and even then, the Google definition is a little hard to understand. So I will attempt to put my own spin on what was written above but with a lot more clarification.<br/>
+	</p>
+	<p>
+		<em><strong>GitHub</strong> is a cloud based code repository which utilizes the version control language of "git".</em> Ill get into what is "git" more soon, and what "version control" is also, but for now lets just talk about what GitHub actually is.<br/>
+		GitHub IS a on line, cloud based repository accessible by the public, but also has private repository's.<br/>
+		GitHub IS a place for developers and hackers alike to share code, talk about the code that is written or planned to be written, and utilize open source<br/>
+	</p>
+
+	<h4 id="what-git">What is Git?</h4>
+
+	<p>
+		Another question you might be asking is <em>Why is git better then SVN or CVS or any other similar language?</em><br/>
+
+		While I'll try to not show my obvious bias towards git in this explanation here it goes:<br/>
+
+		With most other version control clients, there is a central repository somewhere, in the cloud or on a server at work, or on a vm in a rack stored in a closet you don't use much. That repository is the only repository there is, you might be able to branch from it, and push to branches, but this doesn't feel very normal, and its hard to use and keep updated. When you update code, it updates the master repository. Your only option if you want to have a test bed, is to make a copy of the original, and push to the copy for testing. Then when you want to add stable code to the main, you then copy the code over to a different folder structure, and push it up. Sure, it works, and it has worked well for many years, but its old and useless now a days. <br/>
+	</p>
+	<p>
+		As pointed out to me when researching this article, prior to GitHub, if you wanted to contribute to an open source project there was a huge pain in the but way for doing it.<br/>
+
+		First you had to download the original source code (which possibly is behind what the developer is actively working on).<br/>
+
+		Go though the code till you find where the fix you want to implement needs to be added, test to make sure that the code your adding actually fixes what you want, and doesn't break anything else<br/>
+
+		Create whats known as a "patch" which lists all of your changes, then submit that patch to the owner(s)/maintainer(s) of the project.<br/>
+
+		They would then have to look though your patch, make sure its not malicious in any way<br/>
+
+		Patch a copy of there code with your patch (if they deemed it good)<br/>
+
+		Make sure it fixes what you say the patch is there to fix, make sure it doesn't break any other features they have then add it to what ever source code repo they have so they can push out your patch with the next release. <br/>
+
+	<br/>
+
+		This can be a HUGE pain for the main developer, if its a popular project they might receive 10-1,000 emails a day with patches, bug reports, complaints, legal issues, what ever it is. This takes away from the time they can actually develop. Also, you might be the 3rd person that week who has sent in a patch to the exact same issue you sent in. So then the developer has to chose WHO's patch to accept. Honestly, I'm not sure how some projects made it with all of that. <br/>
+	</p>
+	<p>
+		With GIT, you "clone" the repository to your local machine, you edit everything on your local machine, test to make sure its all good locally, then you push it back up to origin.<br/>
+
+		Branching feels normal, switching between branches makes since and can be easily followed, pushing branches back up to GitHub (or where ever) feels good, and everyone can see whats going on in what branch.<br/>
+
+		The act of committing (while can be worked around) is forced. While being forced to do something normally would be a bad thing, in this case its not, when you commit code, you have to give a short (~100 or less characters) of what you did. So if you are an editor, and you fixed some spelling errors in the document, you can put "fixed spelling errors". Or if your a developer and you finally fixed that darn bug that keeps dumping your tables, you could commit "fixed bug 1c487"<br/>
+
+		If you want to contribute to an open source project, but your not part of the developer team, you can <a href="now-fork">fork</a> their code, make the changes on your local machine, then submit whats known as a "pull" request back to the owner. This pull request can be reviewed by many eyes, or at least the owner's. He can quickly see what changes you made to his code because the system is built to do all of that for you. He can copy down your changes, make sure they work, then push them back in.<br/>
+
+		Does this remove the pain of dealing with other people fixing/updating your code? Not at all, but it makes the whole process a lot easier, much more visual, and allows for more people to know whats going on.
+	</p>
+	<p>
+		Version control is the next big thing to explain. Version control is a history of the codes, adds and removes. For example, this blog post your viewing, is written on my local machine, every now and then I save. Every save is saved to a copy of the full repository on my local machine. Once I get to a point where I feel its got enough content to where if I lost it I would be angry, I push it up to a branch and in the commit I say WIP which is short for Work In Progress. Once I'm complete with all of what I think needs to be done, i commit it as "Review" and contact my editor and ask him to review the document. If hes happy with it he tells me so, if not he simply fixes what ever errors I have, or he asks me to work on certain areas. This continues until he says its good. I then "merge" that branch into the master. Merging a branch is a little advanced for this paragraph but ill try to cover it soon or in a future article. For now, just know that it pulls all of the code (in this case text) i put into the branch into the master. Once I have a full new post, or what ever the goal was (fixed bug, new post, updated piece of code...) i then log onto the server, pull the code down, and copy the new parts over to the apache web server. A few minutes later I refresh the live page and check it there to make sure it looks good.<br>
+
+		So, thats great, sure, but what does that have to do with version control?<br/>
+
+		Lets say I'm fixing something, refactoring code, adding a feature, updating a post, what ever it is. I commit, and I realize, wait a minute, this whole section here is pointless now I just removed its need, or I re-factored it. I commit that new piece up, everything looks good, but then we find out that the page doesn't work on Chrome, or when I re-factored the code I added a bug that was worse then the original bug or what ever. I can then roll back to a previous version of the code in a snap! Everyone who views my code can see exactly what lines I added, what lines I removed, maybe when I look at the old and new code that was changed side by side I can see what I did wrong, and fix it, or I can only revert back half of it. <br/>
+	</p>
+	<p>
+		This is the beauty of GitHub, Git and Version Control, and why everyone should use it. If your a developer, or if you just write scripts for personal scripts. Or if your like me, you run Linux and you have a small collection of "dotfiles" (future article on these) and you want a place to store them, or a place to share them because you think yours are awesome. GitHub is the best place to store what ever it is your doing!<br/>
+	</p>
+
+	<h3 id="how">How do I start GitHub?</h3>
+
+	<p>
+		So, first, you will need to get git.<br/>
+
+		On linux, this is in every repository ive ever used, so it should be as simple as just running what ever your package manager's command to install something then "git". For example: <br/>
+
+		<code class="codeInput">sudo apt-get install git</code> &lt;-- this will install git on Ubuntu/Debian Based Linux Distros<br/>
+
+		<code class="codeInput">pacman -S git</code> &lt;-- this will install git on Arch Linux<br/>
+	</p>
+	<p>
+		You should also sign up for a free GitHub account <a href="https://github.com/">here</a>(you only have to pay if you want private repository which is optional).<br/>
+
+		Once your in you need to actually setup your account.
+	</p>
+
+	<h4>CLI</h4>
+
+	<p>
+		So, we fire up a terminal as always and we type the following (green text = input, red text = output)<br/>
+
+		<code class="codeInput">git config --global user.name "John Doe"</code> Replace John Doe with your username you created on GitHub! Keep the Quotation Marks though!<br/>
+
+		<code class="codeInput">git config --global user.email "johndoe@foobar.com"</code> Replace the email with your email! Keep the Quotation Marks though!<br/>
+
+		(Optional)<code class="codeInput">git config --global core.editor "vim"</code> By default it opens in Emacs you can also set it to Nano by using "nano -w"<br/>
+
+		(Optional)<code class="codeInput">git difftool --global --tool=vimdiff</code> By default it uses "meld"<br/>
+
+		<br/>
+
+		Now that your account is on your local machine, and you have git installed lets get a empty repository started. Ill show you how preform this.
+	</p>
+	<p>GUI Way (The way I always do it)</p>
+
+	<ol>
+		<li>Log into your account at github.com</li>
+		<li>In the top right, to the right of your user name, click the "+", then click "New Repository"</li>
+		<li>Type in a name for the repository</li>
+		<li>(Optional) Give a description of what you plan on doing with the repository</li>
+		<li>(Optional) Change the repo to be "private", this requires a paid account to do</li>
+		<li>(Optional) Click the check box to add a "README" file (I always do this)</li>
+		<li>(Optional) Create a .gitignore this is useful if you know there are certain files you want to put into your repo, that you wont want git to put into the repo. For example, i have a ".project" folder that is only on my local due to it will not benefit anyone out there to have this info. Its for a local only GUI program that I'm experimenting with at the moment called "GitEye".</li>
+		<li>(Optional) Give the repo a license. If you need to know more about licenses, there is a small "i" with a circle that takes you to a place that explains what each license does and is used for.</li>
+		<li>Click "Create Repository"</li>
+	</ol>
+
+	<p>
+		Now your repository is created, its on GitHub, and if you selected the option to create a README file its also available to pull down to your local immediately. After I explain how to do this all via CLI ill explain how to clone the repo locally also.
+	</p>
+	<p>Clone your new Repository</p>
+
+	<ol>
+		<li>If your not already, log into GitHub, and click on your username up in the top right (this is your profile)</li>
+		<li>Click on your new repository, if you have a file here already your ready to clone your repo (if not you need to create one)</li>
+		<li>On the right side, towards the middle or bottom, you will see "HTTPS Clone URL" click in this box and copy manually, or click the little copy icon to the right of that to copy to your clipboard</li>
+		<li>From your terminal, create a folder (i always create a folder called "git" at my home) and go inside of the folder.</li>
+		<li>Run the following command <code class="codeInput">git clone https://github.com/user.name/repo.git</code> replace the URL with the one you just copied</li>
+	</ol>
+
+	<p>
+		You now have a repository on your local machine, if you want to make sure your able to upload/download code as needed. Lets do a quick exercise.<br/>
+
+		<code class="codeInput">touch file1.txt &amp;&amp; cat "HELLO WORLD!" &gt; file1.txt</code><br/>
+
+		This should create a file called file1.txt and put the words "HELLO WORLD!" into the file. <br/>
+
+		<code class="codeInput">git add file1.txt</code><br/>
+
+		This adds the 1 file "file1" to be sent back to GitHub, you can also specific files at a time (file1, file2, file3).<br/>
+
+		You can also use <code class="codeInput">git add .</code> this will add everything in the current folder (and sub-folders) not just 1 or file. <br/>
+
+		<code class="codeInput">git commit -m "Testing Access"</code><br/>
+
+		This preforms a "commit" you are committing a the files in that are currently part of the "add" but not yet "commited" with the following message (-m) if you don't add -m and a message it will pop up a box asking you to type your commit message. If you set the optional core.editor above it will use the editor you chose, other wise it uses emacs. <br/>
+
+		<code class="codeInput">git push</code><br/>
+
+		This "pushes" everything that is currently commited back to where you cloned it (in this case "master")<br/>
+
+		<br>
+
+		Assuming you don't see any errors preforming the above, lets go back to GitHub, and refresh our repository, if you see that "file1.txt" is now listed inside of the repo, then congratulations! It worked!<br/>
+
+		<br/>
+
+		If not you need to troubleshoot. You can send me an email if needed via the contact options above, ill try to help you. But beware I do all of this in my spare-time, so I'm not sure how fast I will be able to reply. Make sure you put an email you can check into the email box also.
+	</p>
+
+	<h3 id="now">Ok, now what?</h3>
+
+	<p>
+		Now you can start making your own stuff! If your already a developer in any language, you should already be pretty excited, if your just getting your feet wet in this world then your probably meaning this more literally. Lets go over 2 very important things you can do in GitHub/Git that are VERY useful. Cloning and Forking.
+	</p>
+
+		<div class="col-md-6">
+
+			<h4 id="now-clone">Cloning</h4>
+
+			<p>
+				<code class="codeInput">git clone https://github.com/user.name/repo.git</code><br/>
+
+				<strong>OR</strong><br/>
+
+				<code class="codeInput">git clone git@github.com:user.name/repo.git</code><br/>
+
+				If you have setup ssh access to GitHub, this is a quick and easy way to preform this.<br/>
+			</p>
+			<p>
+				If you followed the above, you have already cloned a empty repository, added a file, and re-uploaded it back to your GitHub all in a few lines of code.<br/>
+
+				Cloning(in git) is the act of copying the current set of code from any public repository on the web to your local machine, you don't have to have an account on GitHub to clone someone, you just need to have git installed! The command is <code class="codeInput">git clone</code> <em>repository</em><br/>
+
+				As I suggested above, you should probably create a folder to host all of the clones you make in, my suggestion is to do it in a place you are frequently at, so on Linux its your "home" directory, and I suggest your folder be called "git", "Git", "GIT" or if you want it slightly hidden name it ".git". <br/>
+
+			<br/>
+			</p>
+			<p>
+				Something cool you can do if you can search GitHub, and it will return public repository's. You can start the search by typing what ever words you want to appear in the repo or description. Then if you want to change it to only a certain language, you can click a desired language on the left, you can change the sort option to see the repo thats has been followed the most, or started the most (or what ever option you want). Then when you get something you might like, you can open up the repo and take a look around. If you like what you see, and want to play with it on your local machine, simply clone it. If you want to take a copy of this for your own to edit, you need to <a href="#now-fork">fork it</a> (next section).
+			</p>
+			<p>
+				The main thing I use cloning for, is if I want to have local copie(s) of my code on a local machine, or on a server or my RPi. You can pre-write the little clone command, and give it to friends so they can simply copy pasta and get your code. You can use it in scripts to copy down code from GH, execute something against it, then delete it, or what ever you need. Its a very simple, yet very awesome little command.
+			</p>
+
+		</div>
+
+	<div class="col-md-6">
+
+		<h4 id="now-fork">Forking</h4>
+
+		<p>
+			Forking is used to make a copy of someone else's code into your profile so that you can edit it as needed with out hurting the original project.<br/>
+
+			Due to this is only done via a web-gui (To my knowledge) i cant provide you any code examples...<br/>
+
+			BUT I can give you a repo that's only purpose is to fork!<br/>
+
+			If you go over to the octocat profile and go to the "spoon-knife" repo (<a href="https://github.com/octocat/Spoon-Knife">HERE</a>)<br/>
+
+			You can click "fork" in the top right, this will then give you a fun little animation of a book being photo copied then it will forward you back to your profile, but with the new repo (in this case Spoon-Knife) selected! Now you can clone it, make edits, and upload it back as you please. It wont effect the original repo owned by "Octocat".
+		</p>
+		<p>
+			Now, lets say that you were forking a project, with the intention of pushing it back to the master repo! You would do this for a few reasons, 1 of which is due to you have tried your hand at patching something, or at adding a feature, but you are not one of the collaborators. <br/>
+
+			After you fork their repo, make the changes you need to, push the code back to your forked repo on GH. You can go to the original repo, and click "create pull request". It will ask you to put in comments on what your doing. This is where you say "i added X feature" or "Fixed Y bug" its best if you identify bugs by the issued code if its a known bug. You should be able to get this information from the "issues" tab (I'm assuming you know what I'm talking about if your contributing to open source projects right now). Then the owner of the repo (when they have time) can look though your changes, and if they feel its good enough, they can "merge" it back in. If this happens, congratulations! You made a change to someone else's code :D
+		</p>
+		</div>
+	</div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <!-- jQuery -->
+    <script src="../../js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../js/bootstrap.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../../js/clean-blog.min.js"></script>
+</body>
+</html>

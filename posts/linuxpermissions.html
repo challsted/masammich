@@ -64,7 +64,7 @@
 <h3 id="s1">1. Basic Permissions</h3>
 Ok, to start, were going to need to learn a new flag for a command you should already know.<br/>
 
-<code class="codeInput">ls -l</code> The "<code class="codeInput">-l</code>" part of this is called a "flag", this specific flag, its description is "use a long listing format" I know that doesnt make that much sence. So to describe it in my own words, it gives "details" to a simple "ls" I have attached a screenshot to show what it outputs for my personal home directory.<br/>
+<code class="codeInput">ls -l</code> The "<code class="codeInput">-l</code>" part of this is called a "flag", this specific flag, its description is "use a long listing format" I know that doesn't make that much since. So to describe it in my own words, it gives "details" to a simple "ls" I have attached a screen shot to show what it outputs for my personal home directory.<br/>
 <a href="http://masammich.files.wordpress.com/2014/03/ss-ls-l.png"><img src="http://masammich.files.wordpress.com/2014/03/ss-ls-l.png" alt="ls -l screenshot" width="525" height="214" /></a></br>
 
 So, lets go over what all this says first.<br/>
@@ -107,12 +107,12 @@ Each of them is does the "owner" of the file have permission to Read, Write, or 
 
 So, lets say you and a friend both use this computer. So lets assume your name is Chase (like in my example) and the friend who uses your computer's name is Jason.<br/>
 So you're a member of the group "users" and Jason is a member of the group "users" also.<br/>
-You have a folder that is owned by you, and the group users. So it looks Molike this.<br/>
+You have a folder that is owned by you, and the group users. So it looks like this.<br/>
 <code class="codeInput">drw-rw-r-- chase user</code><br/>
-This will allow both you and jason to read and write to this folder.<br/>
+This will allow both you and Jason to read and write to this folder.<br/>
 If you wanted to make it so that the group "user" could no longer write to the folder you can do that easily. With a command named "chmod". I remember this by thinking "CHange or MODify" it actually means "Change a file's mode bits" but that's a little confusing.<br/>
 
-Just to show you the command in order to take away jasons ability to write to the folder. It would be<br/>
+Just to show you the command in order to take away Jason's ability to write to the folder. It would be<br/>
 
 <code class="codeInput">chmod 644</code><br/>
 
@@ -120,7 +120,7 @@ Just to show you the command in order to take away jasons ability to write to th
 
 What do numers have to do with the letters rwx? So, you remember how I have been calling the "bits" this whole time. Thats because they are actually written in binary (1 or 0) but your shell shows them to you in a much more easy to read way.<br/>
 
-<em><strong>Binary? Im not a computer, how do I read binary?</strong></em><br/>
+<em><strong>Binary? I'm not a computer, how do I read binary?</strong></em><br/>
 
 So, you only need to know 3 spaces of binary. This wont be hard. Binary is read from right to left, unlike English which is left to right. As I already said, its written in 1's and 0's. So how do you count to 644 with 1's and 0's unless you add 644 1's together!?<br/>
 
@@ -129,7 +129,7 @@ Ok, so as i said, you read binary from left to right. So let's make a few sets o
 <code class="codeOutput">110 = rw-</code><br/>
 <code class="codeOutput">111 = rwx</code><br/>
 
-<em><strong>But that still doesnt explain how you got 644!</strong></em><br/>
+<em><strong>But that still doesn't explain how you got 644!</strong></em><br/>
 
 So each place doubles as you count, the first space is a 1, the 2nd space a 2 (2 times 1), the 3rd space is 4 (2 times 2). So when you look at 111 you can count 4+2+1 = 7. So lets re-write what we did above but using numbers also.<br/>
 
@@ -147,7 +147,7 @@ So now Chase can read and write to the folder, and Jason (who is a member of the
 
 <em><strong>But you said "chmod and chown" what is chown?</strong></em><br/>
 
-chown is "change ownership", so if you found a file that was owned by Jason, and it is called "file_from_jason" and you moved it from his home directory into yours. Move (mv) as you will learn preserves permissions. So if it was owned by jason and the group user only had r permissions to it. But you need to be able to read and write to it. Then one of your options would be to change the ownership of the file.<br/>
+chown is "change ownership", so if you found a file that was owned by Jason, and it is called "file_from_jason" and you moved it from his home directory into yours. Move (mv) as you will learn preserves permissions. So if it was owned by Jason and the group user only had r permissions to it. But you need to be able to read and write to it. Then one of your options would be to change the ownership of the file.<br/>
 
 So in this example you could type<br/>
 

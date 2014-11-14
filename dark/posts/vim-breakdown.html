@@ -68,14 +68,23 @@
     <!-- Main Content -->
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="col-lg-10 col-lg-offset-1 col-md-12">
 
                 <h2>VIM Part 2</h2>
+                <p>                    
+                    <em> DISCLAIMER:<br/>
+                    Everywhere in this article, except where I discuss keymaps I will assume your keymaps are default, and not changed in any way.</em><br/>
+                </p>
         		<ol>
                     <li><a href="vi-vim.html">Vim (Part 1)</a></li>
                     <li><a href="#commands">VIM Commands</a></li>
                     <ol>
                         <li><a href="#commands-beginner">Beginner</a></li>
+                        <ol>
+                            <li><a href="#beginner-modes">Modes</a></li>
+                            <li><a href="#beginner-movement">Movement</a></li>
+                            <li><a href="#beginer-commands">Entering Commands</a></li>                           
+                        </ol>
                         <li><a href="#commands-intermediate">Intermediate</a></li>
                         <li><a href="#commands-advanced">Advanced</a></li>
                     </ol>
@@ -101,17 +110,64 @@
                         <li><a href="#plugins-suggested">Suggested Plugins</a></li>
                     </ol>
                 </ol>
-                <hr class="medium">
+                <hr class="small">
                 <p>
                     My previous article on VIM was rather lacking, it presented a game, some links to articles that puked data on to your lap, and I did little to try to assit you in your learning. I appoligize for that, and I shall attempt to rectafy that here, (excuse the puke though...)
                 </p>
                 <!-- Section 2 (b/c sect 1 is a outer link)-->
                 <h3 id="commands">VIM Commands</h3>
                 <p>
+                    As you should know, vim is a Model Commandline Text Editor. Which, as I understand it, means that it uses modes, i always think of it as a "mode cli text editor". So it uses "modes" to edit or add text. If you have zero expierence with vim, and you have it installed. Just type <code class="codeInput">vim</code> into your terminal. It will open a "vim tutor" which attempts to teach you vim, you also have the option of playing the game I mentioned before which can be found at <a href="http://vim-adventures.com/" style="text-decoration: underline">VimAdventures.com</a> thats pretty much a TLDR of the previous article. So lets get on with the VIM Commands shall we!<br/>
                 </p>
 
                 <h4 id="commands-beginner">Beginner Commands</h4>
+                <p id="beginner-modes">
+                    So first you need to understand what "mode" your in and what those modes mean.<br/>
+                    <br/>
+                    If you just opened vim, your in <strong>"Command"</strong> Mode. <br/>
+                    In this mode all keystrokes are not interpreted as the letter you press. They all have meanings that we will learn soon. <br/>
+                    You will know your in command mode when you do not see anything inside of brackets down in the bottom left.<br/>
+                </p>
                 <p>
+                    Next you have <strong>"Insert"</strong> Mode. <br/>
+                    The easiest way to get to this mode is by hitting "i", but there are several other ways to get to insert mode. <br/>
+                    You will know your in insert mode when a small "[INSERT]" appears at the bottom left of your screen.<br/> 
+                    When you are in Insert mode, all of your keystrokes are not interpreted, instead they are taken as you type.<br/>
+                    So if you hit the "i" key it types "i" instead of changing your mode.<br/>
+                </p>
+                <p>
+                    Next you have <strong>"Replace"</strong> mode.<br/>
+                    The only way I know to get into insert mode is by pressing "R" (Capitol R). You can also go into temporary replace mode by pressing "r" (lowercase r)<br/>
+                    You will know you are in replace mode when you see a small "[REPLACE]" appear at the bottom left of your screen.<br/>
+                    When you are in Replace mode, any key you type will replace what is underneth the cursor. So if your cursor is hovering over a P and you press the T key, that O will be replaced by a T.<br/>
+                    "Temporary" replace mode (as I refer to it) will only replace one character (the one under the cursor) then return you to command mode.<br/>
+                </p>
+                <p>
+                    Last mode you need to learn is <strong>"Visual"</strong> mode.<br/>
+                    You can get to Visual mode a few differnt ways, but each way preforms a differnt type of "visual" task.<br/>
+                    "Shift-V" puts you into "Visual Line" mode, this allows you to highlight single characters or full words.<br/>
+                    "^V" (This means "Leader V" which by default is CTRL V) puts you into "Visual Block" mode, this allows you to edit whole lines at a time, useful to highlight full blocks of code or text.<br/>
+                    You will know your in visual mode when you see "[VISUAL]" appear at the bottom left of your screen.<br/>
+                    Visual Line and Visual Block are ment for High-Lighting text, I believe the only purpose of this is to "yank" (aka Copy) text <br/>
+                </p>
+                <hr class="medium">
+                <p id="beginner-movement">
+                PUT SOME STUFF HERE ABOUT HJKL!
+                </p>
+                <hr class="medium">                
+                <p id="beginer-commands">
+                    Next you need to know when to enter commands, and how to leave differnt modes.<br/>
+                    As I already said, by default your in "Command Mode", you have to go into other modes by pressing a a key, or a combo of keys.<br/>
+                    The "Escape" key (top left most key on all standard keyboards usually marked as "Esc") is ment to get you out anything.<br/>
+                    If your ever in a strange mode, or if you just want to go back to command mode from Insert mode. You can hit the trusty esc key to get out of almost any mode.<br/>
+                    Every key on the keyboard has some kind of a command tied to it, and most of them have 2 or more commands tied to them, so a command could be used by hitting the key, hititng shift then the key, hitting alt then the key, or hitting "leader" then the key which is "control" and is usually listed as "^" on differnt sites and tutorials.<br/>
+                    
+                </p>
+                <hr class="medium">
+                <p>
+                    Command we need to know first is how to <em>quit</em> VIM. The following commadns all "quit" vim. Key word is "quit" not "exit".<br/>
+                    <code class="codeInput">:q</code>, <code class="codeInput">:q!</code>, <code class="codeInput">ZZ</code><br/>
+                    So, thats ":q" I usually hear people pronounce this as "Colon Q". This is typed from "Command" mode (not insert, visual, or replace mode). 
                 </p>
 
                 <h4 id="commands-intermediate">Intermediate Commands</h4>
@@ -121,7 +177,7 @@
                 <h4 id="commands-advanced">Advanced Commands</h4>
                 <p>
                 </p>
-
+                <hr class="small">
                 <!-- Section 3 -->
                 <h3 id="vimrc">.vimrc</h3>
                 <p>
@@ -145,6 +201,8 @@
                 <h4 id="vimrc-remap">:remap &amp; :noremap</h4>
                 <p>
                 </p>
+
+                <hr class="small">
 
                 <!-- Section 4 -->
                 <h3 id="plugins">PLUG-INS!</h3>

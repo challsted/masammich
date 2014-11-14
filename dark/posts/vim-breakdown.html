@@ -59,7 +59,7 @@
                     <div class="site-heading">
                         <h1 style="color: white">VIM</h1>
                         <hr class="small">
-                        <span class="subheading">Commands, Plugins and a look into the hidden vimrc</span>
+                        <span class="subheading">Commands, plug-ins and a look into the hidden vimrc</span>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                 <h2>VIM Part 2</h2>
                 <p>                    
                     <em> DISCLAIMER:<br/>
-                    Everywhere in this article, except where I discuss keymaps I will assume your keymaps are default, and not changed in any way.</em><br/>
+                    Everywhere in this article, except where I discuss key maps I will assume your key maps are default, and not changed in any way.</em><br/>
                 </p>
         		<ol>
                     <li><a href="vi-vim.html">Vim (Part 1)</a></li>
@@ -94,10 +94,10 @@
                         <li><a href="#vimrc-color">colorscheme(WIP)</a></li>
                         <li><a href="#vimrc-remap">remaps(WIP)</a></li>
                     </ol>
-                    <li><a href="#plugins">Plug-Ins</a></li>
+                    <li><a href="#plug-ins">Plug-Ins</a></li>
                     <ol>
-                        <li><a href="#plugins-where">Where do I find them?</a></li>
-                        <li><a href="#plugins-how">How do I install them?</a></li>
+                        <li><a href="#plug-ins-where">Where do I find them?</a></li>
+                        <li><a href="#plug-ins-how">How do I install them?</a></li>
                         <ol>
                             <li><a href="#how-manual">Manual</a></li>
                             <li><a href="#how-manager">Managers</a></li>
@@ -107,17 +107,17 @@
                                 <li><a href="#manager-vundle">Vundle</a></li>                                
                             </ol>
                         </ol>
-                        <li><a href="#plugins-suggested">Suggested Plugins</a></li>
+                        <li><a href="#plug-ins-suggested">Suggested plug-ins</a></li>
                     </ol>
                 </ol>
                 <hr class="small">
                 <p>
-                    My previous article on VIM was rather lacking, it presented a game, some links to articles that puked data on to your lap, and I did little to try to assit you in your learning. I appoligize for that, and I shall attempt to rectafy that here, (excuse the puke though...)
+                    My previous article on VIM was rather lacking, it presented a game, some links to articles that puked data on to your lap, and I did little to try to assist you in your learning. I apologize for that, and I shall attempt to rectify that here, (excuse the puke though...)
                 </p>
                 <!-- Section 2 (b/c sect 1 is a outer link)-->
                 <h3 id="commands">VIM Commands</h3>
                 <p>
-                    As you should know, vim is a Modal Commandline Text Editor. Which, as I understand it, means that it uses modes, i always think of it as a "mode cli text editor". So it uses "modes" to edit or add text. If you have zero expierence with vim, and you have it installed. Just type <code class="codeInput">vim</code> into your terminal. It will open a "vim tutor" which attempts to teach you vim, you also have the option of playing the game I mentioned before which can be found at <a href="http://vim-adventures.com/" style="text-decoration: underline">VimAdventures.com</a> thats pretty much a TLDR of the previous article. So lets get on with the VIM Commands shall we!<br/>
+                    As you should know, vim is a Modal Command line Text Editor. Which, as I understand it, means that it uses modes, i always think of it as a "mode cli text editor". So it uses "modes" to edit or add text. If you have zero experience with vim, and you have it installed. Just type <code class="codeInput">vim</code> into your terminal. It will open a "vim tutor" which attempts to teach you vim, you also have the option of playing the game I mentioned before which can be found at <a href="http://vim-adventures.com/" style="text-decoration: underline">VimAdventures.com</a> thats pretty much a TLDR of the previous article. So lets get on with the VIM Commands shall we!<br/>
                 </p>
 
                 <h4 id="commands-beginner">Beginner Commands</h4>
@@ -140,60 +140,60 @@
                     Next you have <strong>"Replace"</strong> mode.<br/>
                     The only way I know to get into insert mode is by pressing "R" (Capitol R). You can also go into temporary replace mode by pressing "r" (lowercase r)<br/>
                     You will know you are in replace mode when you see a small "[REPLACE]" appear at the bottom left of your screen.<br/>
-                    When you are in Replace mode, any key you type will replace what is underneth the cursor. So if your cursor is hovering over a P and you press the T key, that O will be replaced by a T.<br/>
+                    When you are in Replace mode, any key you type will replace what is underneath the cursor. So if your cursor is hovering over a P and you press the T key, that O will be replaced by a T.<br/>
                     "Temporary" replace mode (as I refer to it) will only replace one character (the one under the cursor) then return you to command mode.<br/>
                 </p>
                 <p>
                     Last mode you need to learn is <strong>"Visual"</strong> mode.<br/>
-                    You can get to Visual mode a few differnt ways, but each way preforms a differnt type of "visual" task.<br/>
+                    You can get to Visual mode a few different ways, but each way preforms a different type of "visual" task.<br/>
                     "Shift-V" puts you into "Visual Line" mode, this allows you to highlight single characters or full words.<br/>
                     "^V" (This means "Leader V" which by default is CTRL V) puts you into "Visual Block" mode, this allows you to edit whole lines at a time, useful to highlight full blocks of code or text.<br/>
                     You will know your in visual mode when you see "[VISUAL]" appear at the bottom left of your screen.<br/>
-                    Visual Line and Visual Block are ment for High-Lighting text, I believe the only purpose of this is to "yank" (aka Copy) text <br/>
+                    Visual Line and Visual Block are meant for High-Lighting text, I believe the only purpose of this is to "yank" (aka Copy) text <br/>
                 </p>
                 <hr class="medium">
                 <p id="beginner-movement">
                     <strong>How to move your cursor in VIM</strong><br/>
-                    So, part of the purose of VIM is to keep your fingers on the keyboard and not leave. It also tries hard to focus on keeping your fingers on the homerow (of a QWERTY keyboard).<br/>
-                    So insted of useing the arrow keys, or even WASD. VIM uses HJKL, which can be very confuseing at first.<br/>
+                    So, part of the purpose of VIM is to keep your fingers on the keyboard and not leave. It also tries hard to focus on keeping your fingers on the home row (of a QWERTY keyboard).<br/>
+                    So instead of using the arrow keys, or even WASD. VIM uses HJKL, which can be very confusing at first.<br/>
                     H goes left<br/>
                     L goes right<br/>
                     J goes down<br/>
                     L goes left<br/>
-                    That might seem kind of arcaic, but if you actually look at the keys it makes quite a bit of since.<br/>
+                    That might seem kind of archaic, but if you actually look at the keys it makes quite a bit of since.<br/>
                     Your index finger sits on the "down" arrow all the time, then next to it is the up arrow. So up and down are in the middle.<br/>
                     Your index finger also hits the left key by moving over a little, and your ring finger hits the right key. The left and right keys are on the outside of the up and down keys.<br/>
-                    Can you use the arrow keys? Yes, vim does not prevent you from useing your arrow keys, but its advised not to use them by puritists.<br/>
+                    Can you use the arrow keys? Yes, vim does not prevent you from using your arrow keys, but its advised not to use them by purists.<br/>
                 </p>
                 <hr class="medium">                
                 <p id="beginer-commands">
                     <strong>How to enter commands into VIM</strong><br/>
                     <br/>
-                    Next you need to know when to enter commands, and how to leave differnt modes.<br/>
+                    Next you need to know when to enter commands, and how to leave different modes.<br/>
                     As I already said, by default your in "Command Mode", you have to go into other modes by pressing a a key, or a combo of keys.<br/>
                     <br/>
-                    The "Escape" key (top left most key on all standard keyboards usually marked as "Esc") is ment to get you out anything.<br/>
+                    The "Escape" key (top left most key on all standard keyboards usually marked as "Esc") is meant to get you out anything.<br/>
                     If your ever in a strange mode, or if you just want to go back to command mode from Insert mode. You can hit the trusty esc key to get out of almost any mode.<br/>
                     <br/>
-                    Every key on the keyboard has some kind of a command tied to it, and most of them have 2 or more commands tied to them, so a command could be used by hitting the key, hititng shift then the key, hitting alt then the key("ALT" or &lt;ALT&gt;), hitting ctrl then the key ("^" or "CTRL" or &lt;CTRL&gt;), or hitting "leader" then the key which is "\" by default (&lt;leader&gt;).<br/>
+                    Every key on the keyboard has some kind of a command tied to it, and most of them have 2 or more commands tied to them, so a command could be used by hitting the key, hitting shift then the key, hitting alt then the key("ALT" or &lt;ALT&gt;), hitting ctrl then the key ("^" or "CTRL" or &lt;CTRL&gt;), or hitting "leader" then the key which is "\" by default (&lt;leader&gt;).<br/>
                     <br/>
                     Now you need to know about ":" or "colon" commands.<br/>
-                    Colon commands can only be entered from command mode. You enter them by typeing the colon key (":") then what ever the command is after the colon.<br/>
+                    Colon commands can only be entered from command mode. You enter them by typing the colon key (":") then what ever the command is after the colon.<br/>
                 </p>
                 <hr class="medium">
                 <p>
-                    Commands we need to know first is how to <em>quit</em> VIM. The following commadns all "quit" vim. Key word is "quit" not "exit".<br/>
+                    Commands we need to know first is how to <em>quit</em> VIM. The following commands all "quit" vim. Key word is "quit" not "exit".<br/>
                     <code class="codeInput">:q</code>, <code class="codeInput">:q!</code>, <code class="codeInput">ZZ</code><br/>
                     So, thats ":q" I usually hear people pronounce this as "Colon Q". As mentioned above, this is only entered form command mode.<br/>
-                    Please note that ZZ is 2 capitoal Z's.<br/>                    
+                    Please note that ZZ is 2 capitol Z's.<br/>                    
                 </p>
                 <p>
                     Now you need to know how to "write" your file, again key word is "write" not "save".<br/>
                     <code class="codeInput">:w</code><br/>
-                    But what if you want to Write the file and quit? Do you need to run <code class="codeInput">:q</code> then <code class="codeInput">:w</code>? NO! Vim allows for these 2 to be preformed at the same time, you can do this by typeing them together. like this:<br/>
+                    But what if you want to Write the file and quit? Do you need to run <code class="codeInput">:q</code> then <code class="codeInput">:w</code>? NO! Vim allows for these 2 to be preformed at the same time, you can do this by typing them together. like this:<br/>
                     <code class="codeInput">:wq</code> so you "write" then "quit". Do not try to ":qw" that would "quit" then it would never write the document because it quit... <br/>
-                    What if you need to save the file to a differnt location, or in a differnt name?<br/>
-                    <code class="codeInput">:w ~/other/folder</code> for writeing to a differnt location, or <code class="codeInput">:w differntName.txt</code> to write it as a differnt name (like "save as").<br/>
+                    What if you need to save the file to a different location, or in a different name?<br/>
+                    <code class="codeInput">:w ~/other/folder</code> for writing to a different location, or <code class="codeInput">:w differntName.txt</code> to write it as a different name (like "save as").<br/>
                     You can also combine this as <code class="codeInput">:w ~/location/to/a/place/notTheOrgionalName.sh</code>
                 </p>
                 <p>
@@ -211,13 +211,13 @@
                 <!-- Section 3 -->
                 <h3 id="vimrc">.vimrc</h3>
                 <p>
-                    You can look at my own personal .vimrc on github by going <a href="https://github.com/hackinginformation/dotfiles/blob/master/vim/.vimrc" style="text-decoration: underline">here.</a>.<br/>
+                    You can look at my own personal .vimrc on GitHub by going <a href="https://github.com/hackinginformation/dotfiles/blob/master/vim/.vimrc" style="text-decoration: underline">here.</a>.<br/>
 
-                    You can download it for your personal use or just as a playtoy if you want by useing wget like this: <br/>
+                    You can download it for your personal use or just as a play toy if you want by using wget like this: <br/>
 
                     <code class="codeInput">wget https://github.com/hackinginformation/dotfiles/blob/master/vim/.vimrc</code><br/>
 
-                    If you go back a few directorys to the <a href="https://github.com/hackinginformation/dotfiles" style="text-decoration: underline">dotfiles repo</a> you can see I publicaly host all of my dot file information for vim and zsh (An extrealy awesome shell that will soon be an article). <em>As of the time of this writeing, the "install.sh" script is broken, please do not use it.</em>
+                    If you go back a few directory to the <a href="https://github.com/hackinginformation/dotfiles" style="text-decoration: underline">dotfiles repo</a> you can see I publicly host all of my dot file information for vim and zsh (An extremely awesome shell that will soon be an article). <em>As of the time of this writing, the "install.sh" script is broken, please do not use it.</em>
                 </p>
 
                 <h4 id="vimrc-set">:set commands</h4>
@@ -235,85 +235,85 @@
                 <hr class="small">
 
                 <!-- Section 4 -->
-                <h3 id="plugins">PLUG-INS!</h3>
+                <h3 id="plug-ins">PLUG-INS!</h3>
                 <p>
                     So, VIM comes with a lot of features, and thing that can be done by default.<br/>
-                    But as you have seen above, some times default isnt good enough, we play with settings to make it better or just personalized.<br/>
-                    Now, some people said that this still isnt enough! So they submitted various features to the owner of VIM and were rejected, so rather then give up. They (and others) started makeing "plug-ins" to add functionality on top of default VIM. This action caught on and is now very popular in the VIM community (very few people DONT use plugins in fact) and there are now Plugins to do almost anything you can imageine (and more frequently being created). <br/>
+                    But as you have seen above, some times default isn't good enough, we play with settings to make it better or just personalized.<br/>
+                    Now, some people said that this still isn't enough! So they submitted various features to the owner of VIM and were rejected, so rather then give up. They (and others) started making "plug-ins" to add functionality on top of default VIM. This action caught on and is now very popular in the VIM community (very few people DONT use plug-ins in fact) and there are now plug-ins to do almost anything you can imagine (and more frequently being created). <br/>
                 </p>
 
-                <h4 id="plugins-where">Where can I find Plug-ins?</h4>
+                <h4 id="plug-ins-where">Where can I find Plug-ins?</h4>
                 <p>
-                    A google search will teach you a lot! But here are a few links, i personally prefer to look though GitHub, and a few differnt reddit pages. <br>
+                    A google search will teach you a lot! But here are a few links, i personally prefer to look though GitHub, and a few different reddit pages. <br>
                     <br/>
-                    <a href="https://github.com/search?utf8=%E2%9C%93&q=vim+plugin" style="text-decoration: underline">GitHub Search</a><br/>
-                    GitHub is where almost all plugins are hosted these days<br/>
+                    <a href="https://github.com/search?utf8=%E2%9C%93&q=vim+plug-in" style="text-decoration: underline">GitHub Search</a><br/>
+                    GitHub is where almost all plug-ins are hosted these days<br/>
                     <a href="https://www.reddit.com/r/vimplugins" style="text-decoration: underline">Reddit VimPlugins</a><br/>
-                    This is not a super "active" subreddit, but it still gets frequent hits.<br/>
-                    If you like reddit you can also look into <a href="http://www.reddit.com/user/HackingInfo/m/vim" style="text-decoration: underline">this multireddit</a><br/>
-                    <a href="http://vim.wikia.com/wiki/Category:Plugin" style="text-decoration: underline">VIM Wiki</a><br/>
-                    The vim wiki is both liked and hated by many. It is a true wikia, anyone can edit it, and yet only a few do. Its quite out of date in places and yet seeminly goes on forever, never ending, alwasy more info in it from somewhere that wasnt linked properly that can only be found by hitting the random article button...<br/>
+                    This is not a super "active" sub-reddit, but it still gets frequent hits.<br/>
+                    If you like reddit you can also look into <a href="http://www.reddit.com/user/HackingInfo/m/vim" style="text-decoration: underline">this multi-reddit</a><br/>
+                    <a href="http://vim.wikia.com/wiki/Category:plug-in" style="text-decoration: underline">VIM Wiki</a><br/>
+                    The vim wiki is both liked and hated by many. It is a true wikia, anyone can edit it, and yet only a few do. Its quite out of date in places and yet seemingly goes on forever, never ending, always more info in it from somewhere that wasn't linked properly that can only be found by hitting the random article button...<br/>
                     
                 </p>
 
-                <h4 id="plugins-how">How do I install these?</h4>
+                <h4 id="plug-ins-how">How do I install these?</h4>
                 <p>
-                    There are several ways to do this. You can do it manually, or you can use a plugin manager (recomended) to do it all for you. 
+                    There are several ways to do this. You can do it manually, or you can use a plug-in manager (recommended) to do it all for you. 
                     <p id="how-manual">
-                        <strong>Manual</strong> although there is nothing wrong with doing it this way, if you plan on having more then a small number of plugins, it might be a good idea to use a plugin manager. But I will still list this way for research, and knowledge.<br/>
+                        <strong>Manual</strong> although there is nothing wrong with doing it this way, if you plan on having more then a small number of plug-ins, it might be a good idea to use a plug-in manager. But I will still list this way for research, and knowledge.<br/>
                         <br/>
-                        So first you need to create a directory, then a few directorys underneth that, I'm not sure if this is 100% needed, but the way I will list here, is the way i was taught, and i always see others doing it this same way (even with a manager).<br/>
+                        So first you need to create a directory, then a few directory underneath that, I'm not sure if this is 100% needed, but the way I will list here, is the way i was taught, and i always see others doing it this same way (even with a manager).<br/>
                         So, first create a folder called ".vim" at your home directory.<br/>
                         <code class="codeInput">mkdir ~/.vim</code><br/>
-                        Now go into that directory and we need to create several more dirctorys, I'll explain what each one is for so you can not create them or just remove them if you dont want them.<br/>
+                        Now go into that directory and we need to create several more directory, I'll explain what each one is for so you can not create them or just remove them if you don't want them.<br/>
                         <code class="codeInput">mkdir -p ~/.vim/{autoload,colors,plugged,swaps,spell}</code><br/>
-                        The above will create 5 sub-directorys underneth ~/.vim. Each of these direcorys has a specific purpose.<br/>
-                        <strong>autoload</strong> - If you want a certain file to load as soon as vim loads (at the same time) this is where you want to put the .vim file. This is mainly used to put what ever plugin manager you use (you put the manager's .vim file here) so you may or may not want it. Im leaving it in here because Im going to assume you want to just learn how it works, not actually doing allt his your self. <br/>
-                        <strong>colors</strong> - This is used for all of your color schemes, being 100% honest, I have 179 colorschemes located in this file right now... I dont even know how I got this many... I probably downloaded a zip of them when i was playing with vim and forgot ... (i have several files still here that dont see to have been touched in ~a year...). I will suggest you wget or git clone your favorate colorscheme into this folder. Once vim sees you have a .vim, it seems to start referenceing it from that point on. So forexample, i LOVE the molokai color scheme, so i cloned it into my ~/.vim/colors dir so i can reference it with my .vimrc.<br/>
-                        <strong>plugged</strong> - Put all of your pluggin files here <br/>
-                        <strong>swaps</strong> - You need to set in your .vimrc to use this for swap files. Its more convient then having random .~filename floating everywhere you forgot to save or quit properly and left a shadow file behind... <br/>
+                        The above will create 5 sub-directory's underneath ~/.vim. Each of these directory has a specific purpose.<br/>
+                        <strong>autoload</strong> - If you want a certain file to load as soon as vim loads (at the same time) this is where you want to put the .vim file. This is mainly used to put what ever plug-in manager you use (you put the manager's .vim file here) so you may or may not want it. Im leaving it in here because I'm going to assume you want to just learn how it works, not actually doing all this your self. <br/>
+                        <strong>colors</strong> - This is used for all of your color schemes, being 100% honest, I have 179 colorschemes located in this file right now... I don't even know how I got this many... I probably downloaded a zip of them when i was playing with vim and forgot ... (i have several files still here that don't see to have been touched in ~a year...). I will suggest you wget or git clone your favorite colorscheme into this folder. Once vim sees you have a .vim, it seems to start referencing it from that point on. So for example, i LOVE the Molokai color scheme, so i cloned it into my ~/.vim/colors directory so i can reference it with my .vimrc.<br/>
+                        <strong>plugged</strong> - Put all of your plug-in files here <br/>
+                        <strong>swaps</strong> - You need to set in your .vimrc to use this for swap files. Its more convenient then having random .~filename floating everywhere you forgot to save or quit properly and left a shadow file behind... <br/>
                         <!-- ADD HOW TO DO THIS -->
                         <strong>spell</strong> - If you chose to turn on spell check in vim, this is where it will save your spell file. Which is where it saves all the words you add or tell it to ignore in a little file.<br/>
                         <br/>
-                        Thats about it, you either wget or git clone the .vim file's into the appropriate place. Colorscheme into the "colors" dir, plugins into the "plugged" dir, files to load on launch into the "autoload" dir and the others you setup to have files put into automatically.<br/>
+                        Thats about it, you either wget or git clone the .vim file's into the appropriate place. Colorscheme into the "colors" directory, plug-ins into the "plugged" directory, files to load on launch into the "autoload" directory and the others you setup to have files put into automatically.<br/>
                     </p>
                     <hr class="medium">
                     <p id="how-manager">
-                        <strong>Manager</strong> This is highly recamended, it makes your life far easier due to it takes the process of updateing, and placeing files where they need to go out of the picture. Please see the individual links on how to install the sepearte plugin, the process changes over time, and I dont want to be behind a revision or 2 for how to install. 
+                        <strong>Manager</strong> This is highly recommended, it makes your life far easier due to it takes the process of updating, and placing files where they need to go out of the picture. Please see the individual links on how to install the separate plug-in, the process changes over time, and I don't want to be behind a revision or 2 for how to install. 
 
                         <p id="manager-vimplug">
                             <strong><a href="https://github.com/junegunn/vim-plug" style="text-decoration: underline">Vim-Plug</a></strong><br/>
                             I personally use this manager. I use because it works in both vim and <a href="#neovim">NeoVim</a>.<br/>
-                            It installs and updates in paralell.<br/>
-                            It allows you to load specific branch or a tag of a plugin, so you can play with experimental versions of a plugin<br/>
+                            It installs and updates in parallel.<br/>
+                            It allows you to load specific branch or a tag of a plug-in, so you can play with experimental versions of a plug-in<br/>
                         </p>
                         <p id="manager-pathogen">
                             <strong><a href="https://github.com/tpope/vim-pathogen" style="text-decoration: underline">Pathogen</a></strong><br/>
-                            One of the strengths of Pathogen, is that it creates seperate folders for every plugin, and inside of that folder, is everything the plugin needs to work.<br/>
-                            The benefit of this is that 1 plugin wont effect the others you have.<br/>
-                            Another benefit of this is that if you want to remove a plugin, you simply remove that directory that is named after the plugin.<br/>                            
+                            One of the strengths of Pathogen, is that it creates separate folders for every plug-in, and inside of that folder, is everything the plug-in needs to work.<br/>
+                            The benefit of this is that 1 plug-in wont effect the others you have.<br/>
+                            Another benefit of this is that if you want to remove a plug-in, you simply remove that directory that is named after the plug-in.<br/>                            
                         </p>
                         <p id="manager-vundle">
                             <strong><a href="https://github.com/gmarik/Vundle.vim" style="text-decoration: underline">Vundle</a></strong><br/>
-                            The Benefit of Vundle is that it is actually built on top of pathogen, so you get all the benefits of pathogen, but you also get a management interface within vim. This is the most popular vim plugin manager that I know of, most plugins you find on GitHub will have vundle instructions on how to use it. 
+                            The Benefit of Vundle is that it is actually built on top of pathogen, so you get all the benefits of pathogen, but you also get a management interface within vim. This is the most popular vim plug-in manager that I know of, most plug-ins you find on GitHub will have vundle instructions on how to use it. 
                         </p>                        
                     </p>
                 </p>
                 
-                <h4 id="plugins-suggested">Got any suggested plugins?</h4>
+                <h4 id="plug-ins-suggested">Got any suggested plug-ins?</h4>
                 <p>
-                    So, although, yes, I use plugins, I dont use many. If you look though some peoples vimrc's on github, you will see sometimes a hundred plugins being loaded up everytime they load up vim. I think thats just dumb, but to each there own. So, Ill suggest a few I know I like, and I'll tell you about Mr. Tim Pope. 
+                    So, although, yes, I use plug-ins, I don't use many. If you look though some peoples vimrc's on GitHub, you will see sometimes a hundred plug-ins being loaded up every time they load up vim. I think thats just dumb, but to each there own. So, Ill suggest a few I know I like, and I'll tell you about Mr. Tim Pope. 
                 </p>
                 <p>
-                    So, I only use a few plugins personally, one such plugin that I feel like i couldnt live with out for very long is <a href="https://github.com/bling/vim-airline" style="text-decoration: underline">Airline</a>. If you go to the link, and scroll down to the readme, you will see that it is amazing. I love it so much. I also use a color theme which you can look though over <a href="https://github.com/bling/vim-airline/wiki/Screenshots" style="text-decoration: underline">here</a>. Im a big fan of the "luna" theme, but you may or may not like it too. Many people are a fan of the "solarized" colorscheme, so I assume they would also be a fan of the solarized theme here. <br/>
+                    So, I only use a few plug-ins personally, one such plug-in that I feel like i couldn't live with out for very long is <a href="https://github.com/bling/vim-airline" style="text-decoration: underline">Airline</a>. If you go to the link, and scroll down to the readme, you will see that it is amazing. I love it so much. I also use a color theme which you can look though over <a href="https://github.com/bling/vim-airline/wiki/Screenshots" style="text-decoration: underline">here</a>. I'm a big fan of the "luna" theme, but you may or may not like it too. Many people are a fan of the "solarized" colorscheme, so I assume they would also be a fan of the solarized theme here. <br/>
                 </p>
                 <p>
-                    Another plugin I have is actually a colorscheme, its an amazing colorscheme called <a href="https://github.com/tomasr/molokai" style="text-decoration: underline">Molokai</a>. My only complaint for molokai is that comments are hard to read on in a dark background. This can be changed though! 
+                    Another plug-in I have is actually a colorscheme, its an amazing colorscheme called <a href="https://github.com/tomasr/molokai" style="text-decoration: underline">Molokai</a>. My only complaint for Molokai is that comments are hard to read on in a dark background. This can be changed though! 
                     <!-- Add info on how to change it? -->
                 </p>
                 <p>
-                    Everything else I use (2 others) are not very important. So let me tell you about one of the most prolific vim plugin makers that I believe exists. <a href="https://github.com/tpope" style="text-decoration: underline">Mr. Tim Pope!</a><br/>
-                    He has countless repositorys, he either has authored or has assited in the creation of a LOT of plugins! Includeing he is the owner of Pathogen, which is (in my opinion) the 2nd most popular vim plugin manager, (only because vundle adds a manager on top) and more functionality additions then you can count in a lifetime. Rummage though some of his stuff if you want, hes got a lot of good things for you to check out.<br/>
+                    Everything else I use (2 others) are not very important. So let me tell you about one of the most prolific vim plug-in makers that I believe exists. <a href="https://github.com/tpope" style="text-decoration: underline">Mr. Tim Pope!</a><br/>
+                    He has countless repository's, he either has authored or has assisted in the creation of a LOT of plug-ins! Including he is the owner of Pathogen, which is (in my opinion) the 2nd most popular vim plug-in manager, (only because Vundle adds a manager on top) and more functionality additions then you can count in a lifetime. Rummage though some of his stuff if you want, hes got a lot of good things for you to check out.<br/>
                 </p>
 
 		</div>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A homegrown blog about Linux and Learning">
+    <meta name="author" content="Chase Hallsted">
+    <title>MaSammich</title>
+    <!-- Bootstrap Core CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/clean-blog.min.css">
+    <link type="text/css" rel="stylesheet" href="../css/custom.css">
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Custom Favicon -->
+    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('#header').load('../headfoot/topheader.html');
+            $('#footer').load('../headfoot/footer.html');
+        });
+    </script>
+    <script>
+        jQuery(document).ready(function() {
+            var offset = 220;
+            var duration = 500;
+            jQuery(window).scroll(function() {
+                if (jQuery(this).scrollTop() > offset) {
+                    jQuery('.back-to-top').fadeIn(duration);
+                } else {
+                    jQuery('.back-to-top').fadeOut(duration);
+                }
+            });
+            
+            jQuery('.back-to-top').click(function(event) {
+                event.preventDefault();
+                jQuery('html, body').animate({scrollTop: 0}, duration);
+                return false;
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('../../img/frontpage1.png')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading">
+                        <h1>About Me</h1>
+                        <hr class="small">
+                        <span class="subheading">This is what I do.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">                
+                <p>
+                    I started useing linux in 2006. I began with Ubuntu, it was ugly and clunky, and wireless drivers were almost non-existant.<br/>
+                    I still use ubuntu to this day, currently running 14.04LTS on my main laptop, and my wifes computer. I have a rasberry pi that runs linux, both of our phones run Android (Linux). I work as a Linux Sysadmin now.<br/>
+                    I spent 5 years in the United States Marine Corps where I was taught about Cisco gear (Switches and Routers), I got a few certificates (CompTIA) and I spent a lot of time doing a bunch of stuff that still to this day, felt pointless in every since of the word. I did still learn quite a bit, and I am glad I did my time and I am a happy civilian now!<br/>
+                    I run this site along side a good friend of mine who I met while in the Corps, we played DND and Cyberpunk together with a lot of other guys and gals, had a lot of fun, now I (slightly) help administer a server for him. I piggy back off his server and his domain.<br/>
+                    I very much enjoy teaching others about things I know about (linux for example), that is part of hte reason I have this site. The origional purpose was that i was trying to create a small group of people, and teach them what i know, so we could talk about FOSS or kernel calls, or what ever it is, because this stuff makes me excited. Well this whole thing started out on Facebook, but it wasnt gaining any traction there, and i was getting more people complaining about i write a wall of text on FB everytime i post then i was getting people who cared.<br/>
+                    But i was having fun, and writeing about the topics sometimes made me have to go research the subject a little (or a lot) to make sure i under stood what i was talking about. So i desided to make a free website, and ended up with a wordpress account (linked at the bottom to the old page) which was great. It taught me a good bit about writeing a blog, about tagging everything, about advertiseing, and about tracking incomming hits so i could know what to write about  more if i wanted more traffic. It was great, but my biggest complaint was that I had nearly 0 control over the look of the site, if i wanted to change the theme, i had to change EVERYTHING about the theme, and i could only use free themes unless i wanted to pay $50-$100 for someone's CSS...<br/>
+                    So when my good old buddy text me one day and said "hey, im looking to buy a VPS who do you suggest", I quickly suggested a company that i hear about all the time on some of the podcasts i follow, and he got a code though the podcast for a free $10 credit which is getting us 2 free months of service! Then he was asking about a domain name and was looking into a company i have nothing agianst, but with a little google foo i found a repuable site that offered the same services for far less. <br/>
+                    So here i sit today, on my couch, typeing away into my vim terminal telling you about me. There isnt much to know. I have linked most every public form of communication i know i have thoughtout this site if you want to get to know me, reach out. Im a fun guy as far as im concerned. I try to be professional in most places but im not like this at all times :P. <br/>
+                </p> 
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div id="footer"></div>
+    <!-- jQuery -->
+    <script src="../../js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../js/bootstrap.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../../js/clean-blog.min.js"></script>
+</body>
+</html>

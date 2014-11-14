@@ -12,7 +12,7 @@ p {
 	padding-left: 10px;
 }
 /* To slightly outline text with black to make it readable on any surface */
-p.textoutline {
+.textoutline {
     color: #fff;
     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }

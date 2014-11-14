@@ -159,18 +159,32 @@
                 <hr class="medium">                
                 <p id="beginer-commands">
                     <strong>How to enter commands into VIM</strong><br/>
+                    <br/>
                     Next you need to know when to enter commands, and how to leave differnt modes.<br/>
                     As I already said, by default your in "Command Mode", you have to go into other modes by pressing a a key, or a combo of keys.<br/>
+                    <br/>
                     The "Escape" key (top left most key on all standard keyboards usually marked as "Esc") is ment to get you out anything.<br/>
                     If your ever in a strange mode, or if you just want to go back to command mode from Insert mode. You can hit the trusty esc key to get out of almost any mode.<br/>
+                    <br/>
                     Every key on the keyboard has some kind of a command tied to it, and most of them have 2 or more commands tied to them, so a command could be used by hitting the key, hititng shift then the key, hitting alt then the key("ALT" or &lt;ALT&gt;), hitting ctrl then the key ("^" or "CTRL" or &lt;CTRL&gt;), or hitting "leader" then the key which is "\" by default (&lt;leader&gt;).<br/>
-
+                    <br/>
+                    Now you need to know about ":" or "colon" commands.<br/>
+                    Colon commands can only be entered from command mode. You enter them by typeing the colon key (":") then what ever the command is after the colon.<br/>
                 </p>
                 <hr class="medium">
                 <p>
-                    Command we need to know first is how to <em>quit</em> VIM. The following commadns all "quit" vim. Key word is "quit" not "exit".<br/>
+                    Commands we need to know first is how to <em>quit</em> VIM. The following commadns all "quit" vim. Key word is "quit" not "exit".<br/>
                     <code class="codeInput">:q</code>, <code class="codeInput">:q!</code>, <code class="codeInput">ZZ</code><br/>
-                    So, thats ":q" I usually hear people pronounce this as "Colon Q". This is typed from "Command" mode (not insert, visual, or replace mode). 
+                    So, thats ":q" I usually hear people pronounce this as "Colon Q". As mentioned above, this is only entered form command mode.<br/>
+                    Please note that ZZ is 2 capitoal Z's.<br/>
+                    <br/>
+                    Now you need to know how to "write" your file, again key word is "write" not "save".<br/>
+                    <code class="codeInput">:w</code><br/>
+                    But what if you want to Write the file and quit? Do you need to run <code class="codeInput">:q</code> then <code class="codeInput">:w</code>? NO! Vim allows for these 2 to be preformed at the same time, you can do this by typeing them together. like this:<br/>
+                    <code class="codeInput">:wq</code> so you "write" then "quit". Do not try to ":qw" that would "quit" then it would never write the document because it quit... <br/>
+                    What if you need to save the file to a differnt location, or in a differnt name?<br/>
+                    <code class="codeInput">:w ~/other/folder</code> for writeing to a differnt location, or <code class="codeInput">:w differntName.txt</code> to write it as a differnt name (like "save as").<br/>
+                    You can also combine this as <code class="codeInput">:w ~/location/to/a/place/notTheOrgionalName.sh</code>
                 </p>
 
                 <h4 id="commands-intermediate">Intermediate Commands</h4>

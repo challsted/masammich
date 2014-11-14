@@ -50,48 +50,70 @@
 </head>
 
 <body>
-	<div id="header"></div>
-	<div class="content-container">
+    <div id="header"></div>
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('../../img/postheader.png')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1 style="color: white">FISH</h1>
+                        <hr class="small">
+                        <span class="subheading">Friendly Interactive Shell, built on ZSH to server you better!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 col-md-12">
 
-<h3><em><strong>So, one of the things I'm trying out right now is a command shell called "<a href="http://en.wikipedia.org/wiki/Friendly_interactive_shell">FISH</a></strong></em></h3>
+				<h3><em><strong>So, one of the things I'm trying out right now is a command shell called "<a href="http://en.wikipedia.org/wiki/Friendly_interactive_shell">FISH</a></strong></em></h3>
 
-<h4><em><strong>What else makes it so nice?</strong></em></h4>
+				<h4><em><strong>What else makes it so nice?</strong></em></h4>
 
-<ul>
-	<li>Tab Completion is far better then bash. How? So lets say your typing a command, lets say its "<code class="codeInput">ls</code>" and you need to find some flags for it. You would simply type "<code class="codeInput">ls -</code>" then hit tab, it will search though the man pages for ls and find the various flags and suggest them to you. It will even give you a easy to understand description of what each flag dose!</li>
-	<li>Command History is integrated as you type.<br/>
-	In bash, you can hit the "up" arrow on your keyboard to scroll though your recent commands. But what if you had some grep you ran 30 lines ago? In bash, you would have to either type it out again, or press the up arrow 30 times.<br/>
-	In fish you type "grep", it suggests the last command you typed that had grep in it, and you can then hit up, this will fill in the last command you used with grep in it. You can also scroll though everything you typed that had grep in it.</li>
-	<li>Aliasing is easier to read and understand.<br/>
-	<p>In bash you would type:<br/>
-	<code class="codeInput"><strong><em>alias foo="bar"</em></strong></code><br/>
-	yea, that's easy, but it looks like a line of code that will cause average users to shriek at the sight of it.<br/>
-	In fish you would type:<br/>
-	<code class="codeInput"><strong><em>function foo</em></strong></code><br/>
-	<strong><em>&nbsp;&nbsp;&nbsp;&nbsp;     <code class="codeInput">bar</em></strong></code><br/>
-	<strong><em>&nbsp;&nbsp;&nbsp;&nbsp;     <code class="codeInput">end</em></strong></code><br/>
-	This looks much more complicated, but i promise you its not.<br/>
-	So you type "function foo" and hit enter. It auto indents and asks for what you want "foo" to do. In this case we have foo preforming "bar", then we press enter. It then asks for what else do we want foo to preform, this allows for complex functions to be created easily. In this case we don't want anything else so we just type "end" and hit enter and its done!</p></li>
-	<li>When you type something wrong in fish, rather then spit out a cryptic error at you, you get a detailed explanation of what it thinks is wrong.</li>
-</ul>
+				<ul>
+					<li>Tab Completion is far better then bash. How? So lets say your typing a command, lets say its "<code class="codeInput">ls</code>" and you need to find some flags for it. You would simply type "<code class="codeInput">ls -</code>" then hit tab, it will search though the man pages for ls and find the various flags and suggest them to you. It will even give you a easy to understand description of what each flag dose!</li>
+					<li>Command History is integrated as you type.<br/>
+					In bash, you can hit the "up" arrow on your keyboard to scroll though your recent commands. But what if you had some grep you ran 30 lines ago? In bash, you would have to either type it out again, or press the up arrow 30 times.<br/>
+					In fish you type "grep", it suggests the last command you typed that had grep in it, and you can then hit up, this will fill in the last command you used with grep in it. You can also scroll though everything you typed that had grep in it.</li>
+					<li>Aliasing is easier to read and understand.</li><br/>
+				</ul>
+					In bash you would type:<br/>
+					<code class="codeInput"><strong><em>alias foo="bar"</em></strong></code><br/>
+					yea, that's easy, but it looks like a line of code that will cause average users to shriek at the sight of it.<br/>
+					In fish you would type:<br/>
+					<code class="codeInput"><strong><em>function foo</em></strong></code><br/>
+					<strong><em>&nbsp;&nbsp;&nbsp;&nbsp;     <code class="codeInput">bar</code></em></strong><br/>
+					<strong><em>&nbsp;&nbsp;&nbsp;&nbsp;     <code class="codeInput">end</code></em></strong><br/>
+					This looks much more complicated, but i promise you its not.<br/>
+					So you type "function foo" and hit enter. It auto indents and asks for what you want "foo" to do. In this case we have foo preforming "bar", then we press enter. It then asks for what else do we want foo to preform, this allows for complex functions to be created easily. In this case we don't want anything else so we just type "end" and hit enter and its done!</p></li>
+					When you type something wrong in fish, rather then spit out a cryptic error at you, you get a detailed explanation of what it thinks is wrong.
 
-<h3><strong>What dose this mean for you? Well, that depends!</strong></h3>
+				<h3><strong>What dose this mean for you? Well, that depends!</strong></h3>
 
-<ul>
-	<li><strong><em>Have you been using bash for a number of years?</em></strong><br/></li>
- 	Then it will probably a nice relief, but a difficult experience for you to switch to fish.<br/>
-	<br/>
-	<li><strong><em>Are you new to Linux, or at least not a big terminal user?</em></strong><br/></li>
- 	Fish will be great for you!<br/>
-	<br/>
-	<li><strong><em>Do you write/use a lot of bash scripts?</em></strong><br/></li>
- 	Then you will not like fish at all due to it dose not process bash scripts very well.<br/>
-	<br/>
-	<li><strong><em>Would you like to get FISH for your Linux desktop?</em></strong><br/></li>
-	Then please go to the <a href="http://fishshell.com/">official site!</a>
-</ul>
+				<ul>
+					<li><strong><em>Have you been using bash for a number of years?</em></strong><br/></li>
+				 	Then it will probably a nice relief, but a difficult experience for you to switch to fish.<br/>
+					<br/>
+					<li><strong><em>Are you new to Linux, or at least not a big terminal user?</em></strong><br/></li>
+				 	Fish will be great for you!<br/>
+					<br/>
+					<li><strong><em>Do you write/use a lot of bash scripts?</em></strong><br/></li>
+				 	Then you will not like fish at all due to it dose not process bash scripts very well.<br/>
+					<br/>
+					<li><strong><em>Would you like to get FISH for your Linux desktop?</em></strong><br/></li>
+					Then please go to the <a href="http://fishshell.com/">official site!</a>
+				</ul>
+			</div>
+		</div>
+	</div>
 
-</p>
+			</div>
+		</div>
+	</div>
 
     <!-- Footer -->
     <div id="footer"></div>

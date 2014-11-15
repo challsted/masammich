@@ -145,7 +145,7 @@
 			<hr width="50%">
 
 			<h3><em><strong id="rmdir">rmdir</strong></em></h3><br/>
-			rmdir removed a directory, but only if the directory is empty<br/>
+			rmdir remove a directory, but only if the directory is empty<br/>
 
 			Use:<br/>
 
@@ -153,7 +153,7 @@
 			<hr width="50%">
 
 			<h3><em><strong id="rm">rm</strong></em></h3><br/> 
-			Removes a file, it you try to use this to remove a folder, it will complain that it cannot. You can simply add a "-r" and it will remove folders. I only ever use rm, i never use rmdir personally. But rmdir is safer due to it checks to make sure the folder is empty before it deletes.<br/>
+			Removes a file, it you try to use this to remove a folder, it will complain that it cannot. You can simply add a "-r" and it will remove folders. I only ever use rm, I never use rmdir personally. But rmdir is safer due to it checking to make sure the folder is empty before it deletes.<br/>
 
 			Use:<br/>
 
@@ -167,15 +167,15 @@
 
 			Use:<br/>
 
-			<code class="codeInput">cp /home/user1/picture1 /home/user2/picture1</code> - This is Copy picture l from user1's home directory to the home directory of user2 and leaving the name the same as it was originally. Leaving the original where it was.<br/>
+			<code class="codeInput">cp /home/user1/picture1 /home/user2/picture1</code> - This is copy picture l from user1's home directory to the home directory of user2 and leaving the name the same as it was originally. Leaving the original where it was.<br/>
 
-			<code class="codeInput">cp /home/user1/pictureABC/ /home/user2/pictureXYZ/</code> - This copy's the picture from user1's home directory, to the home directory of user 2, and changes the name of the picture. Leaving the original as it was.<br/>
+			<code class="codeInput">cp /home/user1/pictureABC /home/user2/pictureXYZ</code> - This copies the picture from user1's home directory, to the home directory of user 2, and changes the name of the picture. Leaving the original as it was.<br/>
 
-			<code class="codeInput">cp -p /home/user1/mystuff/ /home/user2/user1_stuff</code> - This copys the folder "mystuff" and everything inside of it also.<br/>
+			<code class="codeInput">cp -p /home/user1/mystuff/ /home/user2/user1_stuff</code> - This copies the folder "mystuff" and everything inside of it also.<br/>
 
 			This is the time where useing -v is helpful so it would be better to type:<br/>
 
-			<code class="codeInput">cp -p -v /home/user1/mystuff/ /home/user2/user1_stuff</code> - This will copy everything inside of the folder, and print out everything that is being copied also. Other wise it will just sit there for a while, while it copy's and you have no idea whats going on.<br/>
+			<code class="codeInput">cp -p -v /home/user1/mystuff/ /home/user2/user1_stuff</code> - This will copy everything inside of the folder, and print out everything that is being copied also. Otherwise it will just sit there for a while, while it copies and you have no idea whats going on.<br/>
 			<hr width="50%">
 
 			<h3><em><strong id="mv">mv &amp; rename</strong></em></h3><br/>
@@ -195,7 +195,7 @@
 
 			<h3><em><strong id="find">find</strong></em></h3><br/>
 
-			"find" is actually a very powerful tool, but can be kind of confusing. If you ever need to find a file, and you know some details about it, you can find it using this command. You can use the -name flag to give it an exact name, or even use -cmin  to find files that were modified in the last X minutes.<br/>
+			"find" is actually a very powerful tool, but can be kind of confusing. If you ever need to find a file, and you know some details about it, you can find it using this command. You can use the -name flag to give it an exact name, or even use -cmin to find files that were modified in the last X minutes.<br/>
 
 			Use:<br/>
 
@@ -207,12 +207,12 @@
 
 			<code class="codeInput">find / -cmin 5</code>  - This will find all files that were "changed" in the last 5 minutes.<br/>
 
-			<code class="codeInput">find . -type f -perm 0777 -print</code> - This will find all files in the current directory with permissions "777" the 0 isn't important right now its much more advanced.<br/>
+			<code class="codeInput">find . -type f -perm 0777 -print</code> - This will find all files in the current directory with permissions "777" the 0 isn't important right now as its much more advanced.<br/>
 			<hr width="50%">
 
 			<h3><em><strong id="grep">grep</strong></em></h3><br/>
 
-			grep is one of my favorite tools, books can probably be written on practical uses of this amazing little word. Grep's exact use is to find lines of text matching a pattern. A little cryptic, I know, but that is probably due to HOW MUCH this little thing can do. Ill try to write a separate article about grep and how to use it more than what ill list here. If you see a link HERE then it's created, if that's not a hyperlink yet. Then i haven't yet made the article. A few nice flags to know/use are the -v flag, which is "invert" and -n which gives a line number. Also, unlike find, you don't HAVE to use a flag to use grep.<br/>
+			grep is one of my favorite tools, books can probably be written on practical uses of this amazing little word. Grep's exact use is to find lines of text matching a pattern. A little cryptic, I know, but that is probably due to HOW MUCH this little thing can do. Ill try to write a separate article about grep and how to use it more than what I'll list here. If you see a link HERE then it's created, if that's not a hyperlink yet. Then I haven't yet made the article. A few nice flags to know/use are the -v flag, which is "invert" and -n which gives a line number. Also, unlike find, you don't HAVE to use a flag to use grep.<br/>
 
 			Use:<br/>
 
@@ -222,7 +222,7 @@
 
 			<code class="codeInput">grep -i "string" textfile.txt</code>  - Searches the file "textfile.txt" for the term "string" but due to -i it will return things that don't match in case (so it will return String, sTring, STRING and so on)<br/>
 
-			<code class="codeInput">find ~/music -name "*.mp3" | grep -i "aqua" | grep -iv "remix"</code> - Ok so this one is a little complicated, but i can break it out for you. First it uses the <a href="#find">find</a> command (explained above) to find all files that end in .mp3 inside of your personal music folder. It then finds all files that end in .mp3, and have the word "aqua" in it with insensitive case (Aqua, AQUA and aqua will all return). Then it finds all files with the word "remix" and it removes them from your results, so you wont get all those German remixes of "Aqua - Barbie Girl". I actually use similar commands to this one my self.<br/>
+			<code class="codeInput">find ~/music -name "*.mp3" | grep -i "aqua" | grep -iv "remix"</code> - Ok so this one is a little complicated, but i can break it out for you. First it uses the <a href="#find">find</a> command (explained above) to find all files that end in .mp3 inside of your personal music folder. It then finds all files that end in .mp3, and have the word "aqua" in it with insensitive case (Aqua, AQUA and aqua will all return). Then it finds all files with the word "remix" and it removes them from your results, so you won't get all those German remixes of "Aqua - Barbie Girl". I actually use similar commands to this one my self.<br/>
 
 			<code class="codeInput">grep -n "function" program.c</code>  - This will find what ever function you give it in the program.c file, and it will also include a line number for every instance it finds. Why is this helpful? Well it's mostly helpful to coders, or admins who look though logs a lot. This will find a certain string and will give you the line number to go fix it. So if you compile your code and you see that a certain function isn't working, or if you need to find all 404's that hit your web server. You can find them easily!<br/>
 			<hr width="50%">
@@ -298,20 +298,20 @@
 			1) <em>What is "<code class="codeInput">sudo</code>" and why should I always be careful when using it?</em><br/>
 			2) <em>What is "<code class="codeInput">apt-get</code>"?</em><br/>
 
-			<em><strong>To answer the first part,</strong></em> sudo is short for "Super User DO". What does that mean? Super user is like an admin, the super user (known as the root account) has permissions to do anything to anyones stuff on the whole computer no matter what you say about it (yes, this can be curbed/thwarted). So when you type "sudo" your telling the CLI that the next thing you type (everything after it) will be done with super user powers. So "sudo cd .." is kind of dumb, why move backwards a directory using super user powers? But "sudo apt-get install vlc" is necessary due to your telling the computer to use the super user account to install a program called VLC, and that will require system wide changes!<br/>
+			<em><strong>To answer the first part,</strong></em> sudo is short for "Super User DO". What does that mean? Super user is like an admin, the super user (known as the root account) has permissions to do anything to anyones stuff on the whole computer no matter what you say about it (yes, this can be curbed/thwarted). So when you type "sudo" your telling the CLI that the next thing you type (everything after it) will be done with super user powers. So "sudo cd .." is kind of dumb, why move backwards a directory using super user powers? But "sudo apt-get install vlc" is necessary due to you telling the computer to use the super user account to install a program called VLC, and that will require system wide changes!<br/>
 			So to summarize, "<code class="codeInput">sudo</code>" is simply a short word for when you want to do something, with admin powers, but not use an admin account.<br/>
 
-			<em><strong>To answer the second part.</strong></em> "apt-get" is the short name of the "package-manager" in Ubuntu (well, for Debian based OS's... ill cover this later). "aptitude get" was the original syntax but you can simply type "apt-get" now. "Aptitude" is the full name, your telling aptitude to get what ever package your telling it to. Whether it be to install, remove, or add a repository, it's all done though getting information with aptitude!<br/>
+			<em><strong>To answer the second part.</strong></em> "apt-get" is the short name of the "package-manager" in Ubuntu (well, for Debian based OS's... I'll cover this later). "aptitude get" was the original syntax but you can simply type "apt-get" now. "Aptitude" is the full name, your telling aptitude to get whatever package your telling it to. Whether it be to install, remove, or add a repository, it's all done though getting information with aptitude!<br/>
 
 			<strong><em>So, now that that's out of the way.</em> </strong><br/>
 
-			If you want to install something in Ubuntu, you are going to need to use sudo (super user do) powers, your also going to need to call upon aptitude to get a package, and your going to need to tell aptitude what to do with that package, and what the name of the package you're looking for is called
+			If you want to install something in Ubuntu, you are going to need to use sudo (super user do) powers, you are also going to need to call upon aptitude to get a package, and you are going to need to tell aptitude what to do with that package, and what the name of the package you're looking for is called.
 
-			So, lets give it a shot, lets say you want to install "VLC" which is an awesome light weight, open source media player. Supports a lot of different codex's out of the box and just works well on very little resources. You will need to type:<br/>
+			So, lets give it a shot, lets say you want to install "VLC" which is an awesome light weight, open source media player. It supports a lot of different codec's out of the box and just works well on very little resources. You will need to type:<br/>
 			<code class="codeInput">sudo apt-get install vlc</code><br/>
 
 			Lets go over that really fast again:<br/>
-			<code class="codeInput">sudo</code>, we know what that does now kind of, were using the super user account to do something.<br/>
+			<code class="codeInput">sudo</code>, we know what that does now kind of, we're using the super user account to do something.<br/>
 			<code class="codeInput">apt-get</code>, ok were using the built-in package manager to do something else<br/>
 			<code class="codeInput">install</code>, ok, were using aptitude to install..<br/>
 			<code class="codeInput">vlc</code>, a package named "vlc"<br/>
@@ -320,11 +320,11 @@
 			You use your local computer password, so if you logged in with the password "fubar" then you use the password "fubar" now.<br/>
 
 			<em><strong>OMG A BUNCH OF TEXT!</strong> </em><br/>
-			This is perfectly ok and normal, just stay calm, assuming you typed everything ok, and your password was correct, apt-get is now doing all the heavy lifting for you, it's going out, finding the package you requested in its repositories, and its also looking at the package and asking it what else it needs to install. It then checks your computer, and sees what packages you do not have that the package you requested needs. It then presents to you a "(Y/n)?" prompt that is asking you "Do you want to install the above packages? You can enter Y for yes or N for no, or just hit enter, because the "Y" is capital in this prompt, Y is the default. It will then do the heavy  lifting again and download and install the package, and all of its dependencies it needs for you. When it done, it will sit there and wait for the next command you want to give it.<br/>
+			This is perfectly ok and normal, just stay calm, assuming you typed everything ok, and your password was correct, apt-get is now doing all the heavy lifting for you, it's going out, finding the package you requested in its repositories, and it's also looking at the package and asking it what else it needs to install. It then checks your computer, and sees what packages you do not have that the package you requested needs. It then presents to you a "(Y/n)?" prompt that is asking you "Do you want to install the above packages? You can enter Y for yes or N for no, or just hit enter, because the "Y" is capital in this prompt, Y is the default. It will then do the heavy lifting again and download and install the package, and all of its dependencies it needs for you. When it's done, it will sit there and wait for the next command you want to give it.<br/>
 
 			<strong>So, just for a quick comparison:</strong><br/>
 			<strong>In Linux</strong> you opened a terminal, you typed 1 command (<code class="codeInput">sudo apt-get install vlc</code>) then typed your password, waited a second or two, hit the enter key to accept the download, then waited again and its done. You now have VLC installed and (hopefully) fully functional on your computer!<br/>
-			If you were to do this same thing <strong>in windows</strong>, you would have to open a browser, go to your favorite search engine (or use a search tool bar (<em>shudder....</em>) type in "vlc" then using what ever search engine you choose search though possibly many hundreds of millions of links, hoping that the top result is the one you want. You then look around the website for a "downloads" button or something of that nature, you download it and hope it's not filled with virus's. You then wait for your virus scanner to scan the package for known virus's, you then open up your downloads folder, double-click the vlc.exe icon, next, next, next finish though the install prompt, then open your start menu and you have VLC installed on your computer! <br/>Congratulations!<br/>
+			If you were to do this same thing <strong>in windows</strong>, you would have to open a browser, go to your favorite search engine (or use a search toolbar (<em>shudder....</em>) type in "vlc" then using what ever search engine you choose, search though possibly many hundreds of millions of links, hoping that the top result is the one you want. You then look around the website for a "downloads" button or something of that nature, you download it and hope it's not filled with viruses. You then wait for your virus scanner to scan the package for known viruses, you then open up your downloads folder, double-click the vlc.exe icon, next, next, next finish though the install prompt, then open your start menu and you have VLC installed on your computer! <br/>Congratulations!<br/>
 
 			See how much simpler this is on Linux??? This is just 1 example, I have more!<br/>
 
@@ -344,7 +344,7 @@
 
 			<em><strong>Ok, last thing I want to tell you about Ubuntu is PPA's</strong></em><br/>
 
-			PPA (Personal Package Archive) is a neat little way to get software that Ubuntu would not normally support, and keep it up-to-date though the package manager! So if you're trying to install a piece of software, that Ubuntu does not natively support, or maybe a version of a piece of software that Ubuntu doesn't have in their repository. Then  you would use a PPA.<br/>
+			PPA (Personal Package Archive) is a neat little way to get software that Ubuntu would not normally support, and keep it up-to-date though the package manager! So if you're trying to install a piece of software that Ubuntu does not natively support, or maybe a version of a piece of software that Ubuntu doesn't have in their repository, then you would use a PPA.<br/>
 
 			So for example, Ubuntu does not have the Cinnamon Desktop located in their repository's. So you search the internet and you find this:<br/>
 
@@ -352,10 +352,10 @@
 
 			We can dissect this and find out what it is actually doing/saying.<br/>
 
-			So, the first part, we already understand "sudo", then its doing something we kind of understand, but not quite. Its calling "apt" but instead of "apt-get" its saying "add-apt" what is that? This is adding something TO apt, aka, it's adding a place for apt to look at to check for software and updates.<br/>
-			So what is it adding? Its adding a repository: "add-apt-repository". Ok, so were using super user to add a repo to apt. Got it. Next!<br/>
+			So, the first part, we already understand "sudo", then it's doing something we kind of understand, but not quite. Its calling "apt" but instead of "apt-get" its saying "add-apt" what is that? This is adding something TO apt, aka, it's adding a place for apt to look at to check for software and updates.<br/>
+			So what is it adding? It's adding a repository: "add-apt-repository". Ok, so were using super user to add a repo to apt. Got it. Next!<br/>
 
-			Ok so next is "ppa:" this is telling apt that its adding a ppa with the following name. In this case its "gwendal-lebihan-dev/cinnamon-stable" that is just how it is identified on launchpad. Launchpad is where these ppa's are hosted and where apt goes to look for them. So if you entered the above command, it would tell apt, to look for that software.<br/>
+			Ok so next is "ppa:" this is telling apt that its adding a ppa with the following name. In this case its "gwendal-lebihan-dev/cinnamon-stable" that is just how it is identified on launchpad. Launchpad is where these ppa's are hosted and where apt goes to look for them. So if you entered the above command, it would tell apt to look for that software.<br/>
 
 			So lets create another little example. Lets assume that you have not added the ppa shown above.<br/>
 
@@ -377,7 +377,7 @@
 			<hr width="50%">
 
 			<h3><em><strong id="arch">Arch Syntax</strong></em></h3><br/>
-			For the Arch CLI I wont go into extreme details like i did with the Ubuntu, I expect you to understand basic stuff once it's explained.<br/>
+			For the Arch CLI I won't go into extreme details like i did with the Ubuntu, I expect you to understand basic stuff once it's explained.<br/>
 
 			All of the following are run as root or using sudo:<br/>
 
@@ -409,7 +409,7 @@
 
 			<code class="codeInput">makepkg -s</code><br/>
 
-			This works about 75% of the time, it resolves the dependency's for the package and installs them. This is only a problem if one of the dependency are also only found in the AUR. If that's the case you must go out and find those dependency's (usually listed under the appropriate column in the AUR). So assuming you now have all of the dependency installed you'll see a long ass string of code as the packages are compiled and then it will spit out a  you need to run:<br/>
+			This works about 75% of the time, it resolves the dependency's for the package and installs them. This is only a problem if one of the dependency are also only found in the AUR. If that's the case you must go out and find those dependency's (usually listed under the appropriate column in the AUR). So assuming you now have all of the dependency installed you'll see a long ass string of code as the packages are compiled and then it will spit out and you need to run:<br/>
 
 			<code class="codeInput">pacman -U </code>&lt;file.tar.xz&gt;<br/>
 

@@ -70,7 +70,7 @@
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1 col-md-12">
 
-			<h2>GitHub - The best way to publicly share and store your code on line!</h2>
+			<h2>GitHub - The best way to publicly share and store your code online!</h2>
 
 			<img title="taken from TechCrunch" src="http://tctechcrunch2011.files.wordpress.com/2010/07/github-logo.png?w=400" alt="github-logo" style="float: right">
 
@@ -166,9 +166,9 @@
 				<code class="codeInput">pacman -S git</code> &lt;-- this will install git on Arch Linux<br/>
 			</p>
 			<p>
-				You should also sign up for a free GitHub account <a href="https://github.com/">here</a>(you only have to pay if you want private repository which is optional).<br/>
+				You should also sign up for a free GitHub account <a href="https://github.com/">here</a>(you only have to pay if you want private repositories which is optional).<br/>
 
-				Once your in you need to actually setup your account.
+				Once you're in you need to actually setup your account.
 			</p>
 
 			<h4>CLI</h4>
@@ -197,13 +197,13 @@
 				<li>(Optional) Give a description of what you plan on doing with the repository</li>
 				<li>(Optional) Change the repo to be "private", this requires a paid account to do</li>
 				<li>(Optional) Click the check box to add a "README" file (I always do this)</li>
-				<li>(Optional) Create a .gitignore this is useful if you know there are certain files you want to put into your repo, that you wont want git to put into the repo. For example, i have a ".project" folder that is only on my local due to it will not benefit anyone out there to have this info. Its for a local only GUI program that I'm experimenting with at the moment called "GitEye".</li>
+				<li>(Optional) Create a .gitignore this is useful if you know there are certain files you want to put into your repo, that you won't want git to put into the repo. For example, I have a ".project" folder that is only on my local due to it will not benefit anyone out there to have this info. Its for a local only GUI program that I'm experimenting with at the moment called "GitEye".</li>
 				<li>(Optional) Give the repo a license. If you need to know more about licenses, there is a small "i" with a circle that takes you to a place that explains what each license does and is used for.</li>
 				<li>Click "Create Repository"</li>
 			</ol>
 
 			<p>
-				Now your repository is created, its on GitHub, and if you selected the option to create a README file its also available to pull down to your local immediately. After I explain how to do this all via CLI ill explain how to clone the repo locally also.
+				Now your repository is created, it's on GitHub, and if you selected the option to create a README file its also available to pull down to your local immediately. After I explain how to do this all via CLI I'll explain how to clone the repo locally also.
 			</p>
 			<p>Clone your new Repository</p>
 
@@ -211,12 +211,12 @@
 				<li>If your not already, log into GitHub, and click on your username up in the top right (this is your profile)</li>
 				<li>Click on your new repository, if you have a file here already your ready to clone your repo (if not you need to create one)</li>
 				<li>On the right side, towards the middle or bottom, you will see "HTTPS Clone URL" click in this box and copy manually, or click the little copy icon to the right of that to copy to your clipboard</li>
-				<li>From your terminal, create a folder (i always create a folder called "git" at my home) and go inside of the folder.</li>
+				<li>From your terminal, create a folder (I always create a folder called "git" at my home) and go inside of the folder.</li>
 				<li>Run the following command <code class="codeInput">git clone https://github.com/user.name/repo.git</code> replace the URL with the one you just copied</li>
 			</ol>
 
 			<p>
-				You now have a repository on your local machine, if you want to make sure your able to upload/download code as needed. Lets do a quick exercise.<br/>
+				You now have a repository on your local machine, if you want to make sure you're able to upload/download code as needed. Lets do a quick exercise.<br/>
 
 				<code class="codeInput">touch file1.txt &amp;&amp; cat "HELLO WORLD!" &gt; file1.txt</code><br/>
 
@@ -230,7 +230,7 @@
 
 				<code class="codeInput">git commit -m "Testing Access"</code><br/>
 
-				This preforms a "commit" you are committing a the files in that are currently part of the "add" but not yet "commited" with the following message (-m) if you don't add -m and a message it will pop up a box asking you to type your commit message. If you set the optional core.editor above it will use the editor you chose, other wise it uses emacs. <br/>
+				This preforms a "commit" you are committing a the files in that are currently part of the "add" but not yet "commited" with the following message (-m) if you don't add -m and a message it will pop up a box asking you to type your commit message. If you set the optional core.editor above it will use the editor you chose, otherwise it uses emacs. <br/>
 
 				<code class="codeInput">git push</code><br/>
 
@@ -238,17 +238,17 @@
 
 				<br>
 
-				Assuming you don't see any errors preforming the above, lets go back to GitHub, and refresh our repository, if you see that "file1.txt" is now listed inside of the repo, then congratulations! It worked!<br/>
+				Assuming you don't see any errors preforming the above, let's go back to GitHub, and refresh our repository, if you see that "file1.txt" is now listed inside of the repo, then congratulations! It worked!<br/>
 
 				<br/>
 
-				If not you need to troubleshoot. You can send me an email if needed via the contact options above, ill try to help you. But beware I do all of this in my spare-time, so I'm not sure how fast I will be able to reply. Make sure you put an email you can check into the email box also.
+				If not you need to troubleshoot. You can send me an email if needed via the contact options above, I'll try to help you, but beware, I do all of this in my spare-time, so I'm not sure how fast I will be able to reply. Make sure you put an email you can check into the email box also.
 			</p>
 
 			<h3 id="now">Ok, now what?</h3>
 
 			<p>
-				Now you can start making your own stuff! If your already a developer in any language, you should already be pretty excited, if your just getting your feet wet in this world then your probably meaning this more literally. Lets go over 2 very important things you can do in GitHub/Git that are VERY useful. Cloning and Forking.
+				Now you can start making your own stuff! If you're already a developer in any language, you should already be pretty excited.  If you're just getting your feet wet in this world then you're probably meaning this more literally. Let's go over 2 very important things you can do in GitHub/Git that are VERY useful. Cloning and Forking.
 			</p>
 
 				<div class="col-md-6">
@@ -265,7 +265,7 @@
 						If you have setup ssh access to GitHub, this is a quick and easy way to preform this.<br/>
 					</p>
 					<p>
-						If you followed the above, you have already cloned a empty repository, added a file, and re-uploaded it back to your GitHub all in a few lines of code.<br/>
+						If you followed the above, you have already cloned an empty repository, added a file, and re-uploaded it back to your GitHub, all in a few lines of code.<br/>
 
 						Cloning(in git) is the act of copying the current set of code from any public repository on the web to your local machine, you don't have to have an account on GitHub to clone someone, you just need to have git installed! The command is <code class="codeInput">git clone</code> <em>repository</em><br/>
 
@@ -274,7 +274,7 @@
 					<br/>
 					</p>
 					<p>
-						Something cool you can do if you can search GitHub, and it will return public repository's. You can start the search by typing what ever words you want to appear in the repo or description. Then if you want to change it to only a certain language, you can click a desired language on the left, you can change the sort option to see the repo thats has been followed the most, or started the most (or what ever option you want). Then when you get something you might like, you can open up the repo and take a look around. If you like what you see, and want to play with it on your local machine, simply clone it. If you want to take a copy of this for your own to edit, you need to <a href="#now-fork">fork it</a> (next section).
+						Something cool you can do if you can search GitHub, and it will return public repository's. You can start the search by typing whatever words you want to appear in the repo or description. Then if you want to change it to only a certain language, you can click a desired language on the left, you can change the sort option to see the repo thats has been followed the most, or started the most (or whatever option you want). Then when you get something you might like, you can open up the repo and take a look around. If you like what you see, and want to play with it on your local machine, simply clone it. If you want to take a copy of this for your own to edit, you need to <a href="#now-fork">fork it</a> (next section).
 					</p>
 					<p>
 						The main thing I use cloning for, is if I want to have local copie(s) of my code on a local machine, or on a server or my RPi. You can pre-write the little clone command, and give it to friends so they can simply copy pasta and get your code. You can use it in scripts to copy down code from GH, execute something against it, then delete it, or what ever you need. Its a very simple, yet very awesome little command.
@@ -298,9 +298,9 @@
 						You can click "fork" in the top right, this will then give you a fun little animation of a book being photo copied then it will forward you back to your profile, but with the new repo (in this case Spoon-Knife) selected! Now you can clone it, make edits, and upload it back as you please. It wont effect the original repo owned by "Octocat".
 					</p>
 					<p>
-						Now, lets say that you were forking a project, with the intention of pushing it back to the master repo! You would do this for a few reasons, 1 of which is due to you have tried your hand at patching something, or at adding a feature, but you are not one of the collaborators. <br/>
+						Now, lets say that you were forking a project, with the intention of pushing it back to the master repo! You would do this for a few reasons, 1 of which is due to you having tried your hand at patching something, or at adding a feature, but you are not one of the collaborators. <br/>
 
-						After you fork their repo, make the changes you need to, push the code back to your forked repo on GH. You can go to the original repo, and click "create pull request". It will ask you to put in comments on what your doing. This is where you say "i added X feature" or "Fixed Y bug" its best if you identify bugs by the issued code if its a known bug. You should be able to get this information from the "issues" tab (I'm assuming you know what I'm talking about if your contributing to open source projects right now). Then the owner of the repo (when they have time) can look though your changes, and if they feel its good enough, they can "merge" it back in. If this happens, congratulations! You made a change to someone else's code :D
+						After you fork their repo, make the changes you need to, push the code back to your forked repo on GH. You can go to the original repo, and click "create pull request". It will ask you to put in comments on what you're doing. This is where you say "I added X feature" or "Fixed Y bug" it's best if you identify bugs by the issued code if its a known bug. You should be able to get this information from the "issues" tab (I'm assuming you know what I'm talking about if you're contributing to open source projects right now). Then the owner of the repo (when they have time) can look though your changes, and if they feel it's good enough, they can "merge" it back in. If this happens, congratulations! You made a change to someone else's code :D
 					</p>
 				</div>
 				<div id="disqus_thread"></div>

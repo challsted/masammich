@@ -59,7 +59,7 @@
                     <div class="site-heading">
                         <h1 class="textoutline" style="color: white">sed</h1>
                         <hr class="small">
-                        <span class="subheading textoutline">sed -i 's/awesome/boreing/g' knowledge_of_sed.sh</span>
+                        <span class="subheading textoutline">sed -i 's/awesome/boring/g' knowledge_of_sed.sh</span>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
 
 				So, as promised, I am creating an article about "sed" which is mainly a GNU program (as in there is a rewrite that is non GNU that I ran into on some very old AIX box's...)<br/>
 
-				What is "sed", so ill just open my local server, and pull up the man doc for sed.<br/>
+				What is "sed", so I'll just open my local server, and pull up the man doc for sed.<br/>
 
 				<br/>
 
@@ -106,7 +106,7 @@
 
 				"<strong><em>But what the heck does that mean?</em></strong>"<br/>
 
-				What its saying is that it edits text. It can be used in a script (direct input file) or it can take piped in text.<br/>
+				What it's saying is that it edits text. It can be used in a script (direct input file) or it can take piped in text.<br/>
 
 				Sed is considered a regex text editor, which is the best way I can explain it.<br/>
 
@@ -192,7 +192,7 @@
 
 				<code class="codeInput"><strong>sed -i 's/</strong></code> &lt;-- we know what this did already, it's an inline search<br/>
 
-				<code class="codeInput"><strong>- Xms512m \\/</strong></code> &lt;-- You basically know what this is doing, it's looking for a line, but this line ends in a special character (backslash \ ) so we have to "escape" it with another backslash (the escape character). The escape character tells the regex to assume the next character is exactly what it looks like, aka NOT a function. Another thing i want to point out, is I copied the spaces before the text also, so it does a full replace, and it keeps spacing (important when you're doing this).<br/>
+				<code class="codeInput"><strong>- Xms512m \\/</strong></code> &lt;-- You basically know what this is doing, it's looking for a line, but this line ends in a special character (backslash \ ) so we have to "escape" it with another backslash (the escape character). The escape character tells the regex to assume the next character is exactly what it looks like, aka NOT a function. Another thing I want to point out, is I copied the spaces before the text also, so it does a full replace, and it keeps spacing (important when you're doing this).<br/>
 
 				<code class="codeInput"><strong>- Xms512m \\\n-XX:NumberOfGCLogFiles=5 \\/ </strong></code>&lt;-- This is the cool part! Your replacing the line, with its self (you want to keep the line!), escaping the \ at the end, then we do something special. We add \n . This is a special sequence for "new line". Which is just like hitting the "enter" key on your keyboard. In this case it inserts the new line right after the \ at the end of the java statement. It then adds the spacing needed for next line (important, not to sed, but to the readability of the java), and then adds the actual new java statement and adds a \ to the end (we escape it also!).<br/>
 

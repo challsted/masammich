@@ -70,13 +70,13 @@
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1 col-md-12">
 
-				<h2>WGET the CLI Downloaeder you probably dont know how to use!</h2>
+				<h2>WGET the CLI Downloaeder you probably don't know how to use!</h2>
 				<center><img title="made at imgflip.com" src="https://i.imgflip.com/b5h3k.jpg" alt="wget DOWNLOAD ALL THE THINGS"></center><br/>
 
-				<strong>wget</strong> is an awesome command line utility that is very often overlooked, but it gives a lot of power to scripts and other shell utility's. wget supports FTP, HTTPS, and HTTP, it is used to download something from a "network" aka the internet. I will go over some very basic syntax and a little more advanced stuff also. So let's get to it!<br/>
+				<strong>wget</strong> is an awesome command line utility that is very often overlooked, but it gives a lot of power to scripts and other shell utilities.  wget supports FTP, HTTPS, and HTTP, it is used to download something from a "network" aka the internet. I will go over some very basic syntax and a little more advanced stuff also. So let's get to it!<br/>
 
 				<h3>Basics</h3>
-				Installing Wget: If you’re on Linux, you probably already have it (you can find out by typing "which wget", if you /usr/bin/wget or something similar your good, if you get "no wget in ..." you don't have it)<br/>
+				Installing Wget: If you’re on Linux, you probably already have it (you can find out by typing "which wget", if you get back /usr/bin/wget or something similar your good, if you get "no wget in ..." you don't have it)<br/>
 
 				If you’re on another distro, then please google for something like "installing wget on windows" or "installing wget on osx"<br/>
 				Let’s start with the most basic thing you can do, download a whole page!<br/>
@@ -89,7 +89,7 @@
 
 				Sometimes you will be trying to download a whole folder or a directory structure, and you will notice that some of the files are not being mirrored. This is due to something called "robots.txt" is on the server, which tells all search engines and spiders to not look in certain folders on a web server. wget has the option to ignore that file. It’s called <code class="codeInput"><strong>"<em>-e robots=off</em>"</strong></code><br/>
 
-				You can also user the <code class="codeInput"><em><strong>-nc</strong></em></code> switch (<code class="codeInput"><em><strong>--no-clobber</strong></em></code>) this is an AWESOME switch that is used to not overwrite files that already exist! So, if you download a list of files, and then go to download them all again, but this time add the -nc flag. You will only download any NEW files not any of the old files! Also, you can add the <code class="codeInput"><em><strong>--backups=X</strong></em></code> is cool, you can back up all files that would have been overwritten instead of not downloading them. <em>X would be a number</em>, so it would replace old file with filename.1 then if you did it again, .1 would become .2, and previous would become 1, then the new one would just become filename. The number of X would be the max number of backups. So if X was 5, it would make 5 backups of every file it needed to overwrite, then after that it would just remove them.<br/>
+				You can also use the <code class="codeInput"><em><strong>-nc</strong></em></code> switch (<code class="codeInput"><em><strong>--no-clobber</strong></em></code>) this is an AWESOME switch that is used to not overwrite files that already exist! So, if you download a list of files, and then go to download them all again, but this time add the -nc flag. You will only download any NEW files not any of the old files! Also, you can add the <code class="codeInput"><em><strong>--backups=X</strong></em></code> is cool, you can back up all files that would have been overwritten instead of not downloading them. <em>X would be a number</em>, so it would replace old file with filename.1 then if you did it again, .1 would become .2, and previous would become 1, then the new one would just become filename. The number of X would be the max number of backups. So if X was 5, it would make 5 backups of every file it needed to overwrite, then after that it would just remove them.<br/>
 
 				If you want everything under a certain directory, but nothing above it you can add the <code class="codeInput"><em><strong>-np</strong></em></code> (<code class="codeInput"><em><strong>--no-parent</strong></em></code>) flag.<br/>
 

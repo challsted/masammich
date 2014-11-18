@@ -80,9 +80,9 @@
 
 				<h3 id="s1">1. Basic Permissions</h3>
 
-				Ok, to start, were going to need to learn a new flag for a command you should already know.<br/>
+				Ok, to start, we're going to need to learn a new flag for a command you should already know.<br/>
 
-				<code class="codeInput">ls -l</code> The "<code class="codeInput">-l</code>" part of this is called a "flag", this specific flag, its description is "use a long listing format" I know that doesn't make that much since. So to describe it in my own words, it gives "details" to a simple "ls" I have attached a screen shot to show what it outputs for my personal home directory.<br/>
+				<code class="codeInput">ls -l</code> The "<code class="codeInput">-l</code>" part of this is called a "flag", this specific flag, it's description is "use a long listing format" I know that doesn't make that much sense. So to describe it in my own words, it gives "details" to a simple "ls".  I have attached a screen shot to show what it outputs for my personal home directory.<br/>
 
 				<a href="http://masammich.files.wordpress.com/2014/03/ss-ls-l.png"><img src="http://masammich.files.wordpress.com/2014/03/ss-ls-l.png" alt="ls -l screenshot" width="525" height="214" /></a></br>
 
@@ -108,7 +108,7 @@
 					<li><a href="#s1-8" class="codeOutput">6fg6hWI.png</a><br/></li>
 				</ol>
 				
-				<strong id="s1-1"><em>1)</em></strong> This is the actual "permissions" its broken into 10 separate bits.<br/>
+				<strong id="s1-1"><em>1)</em></strong> This is the actual "permissions" it's broken into 10 separate bits.<br/>
 
 				The first bit is a little strange, it will usually be a "-", "d" or "l". This first bit represents if "special" permissions need to take effect or not. For this example it's a "-" so no special permissions need to take effect. If it were a "d" as in several of the lines above, this would mean that it is a directory (a folder). If it is a "l" than it is a link. Links will be explained later as they are special and very useful!<br/>
 
@@ -126,7 +126,7 @@
 
 				<strong id="s1-6"><em>6)</em></strong> This is the last day the file was modified, so I last modified this on March 7th.<br/>
 
-				<strong id="s1-7"><em>7)</em></strong> This is the last time i modified the file. Its written in 24 hour format. So at 9:09pm.<br/>
+				<strong id="s1-7"><em>7)</em></strong> This is the last time I modified the file. Its written in 24 hour format. So at 9:09pm.<br/>
 
 				<strong id="s1-8"><em>8)</em></strong> This is the name of the actual file. In this case, it's a randomly generated named picture. I know its a picture because i know what ".png" is a file format used for pictures.<br/>
 
@@ -136,11 +136,11 @@
 
 				That's it.<br/>
 
-				Each of them is does the "owner" of the file have permission to Read, Write, or Execute? Dose the group? Dose the "World"? You'll learn much more about these 3 groups very soon.<br/>
+				Does the "owner" of the file have permission to Read, Write, or Execute? Does the group? Does the "World"? You'll learn much more about these 3 groups very soon.<br/>
 
 				<h3 id="s2">2. Changing permissions with Chmod and Chown</h3>
 
-				So, lets say you and a friend both use this computer. So lets assume your name is Chase (like in my example) and the friend who uses your computer's name is Jason.<br/>
+				So, let's say you and a friend both use this computer. So lets assume your name is Chase (like in my example) and the friend who uses your computer's name is Jason.<br/>
 
 				So you're a member of the group "users" and Jason is a member of the group "users" also.<br/>
 
@@ -158,12 +158,12 @@
 
 				<em><strong>"???????" You may be thinking.</strong></em><br/>
 
-				What do numers have to do with the letters rwx? So, you remember how I have been calling the "bits" this whole time. Thats because they are actually written in binary (1 or 0) but your shell shows them to you in a much more easy to read way.<br/>
+				What do numbers have to do with the letters rwx? So, you remember how I have been calling the "bits" this whole time. Thats because they are actually written in binary (1 or 0) but your shell shows them to you in a much more easy to read way.<br/>
 
 
 				<em><strong>Binary? I'm not a computer, how do I read binary?</strong></em><br/>
 
-				So, you only need to know 3 spaces of binary. This wont be hard. Binary is read from right to left, unlike English which is left to right. As I already said, its written in 1's and 0's. So how do you count to 644 with 1's and 0's unless you add 644 1's together!?<br/>
+				So, you only need to know 3 spaces of binary. This won't be hard. Binary is read from right to left, unlike English which is left to right. As I already said, it's written in 1's and 0's. So how do you count to 644 with 1's and 0's unless you add 644 1's together!?<br/>
 
 				Ok, so as i said, you read binary from left to right. So let's make a few sets of 3 binary numbers and what they mean then show them in Linux.<br/>
 				

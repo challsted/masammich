@@ -21,8 +21,15 @@
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script>
+	<!--<script>
 		$(function(){
+			$('#header').load('../content/header.html');
+			$('#footer').load('../content/footer.html');
+			$('#content').load('../content/fish.html');
+		});
+	</script>-->
+	<script>
+		$(document).ready( function() {
 			$('#header').load('../content/header.html');
 			$('#footer').load('../content/footer.html');
 			$('#content').load('../content/fish.html');

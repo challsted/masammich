@@ -52,12 +52,12 @@
 <body>
     <div id="header"></div>
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('../../img/postheader.png')">
+    <header class="intro-header" style="background-image: url('../../img/header.png')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1 class="textoutline" style="color: white">VIM</h1>
+                        <h1 class="textoutline" style="color: white">VIM p2</h1>
                         <hr class="small">
                         <span class="subheading textoutline">Commands, plug-ins and a look into the hidden vimrc</span>
                     </div>
@@ -86,7 +86,13 @@
                             <li><a href="#beginer-commands">Entering Commands</a></li>                           
                         </ol>
                         <li><a href="#commands-intermediate">Intermediate(WIP)</a></li>
-                        <li><a href="#commands-advanced">Advanced(WIP)</a></li>
+                        <ol>
+                            <li><a href="#interm-movement">Movement</a></li>
+                            <li><a href="#interm-split">Split Screen</a></li>
+                            <li><a href="#interm-buffers">Buffers</a></li>
+                            <li><a href="#interm-tabs">Tabs</a></li>
+                            <li><a href="#interm-registers">Registers</a></li>                            
+                        </ol>
                     </ol>
                     <li><a href="#vimrc">.vimrc(WIP)</a></li>
                     <ol>
@@ -202,10 +208,64 @@
 
                 <h4 id="commands-intermediate">Intermediate Commands</h4>
                 <p>
+                    So, you understand how to write and how to quit, and how to do those things together! Thats awesome!<br/>
+                    Now, we can begin working on some more advanced stuff! Let me begin by saying that you will never fully learn VIM. You can read reviews on vim from people who have been useing it 5, 10, or 20 years and they will all say "I just learned how to do this!". There is so many things in vim its crazy. So many ways to do what your wanting to do, some more efficient, some more "pure".
                 </p>
-                
-                <h4 id="commands-advanced">Advanced Commands</h4>
+                <p id="interm-movement">
+                    Moving around in vim is a little stange, but hoepfully your used to the basic J is down K is up thing.<br/>
+                    If you have opened a file larger then 5 lines you probably wanted to get to the bottom of the document instantly and you probably wondered if you could do this in VIM. Yes, you can. <br/>
+                    <code class="codeInput">G</code> (Shift g) Takes you to the end of the document, easy enough.<br/>
+                    What if you wanted to go back to the top?<br/>
+                    <code class="codeInput">gg</code> (g 2 times)That is just hitting the g key 2 times with no modifier keys. Again, pretty easy.<br/>
+                </p>
                 <p>
+                    Ok, thats great, how about if you want to go to the end of the line?<br/>
+                    <code class="codeInput">$</code> (Shift 4) Takes you to the end of the line and thats it,<br/>
+                    OR <code class="codeInput">A</code> (Shift A) Will take you to the ed of the line AND put you into insert mode.<br/>
+                    Ok, what if you want to go to the beggining of the line?<br/>
+                    <code class="codeInput">0</code>(Zero) will take you to the start of the line<br/>
+                </p>
+                <p>
+                    Cool, you can move from the top of the page to the bottom of the page. You can move to the end of the line and the beggining of the line all with 1 or 2 keystrokes! But what if you want to move only 1 "page" at a time?<br/>
+                    <code class="codeInput">^b</code> (Ctrl b) Will move you up 1 full "page" of text. The oposite of this is <code class="codeInput">^f</code>(Ctrl f) which takes you down of 1 full page of text.<br/>
+                    You can also go only "half" of a page with <code class="codeInput">^u</code> (Ctrl u) for up and <code class="codeInput">^d</code> (Ctrl d) for down<br/>
+                </p>
+                <p>
+                    While were talking about movement, I need to teach you about WORDs and words.<br/>
+                    Vim thinks of the below as 1 WORD: <br/>
+                    http://masammich.technoanomaly.com <br/>
+                    But that same sentence is 7 words<br/>
+                    <br/>
+                    <em>WHAT? How does that work?</em><br/>
+                    VIM has 2 more horizonal movements called "WORD" and "word" that you will see. But before I explain the word, you need to learn about what the difference is.<br/>
+                    As far as I understand it,<br/>
+                    A "word" is any non-blank character(s) that ends in a white space, a tab, a EOL (End of Line) or any other non-keyword character(basically any symobol). One strange exemption to this is that a blank line is also considered a word.<br/>
+                    A "WORD" is a sequence of non-blank characters sepearted by white space. Just like a word, an empty line can also be a WORD.<br/>
+                    Again, this gets tricky because "://" is considered a single word. Also "..." would be 1 word but ".a." would be 3 words. <br/>
+                    So, a few examples of a single "word" are *(), $$$$$$$$$$$$, and &amp;&amp;&lt;&gt;<br/>
+                    A few examples of a single WORD are "WORD", "www.google.com", www.google.com and this-is-1-long-WORD<br/>
+                    If this needs more clairification, leave me a comment below, ill go over it with you or edit this to make it better.<br/>
+                </p>
+                <p>
+                    Ok, so now that you know what a WORD and a word are, you can mainly read the documentation on VIM and understand movements better now!<br/>
+                    So, you can now move horizontally with <code class="codeInput">w</code> and <code class="codeInput">W</code> to move forward to the beggining of each word or WORD, you can also use <code class="codeInput">e</code> and <code class="codeInput">E</code> to move to the end of each word or WORD.<br/>
+                    If you want to move backwards in this same manner it will be: <code class="codeInput">b</code> for previous word and <code class="codeInput">B</code> for previous WORD.<br/>
+                    Your also able to move backwards useing the <code class="codeInput">^</code> (Shift 6) key. This brings you to the previous non-blank character.<br/>
+                </p>
+                <p>
+                    That pretty much covers the basics of "movement". Up and down full and half pages, left and right words. Also full line or page movements. It might seem stange, but you only need to memorize the keys for a short period of time, you can always do what I did and go find a pretty graphic online that shows all the vim keys you need, print it out and hang it up near your desk or save it on your desktop. I still reference mine for some commadns i dont use often.<br/>
+                </p>
+                <hr class="medium">
+                <p id="interm-split">
+                </p>
+                <hr class="medium">
+                <p id="interm-buffers">
+                </p>
+                <hr class="medium">
+                <p id="interm-tabs">
+                </p>
+                <hr class="medium">
+                <p id="interm-registers">
                 </p>
                 <hr class="small">
                 <!-- Section 3 -->

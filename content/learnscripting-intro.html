@@ -2,16 +2,32 @@
 
 Welcome to my attempt at makeing a class for you guys ang girls to learn shell scripting (SH Scripting). From here you can take the extra steps to learn the "sugar" of BASH, KSH or any  other shell that is based on SH (all of them?).<br/>
 
-I will attempt to break everything down into major and minor sections, each major section covering 1 "major" topic, and within each major section being many minor sections.<br/>
+<h3>What I expect from you, the reader</h3>
+	<ul>
+		<li>You have access to a Linux or Unix box</li>
+		<li>If you are useing a GUI on this box, you know how to open a terminal</li>
+		<li>I expect you to have a text editor, terminal or gui</li>
+		<ul>
+			<li>I will always expect that you are using <a href="../dark/vim-breakdown.html">vim</a></li>
+			<li>You are welcome to use any other text editor, such as emacs, gedit, kate, notepad++, or sublime to name a few</li>
+			<li>As a reminder, you can create or edit the script from terminal like this:</li>
+				<ul>
+					<code class="codeInput">vi scriptname.sh</code><br/>
+					<code class="codeInput">emacs scriptname.sh</code><br/>
+					<code class="codeInput">gedit scriptname.sh</code><br/>
+					<code class="codeInput">kate scriptname.sh</code><br/>
+					<code class="codeInput">subl scriptname.sh</code><br/>
+				</ul>
+			<!-- Might need to move last </li> here -->
+		</ul>
+		<li>I expect you to mark all of your scripts as executable, you can use <code class="codeInput">chmod +x</code> or any other method that gives the executable flag. If you want more information about linux permissions, see my other article <a href="../dark/linuxpermissions.html">Linux Permissions Article</a></li>
+	</ul>
 
-After what I believe is a large amount of knowledge, I will provide an EoL (End of Lesson) quiz. At the moment they are completly self driven, I will provide an answer key, and I hopefully can provide WHY some of the answers are wrong. Its up to you to not cheat and make sure you understand everything. If you find bugs, or issues feel free to comment about it at the bottom of the page (Requires a Disquss account). I will do my best to reply, explain, update, fix, or remove the issue. <br/>
 
-For further clarification, everything I ask you to do here is ment to be done in a "shell" which is also known as a "terminal". You can use any shell you want as long as it uses "sh", or you can simply use a SheBang (more info soon) to tell the shell to use sh instead. Some of this can be done in a single line in your terminal, some of this needs to be done from a ".sh" program with execute permissions (chmod +x ..).<br/>
+<h3>What you, the reader, can expect from me</h3>
+	<ul>
+		<li>I will attempt to break everything down into major and minor sections, each major section covering 1 "major" topic, and within each major section being many minor sections.</li>
+		<li>After what I believe is a large amount of knowledge, I will provide an EoL (End of Lesson) quiz. At the moment they are completly self driven, I will provide an answer key, and I hopefully can provide WHY some of the answers are wrong. Its up to you to not cheat and make sure you understand everything. If you find bugs, or issues feel free to comment about it at the bottom of the page (Requires a Disquss account). I will do my best to reply, explain, update, fix, or remove the issue.</li>
+		<li>For further clarification, everything I ask you to do here is ment to be done in a "shell" which is also known as a "terminal". </li>
 
-I will always assume you are using "vim" as your editor, but your welcome to use anything else you want. For example:<br>
-If you are trying to create a script called "script1.sh", I am assuming that you have or will type "<code class="codeInput">vi script1.sh</code>"<br>
-But nothing stops you from typeing "<code class="codeInput">emacs script1.sh</code>" or "<code class="codeInput">gedit script1.sh</code>", you can use any editor you want, just replace "vi" or "vim" with your editor if I list instructions. <br/>
-
-All of your scripts will need to be marked as executable, this can be done in a nuber of ways, I usually just run "chmod +x script1.sh". But obvsiously you replace the script name with what ever you named your script. If you want more information about linux permissions, go check out my <a href="../dark/linuxpermissions.html">Linux Permissions Article</a>.<br/>
-
-You will need to execute your script once its marked as executable also, this is very easy, you can type "<code class="codeInput">./script1.sh</code>" and this will execute your script (or print an error if it has errors).<br/>
+	</ul>

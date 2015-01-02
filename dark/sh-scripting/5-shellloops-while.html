@@ -7,7 +7,7 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<meta name="description" content="A homegrown blog about Linux and Learning">
     <meta name="author" content="Chase Hallsted">
-	<title>Questions for End of Lesson 1</title>
+	<title>SH Loops "while"</title>
 	<!-- Bootstrap Core CSS -->
     <link type="text/css" rel="stylesheet" href="../css/bootstrap.dark.css">
     <!-- Custom CSS -->
@@ -25,7 +25,7 @@
 		$(function(){
 			$('#header').load('../content/header.html');
 			$('#footer').load('../content/footer.html');
-			$('#content').load('../content/lesson1.html');
+			$('#content').load('../content/shellloops-while.html');
 			$('#list').load('../content/lesson-list.html');
 		});
 	</script>
@@ -48,6 +48,7 @@
 		    })
 		});
 	</script>
+
 </head>
 
 <body>
@@ -56,11 +57,12 @@
     <header class="intro-header" style="background-image: url('../img/header.png')">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+                <div class="col-lg-10 col-lg-offset-1 col-md-12">
                     <div class="site-heading">
-                        <h1 class="textoutline" style="color: white">End of Lesson 1!</h1>
+                        <h1 class="textoutline" style="color: white">Shell Loops - If</h1>
                         <hr class="small">
-                        <span class="subheading textoutline">Now lets do some exercises</span>
+                        <span class="subheading textoutline">while loops, use, strucutre, examples</span>
+                        <span class="subheading textoutline">while [ $READER == $READING ] then; echo "Your learning the Linux!"</span>
                     </div>
                 </div>
             </div>
@@ -73,8 +75,8 @@
             	<div id="list"></div><!-- This pulls in the list for the lessons -->
 				<div id="content"></div><!-- This is where the content is pulled in -->
 				<ul class="pager">
-					<li class="previous"><a href="../../content/basiccommands.html">Previous - Basic Commands</a></li>
-					<li class="next"><a href="../../content/shellloops-if.html">Next - Shell Loops "if"</a></li>
+					<li class="previous"><a href="../../content/shellloops-if.html">Previous - if Loops</a></li>
+					<li class="next"><a href="../../content/shellloops-for.html">Next - for Loops</a></li>
 				</ul>
 				<div id="disqus_thread"></div>
 				<script type="text/javascript">
@@ -90,6 +92,7 @@
 			</div>
 		</div>
 	</div>
+
     <!-- Footer -->
     <div id="footer"></div>
     <!-- jQuery -->

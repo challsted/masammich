@@ -1,0 +1,57 @@
+<h2>Hello Internet!</h2>
+
+This is part 1 of my new lesson plan to help teach you to script in SH (Shell), once you have this down, you can easily learn the extra quirks on top of SH to learn BASH, KSH, ZSH, FISH or any other SHell (thats what SH in these means). <br/>
+
+So for part 1, here is how to start a script, it's honestly very easy, but it can quickly become confusing.<br/>
+
+<h3>#! (SheBang)</h3>
+
+So, the main thing you will see as the top line of every script (well, you SHOULD always see this as the top line) is something like:<br/>
+
+<code class="codeInput">#!/bin/bash</code><br/>
+
+<code class="codeInput">#!/bin/ksh</code><br/>
+
+<code class="codeInput">#!/bin/sh</code><br/>
+
+<code class="codeInput">#!/local/bin/bash</code><br/>
+
+<code class="codeInput">#!/bin/zsh</code><br/>
+
+<code class="codeInput">#!/usr/bin/ksh</code><br/>
+
+Basically, if you don't see a pattern above, it always starts with the "SheBang" as it is called which is the #! and it immediately tells the shell (which is reading the script) what type of syntax, to use, and where to find this shell at.<br/>
+
+99% of the time, if you're writing a script for yourself, you will put your local shell here. If you want to know what your local shell you can type "<code class="codeInput"><strong>echo $SHELL</strong></code>" and it will echo something like "<code class="codeInput"><strong>/bin/bash</strong></code>" or "<code class="codeInput"><strong>/usr/bin/bash</strong></code>". You can put this at line 1 in your script then continue on.<br/>
+
+Next you need to know how to do something that is very important, and that separates good code form bad code.<br/>
+
+<h3>COMMENTS!!</h3>
+
+Anything that starts with a <code class="codeInput">#</code> and the 2nd character is not a <code class="codeInput">!</code> will be ignored by the shell.<br/>
+
+This is a good time and place to add little notes to yourself, or notes to anyone who might read your script.<br/>
+
+Even if you don't think ANYONE else will EVER read your script, you should still leave yourself a note, on what the purpose of this script is, or at least every few lines break out what you're doing.<br/>
+
+Just wrote a big loop? Add a comment to explain what you wrote.<br/>
+
+Why should you comment, even if it's only you that will ever look at this code? I can think of 2 good reasons.<br/>
+
+1) You will make this 1 script, and for the next 2 years you will drag it from upgrade to upgrade even when you switch to a different distro, you will keep this little handy script along and it will always work.<br/>
+
+Then one day, it stops working! OH-NO! What should you do now? Well, you made it, you can fix it too right! The error says that line 14 is throwing an error that is unexpected.<br/>
+
+So you fire up vi, and you open the script and you look at line 14, and its a long if loop that makes absolutely no sense to you, and you have no idea what the hell you are reading! Then you might think, man, I wish I would have put some kind of easily human readable part here, so that I could understand what I wrote...<br/>
+
+2) You write-up this script, you fall in love with bash scripting, and you quickly continue up till you have your own <code class="codeInput">~/bin dir</code> and its even in your path so you can reference the scripts from anywhere in your computer no issues.<br/>
+
+Then again, 1 day, line 57 decides to no longer work on one of those old tried and true scripts. You open it up in your trusty vi and you see complete spaghetti code, Your using multiple <code class="codeInput">mkdir</code>'s instead of a <code class="codeInput">mkdir -p</code>, you have random print statements for no reason at all, and you used some old girl friends name as a variable in a few places.<br/>
+
+You cant seem to figure out what you were thinking when you wrote this crap and you spend longer trying to dice it all apart to fix line 57 then it would have taken you to re-write the whole thing from scratch!<br/>
+
+<h4>From here, you have a giant list of stuff you can do or dabble in.</h4>
+
+We have several types of loops, which I plan to go onto next<br/>
+
+We need to understand how you can use the loops in different ways, so you can have several types of "<code class="codeInput">if</code>" loops for example. "<code class="codeInput">if</code>" loops can be used for more than just checking if a value is less than another value and do something while that happens. This and more will be covered in the articles to come.<br/>

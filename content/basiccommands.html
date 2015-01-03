@@ -7,7 +7,7 @@ These are just a small subset of the total number of commands you need to know i
 
 <ol>
 	<li><a href="#cd">cd - Change Directory</a></li>
-	<li><a href="#ls">ls - List Directorys</a></li>
+	<li><a href="#ls">ls - List Directory's</a></li>
 	<li><a href="#man">man(ual) pages</a></li>
 	<li><a href="#mkdir">mkdir - Make Directory</a></li>
 	<li><a href="#rmdir">rmdir - Remove Directory</a></li>
@@ -32,30 +32,30 @@ Ok, so the links above link directly to each of the commands below for easier ac
 <h3><strong id="cd"><em>cd</em></strong><br/></h3>
 <p>
 cd is use to "Change Directory"<br/>
-You can also use "cd" to go back to your "home" if you just type "cd" and press enter. This is the same as typeing "<code class="codeInput">cd ~</code>" or typeing "<code class="codeInput">cd ~/home/userid</code>"<br/>
+You can also use "cd" to go back to your "home" if you just type "cd" and press enter. This is the same as typeing "<code class="codeInput">cd ~</code>" or typing "<code class="codeInput">cd ~/home/userid</code>"<br/>
 If you want to go back to the directory you came from, you can type <code class="codeInput">cd -</code><br/>
-You have to pass cd a parameter inorder for it to know where you want to change directory to.<br/>
+You have to pass cd a parameter in order for it to know where you want to change directory to.<br/>
 Use: <br/>
 <code class="codeInput">cd /</code> will take you to the root directory of the system.<br/>
 <code class="codeInput">cd ../</code> will take you back 1 directory<br/>
-<code class="codeInput">cd ../../../../</code> will take you back 4 directorys (you can do this as few or as many times as you need)<br/>
+<code class="codeInput">cd ../../../../</code> will take you back 4 directory's (you can do this as few or as many times as you need)<br/>
 <code class="codeInput">cd ~/git</code> will take you to a folder called "git" inside of your home directory.<br/>
-You can also go back, then forward into a directory <code class="codeInput">cd ../../git/project</code> will go backwards 2 directorys, then forwards a directory.<br/>
+You can also go back, then forward into a directory <code class="codeInput">cd ../../git/project</code> will go backwards 2 directory's, then forwards a directory.<br/>
 </p>
 <hr width="50%">
 
 <h3><strong id="ls"><em>ls</em></strong><br/></h3>
 <p>
-ls stands for "list" and is used to "list directorys"<br/>
-As strange as this command looks, it will be esential to know both ls and cd. Knowning some of the "flags" for ls will make your life easier!<br/>
+ls stands for "list" and is used to "list directory's"<br/>
+As strange as this command looks, it will be essential to know both ls and cd. Knowing some of the "flags" for ls will make your life easier!<br/>
 Use:<br>
-<code class="codeInput">ls</code> - This simply lists all of the directorys and files in 1 long line, if it runs off screen, it stars over at the left and keeps going. This is useful but sometimes you need more info. <br/>
+<code class="codeInput">ls</code> - This simply lists all of the directory's and files in 1 long line, if it runs off screen, it stars over at the left and keeps going. This is useful but sometimes you need more info. <br/>
 <code class="codeInput">ls -a</code> - This will show "all" files and folders. Mainly used to show "hidden" files.<br/>
 <code class="codeInput">ls -l</code> - This will show a "long" format for all files, it shows owner, permissions, modified date, and size of the file<br/>
 <code class="codeInput">ls -al</code> - "list all long" will show all files in "long" format.<br/>
-<code class="codeInput">ls -d</code> - You have to provide a name for this one, its mainly useful if your in a place with a lot of directorys, and you need to find a certain subset of those folders. Example: <code class="codeInput">ls -d *project*</code> this will list all folders with the word "project" in the name. The wild card is optional. <br/>
-<code class="codeInput">ls -hl</code> - This one stands for "human readable" which sounds a little strange. You only ever use this one with "l" or it wont even make a difference. This will turn the "size" section of the "long" listing to use "human readable" sizes. So instead of 1024 it will say 1k for kilabytes, or instead of 6291456 it will say 6M for megabytes.<br/>
-<code class="codeInput">ls -lhart</code> - This is a command I like to use. It does a "long" listing of "all" directorys with human readable size, and it uses "reverse time" to sort them all out. This is nice because the most recently updated file will be on the bottom of the list. <br/>
+<code class="codeInput">ls -d</code> - You have to provide a name for this one, its mainly useful if your in a place with a lot of directory's, and you need to find a certain subset of those folders. Example: <code class="codeInput">ls -d *project*</code> this will list all folders with the word "project" in the name. The wild card is optional. <br/>
+<code class="codeInput">ls -hl</code> - This one stands for "human readable" which sounds a little strange. You only ever use this one with "l" or it wont even make a difference. This will turn the "size" section of the "long" listing to use "human readable" sizes. So instead of 1024 it will say 1k for kilobytes, or instead of 6291456 it will say 6M for megabytes.<br/>
+<code class="codeInput">ls -lhart</code> - This is a command I like to use. It does a "long" listing of "all" directory's with human readable size, and it uses "reverse time" to sort them all out. This is nice because the most recently updated file will be on the bottom of the list. <br/>
 </p>
 <hr width="50%">
 

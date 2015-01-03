@@ -19,20 +19,20 @@ They are called this because they "loop" or iterate though data or instructions 
 <p>
 As explained above, loops iterate over data until they are false, an if loop checks every things its given 1 time to see if its true or not. If it is true then it preforms an action on the data, if its false then it passes over it.<br/>
 
-If loops consist of 5 manditory parts, and 2 optional parts.<br/>
+If loops consist of 5 mandatory parts, and 2 optional parts.<br/>
 <ol>
 	<li>They always opens with the word "if"</li>
-	<li>Then a statement that has to qualify to true<sup><sup>1</sup></sup> inside of brakets []<sup><sup>2</sup></sup></li>
-	<li>The word "then" with a simicolon<sup><sup>3</sup></sup></li>
+	<li>Then a statement that has to qualify to true<sup><sup>1</sup></sup> inside of brackets []<sup><sup>2</sup></sup></li>
+	<li>The word "then" with a semicolon<sup><sup>3</sup></sup></li>
 	<li>A command to preform if the statement is true</li>
-	<li>A closeing "fi" (which is "if" backwards)</li>
+	<li>A closing "fi" (which is "if" backwards)</li>
 </ol>
-<h6><sup>1</sup> Only has to be true if you dont use an else(below)<br/>
-<sup>2</sup> The brakets are used to say "inside of here needs to be true or false"<br/>
-<sup>3</sup> Simicolon is only needed if you dont put it on a new line (example below)</h6>
+<h6><sup>1</sup> Only has to be true if you don't use an else(below)<br/>
+<sup>2</sup> The brackets are used to say "inside of here needs to be true or false"<br/>
+<sup>3</sup> Semicolon is only needed if you don't put it on a new line (example below)</h6>
 An example of that would look like this:<br/><br/>
 
-With a simicolon:<br/>
+With a semicolon:<br/>
 <code class="codeInput">
 A = 1<br/>
 B = 2<br/>
@@ -41,7 +41,7 @@ if [ $A &lt; $B ] then;<br/>
 fi<br/><br/>
 </code>
 
-Without a simicolon:<br/>
+Without a semicolon:<br/>
 <code class="codeInput">
 A = 11<br/>
 B = 2<br/>
@@ -58,7 +58,7 @@ fi<br/><br/>
 What I mean by that is <em>"if a is less then b, then tell me a is less then b, but if a is not less then b, then tell me a is greater then b"</em><br/>
 The part about "but if a is not less then b then..." can be shortened down to just "else". Let me show you!<br/><br/>
 
-With a simicolon:<sup><sup>4</sup></sup><br/>
+With a semicolon:<sup><sup>4</sup></sup><br/>
 <code class="codeInput">
 A = 3<br/>
 B = 2<br/>
@@ -69,7 +69,7 @@ else<br>
 fi<br/><br/>
 </code>
 
-Without a simicolon:<br/>
+Without a semicolon:<br/>
 <code class="codeInput">
 A = 15<br/>
 B = 20<br/>
@@ -80,7 +80,7 @@ else<br>
 &Tab;echo "A is greater then B"<br/>
 fi
 </code>
-<h6><sup>4</sup> I will use both methods interchangably, and I will not be doing both anymore.</h6>
+<h6><sup>4</sup> I will use both methods interchangeably, and I will not be doing both anymore.</h6>
 </p>
 
 <p>
@@ -90,9 +90,9 @@ I then ask "If A is less then B, I want you to tell me that A is less then B." b
 Then your good, you tell me that 1 is less then 2.<br/>
 But what if i tell you A is equal to 10, and B is equal to 2.<br/>
 Then again, I ask "If A is less then B, I want you to tell me that A is less then B"<br/>
-Ok, but you cant say anything to me, because I didnt tell you what to do if A is not less then B, so you would just sit there and do nothing.<br/>
+Ok, but you cant say anything to me, because I didn't tell you what to do if A is not less then B, so you would just sit there and do nothing.<br/>
 If I had given you a 2nd set of instructions, saying "But if anything else happens, just tell me that A is greater then B"<br/>
-That is the equivilent of an "else". Its kind of a "catch all". If the above isnt true, then do <strong>this</strong> to everything <strong><em>else</em></strong>.<br/>
+That is the equivalent of an "else". Its kind of a "catch all". If the above isn't true, then do <strong>this</strong> to everything <strong><em>else</em></strong>.<br/>
 </p>
 
 <p>
@@ -113,7 +113,7 @@ else<br/>
 fi<br/><br/>
 </code>
 
-We can simplify this even further by useing a little thing called "or" which is showing in sh as "||" (the symbol commonly above the enter key, and is known as a "pipe" in unix, 2 times).<br/><br/>
+We can simplify this even further by using a little thing called "or" which is showing in sh as "||" (the symbol commonly above the enter key, and is known as a "pipe" in UNIX, 2 times).<br/><br/>
 
 <code class="codeInput">
 A = -10<br/>
@@ -136,15 +136,15 @@ A variable is a single word or symbol that holds a value that is given to it by 
 So if I say <code class="codeInput">A=100</code>. Then later i say <code class="codeInput">echo $A</code> it will say <code class="codeOutput">100</code>.<br/>
 So you should have noticed, when I was assigning the value of 100 to the letter A, I used "A" but when I called on the variable to find out the value I used "$A". This is simply so that if I assign the number "100" to the letter A, and then I type <code class="codeInput">echo "Tell Me A Joke"</code>, it wont reply <code class="codeOutput">Tell Me 100 Joke</code><br/>
 Just to be through, you can assign anything to a variable, not just numbers, and a variable can be more then 1 letter.<br/>
-So you can say <code class="codeInput">NAME=Chase</code>, then if you <code class="codeInput">echo $NAME</code>, it will say <code class="codeOutput">Chase</code> or you can give a variable the value of a command. But that needs special characters sourounding it. Example:<br>
+So you can say <code class="codeInput">NAME=Chase</code>, then if you <code class="codeInput">echo $NAME</code>, it will say <code class="codeOutput">Chase</code> or you can give a variable the value of a command. But that needs special characters surrounding it. Example:<br>
 <code class="codeInput">SEARCHRESULTS=`find ~ -iname *.sh`</code><br>
-Then if you <code class="codeInput">echo $SEARCHRESULTS</code> it will return everyfile under your home directory that ended in .sh (if there was none, it might appear to not have worked)<br/>
-Please note that after the equal's symbol i have a "`" which is not a single quote, it is usually known as a "back-tick", it is located (on most keyboards) on the same key as the ~, which is in the top left, but below the ESC key. <br/>
+Then if you <code class="codeInput">echo $SEARCHRESULTS</code> it will return every file under your home directory that ended in .sh (if there was none, it might appear to not have worked)<br/>
+Please note that after the equals symbol i have a "`" which is not a single quote, it is usually known as a "back-tick", it is located (on most keyboards) on the same key as the ~, which is in the top left, but below the ESC key. <br/>
 
 <h3>So lets make a script!</h3>
 
-Lets make a quick directory just for the purpose of doing the quizes and challenges.<br/>
-If you havnt already done so, please make a dir in your home directory just for these scripts, if you dont want to use what I provide, thats fine, just substitute as needed.<br/>
+Lets make a quick directory just for the purpose of doing the quizzes and challenges.<br/>
+If you haven't already done so, please make a dir in your home directory just for these scripts, if you don't want to use what I provide, thats fine, just substitute as needed.<br/>
 <code class="codeInput">mkdir ~/quizzes &amp;&amp; cd ~/quizzes</code><br/>
 From here lets create a script called ifloop.sh like this <code class="codeInput">vim ifloop.sh</code> (please note this it is optional to use vi/m). <br/>
 <br/>
@@ -168,23 +168,23 @@ Now I want you, the reader, to take it from here!<br/>
 	<li>If that fails, it should check if B is less then A</li>
 	<li>Echo that B is less then A</li>
 	<li>If all else fails say that C is greater then B and A</li>
-	<li>Make sure that when you echo, you show the values of the varialbes, not the variables them selves</li>
+	<li>Make sure that when you echo, you show the values of the variables, not the variables them selves</li>
 </ol>
 <h3>Extra Credit!</h3>
 <ul>
 	<li>Once you have the above completed:</li>
-	<li>Research the "read" command, it is ment for takeing input from the user's keyboard</li>
+	<li>Research the "read" command, it is meant for taking input from the user's keyboard</li>
 		<ol>
-			<li>Prompt the user for the values of A, B, and C instead of hard codeing them</li>
-			<li>Try differnt combos to make sure it out puts the correct response everytime.</li>
+			<li>Prompt the user for the values of A, B, and C instead of hard coding them</li>
+			<li>Try different combos to make sure it out puts the correct response every time.</li>
 			<li>What happens when one of the values is 0?</li>
 			<li>What happens when one of the values is -1?</li>
 			<li>What happens when one of the values are 100000000?</li>
-			<li>Can you think of a way to to make sure that the values are always numbers? What if the user input "ABCDEFG" instead of "12345"? Can you check the input to makesure that they gave you a number? (the answer is yes, you can, go figure out how!)</li>
+			<li>Can you think of a way to to make sure that the values are always numbers? What if the user input "ABCDEFG" instead of "12345"? Can you check the input to make sure that they gave you a number? (the answer is yes, you can, go figure out how!)</li>
 		</ol>
 </ul>
 
 A few helpful external links:<br/>
 <a href="http://www.shellcheck.net/">Shell Check</a><br/>
 <a href="http://explainshell.com/">Explain Shell</a><br/>
-<a href="http://wiki.bash-hackers.org/commands/classictest#file_tests">CLI Tests</a><br/>
+<a href="http://wiki.bash-hackers.org/commands/classictest#file_tests">CLI Tests</a><br/>http://www.shellcheck.net/

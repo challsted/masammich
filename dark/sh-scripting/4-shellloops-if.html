@@ -9,24 +9,24 @@
     <meta name="author" content="Chase Hallsted">
 	<title>SH Loops "if"</title>
 	<!-- Bootstrap Core CSS -->
-    <link type="text/css" rel="stylesheet" href="../css/bootstrap.dark.css">
+    <link type="text/css" rel="stylesheet" href="../../css/bootstrap.dark.css">
     <!-- Custom CSS -->
-    <link type="text/css" rel="stylesheet" href="../css/clean-blog.dark.css">
-    <link type="text/css" rel="stylesheet" href="../css/custom.css">
+    <link type="text/css" rel="stylesheet" href="../../css/clean-blog.dark.css">
+    <link type="text/css" rel="stylesheet" href="../../css/custom.css">
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <!-- Custom Favicon -->
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script>
 		$(function(){
-			$('#header').load('../content/header.html');
-			$('#footer').load('../content/footer.html');
-			$('#content').load('../content/shellloops-if.html');
-			$('#list').load('../content/lesson-list.html');
+			$('#header').load('../../content/header.html');
+			$('#footer').load('../../content/footer.html');
+			$('#content').load('../../content/shellloops-if.html');
+			$('#list').load('../../content/lesson-list.html');
 		});
 	</script>
 	<script>
@@ -54,7 +54,7 @@
 <body>
     <div id="header"></div>
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('../img/header.png')">
+    <header class="intro-header" style="background-image: url('../../img/header.png')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 col-md-12">
@@ -73,7 +73,196 @@
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1 col-md-12">
             	<div id="list"></div><!-- This pulls in the list for the lessons -->
-				<div id="content"></div><!-- This is where the content is pulled in -->
+				<h2>If Loops!</h2>
+
+<h3>Types of loops</h3>
+
+There are several types of loops, and each type has a different purpose, we will be covering the following types of loops.
+
+<ul>
+	<li><a href="shellloops-if.html">if</a></li>
+	<li><a href="shellloops-while.html">while</a></li>
+	<li><a href="shellloops-for.html">for</a></li>
+</ul>
+
+<h3>What is a "loop"?</h3>
+<p>
+They are called this because they "loop" or iterate though data or instructions until they are no longer true. To be able to understand what I mean by "until they are no longer true", you must understand what is known as "Boolean Logic". Boolean logic (very simplified) is a "true or false" "1 or 0", basically, its always one way or the other.<br/>
+</p>
+
+<h3>What is an "if" loop?</h3>
+<p>
+As explained above, loops iterate over data until they are false, an if loop checks every things its given 1 time to see if its true or not. If it is true then it preforms an action on the data, if its false then it passes over it.<br/>
+
+If loops consist of 5 mandatory parts, and 2 optional parts.<br/>
+<ol>
+	<li>They always opens with the word "if"</li>
+	<li>Then a statement that has to qualify to true<sup><sup>1</sup></sup> inside of brackets []<sup><sup>2</sup></sup></li>
+	<li>The word "then" with a semicolon<sup><sup>3</sup></sup></li>
+	<li>A command to preform if the statement is true</li>
+	<li>A closing "fi" (which is "if" backwards)</li>
+</ol>
+<h6><sup>1</sup> Only has to be true if you don't use an else(below)<br/>
+<sup>2</sup> The brackets are used to say "inside of here needs to be true or false"<br/>
+<sup>3</sup> Semicolon is only needed if you don't put it on a new line (example below)</h6>
+An example of that would look like this:<br/><br/>
+
+With a semicolon:<br/>
+<code class="codeInput">
+A = 1<br/>
+B = 2<br/>
+if [ $A &lt; $B ] then;<br/>
+&Tab;echo "A is less then B"<br/>
+fi<br/><br/>
+</code>
+
+Without a semicolon:<br/>
+<code class="codeInput">
+A = 11<br/>
+B = 2<br/>
+if [ $A &lt; $B ]<br/>
+then<br/>
+&Tab;echo "A is less then B"<br/>
+fi<br/><br/>
+</code>
+</p>
+
+<h4>What about those optional parts?</h4>
+<p>
+<strong>else</strong> is the first optional piece, else has a cool effect on an if loop, it can make it take more data then it would normally be able to.<br/>
+What I mean by that is <em>"if a is less then b, then tell me a is less then b, but if a is not less then b, then tell me a is greater then b"</em><br/>
+The part about "but if a is not less then b then..." can be shortened down to just "else". Let me show you!<br/><br/>
+
+With a semicolon:<sup><sup>4</sup></sup><br/>
+<code class="codeInput">
+A = 3<br/>
+B = 2<br/>
+if [ $A &lt; $B ] then;<br/>
+&Tab;echo "A is less then B"<br/>
+else<br>
+&Tab;echo "A is greater then B"<br/>
+fi<br/><br/>
+</code>
+
+Without a semicolon:<br/>
+<code class="codeInput">
+A = 15<br/>
+B = 20<br/>
+if [ $A &lt; $B ]<br/>
+then<br/>
+&Tab;echo "A is less then B"<br/>
+else<br>
+&Tab;echo "A is greater then B"<br/>
+fi
+</code>
+<h6><sup>4</sup> I will use both methods interchangeably, and I will not be doing both anymore.</h6>
+</p>
+
+<p>
+How did it do that? Think of it like this.<br/>
+I give you the following instructions: A is equal to 1, and B is equal to 2.<br/>
+I then ask "If A is less then B, I want you to tell me that A is less then B." but i give you no other instructions. <br/>
+Then your good, you tell me that 1 is less then 2.<br/>
+But what if i tell you A is equal to 10, and B is equal to 2.<br/>
+Then again, I ask "If A is less then B, I want you to tell me that A is less then B"<br/>
+Ok, but you cant say anything to me, because I didn't tell you what to do if A is not less then B, so you would just sit there and do nothing.<br/>
+If I had given you a 2nd set of instructions, saying "But if anything else happens, just tell me that A is greater then B"<br/>
+That is the equivalent of an "else". Its kind of a "catch all". If the above isn't true, then do <strong>this</strong> to everything <strong><em>else</em></strong>.<br/>
+</p>
+
+<p>
+<strong>elif</strong> which is a combination of the words "else and if" acts as both an else statement and an if statement, and is the last optional thing you can add to an if statement. An elif must have an else statement also.<br/>
+Here is an example if, elif, else:<br/><br/>
+
+<code class="codeInput">
+A = 0<br/>
+B = 8<br/>
+if [ $A &lt; $B ] then;<br/>
+&Tab;echo "A is less then B"<br/>
+elif [ $A == 0 ] then;<br/>
+&Tab;echo "A is equal to 0"<br/>
+elif [ $B == 0 ] then;<br/>
+&Tab;echo "B is equal to 0"<br/>
+else<br/>
+&Tab;echo "A is greater then B"<br/>
+fi<br/><br/>
+</code>
+
+We can simplify this even further by using a little thing called "or" which is showing in sh as "||" (the symbol commonly above the enter key, and is known as a "pipe" in UNIX, 2 times).<br/><br/>
+
+<code class="codeInput">
+A = -10<br/>
+B = 8<br/>
+if [ $A &lt; $B ] then;<br/>
+&Tab;echo "A is less then B"<br/>
+elif [ $A == 0 || $B == 0 ] <br/>
+&Tab;echo "One of the numbers is 0"<br/>
+else<br/>
+&Tab;echo "A is greater then B"<br/>
+fi<br/><br/>
+</code>
+
+Both of the above will check if A or B is equal to 0, and if A is not less then B and neither number is equal to 0, then it assumes that A is greater then B (pretty good chances at this point).<br/>
+</p>
+
+<h3>$VARIABLES</h3>
+Lets take a quick second to explain what Variables are.<br/>
+A variable is a single word or symbol that holds a value that is given to it by you or by the script.<br/>
+So if I say <code class="codeInput">A=100</code>. Then later i say <code class="codeInput">echo $A</code> it will say <code class="codeOutput">100</code>.<br/>
+So you should have noticed, when I was assigning the value of 100 to the letter A, I used "A" but when I called on the variable to find out the value I used "$A". This is simply so that if I assign the number "100" to the letter A, and then I type <code class="codeInput">echo "Tell Me A Joke"</code>, it wont reply <code class="codeOutput">Tell Me 100 Joke</code><br/>
+Just to be through, you can assign anything to a variable, not just numbers, and a variable can be more then 1 letter.<br/>
+So you can say <code class="codeInput">NAME=Chase</code>, then if you <code class="codeInput">echo $NAME</code>, it will say <code class="codeOutput">Chase</code> or you can give a variable the value of a command. But that needs special characters surrounding it. Example:<br>
+<code class="codeInput">SEARCHRESULTS=`find ~ -iname *.sh`</code><br>
+Then if you <code class="codeInput">echo $SEARCHRESULTS</code> it will return every file under your home directory that ended in .sh (if there was none, it might appear to not have worked)<br/>
+Please note that after the equals symbol i have a "`" which is not a single quote, it is usually known as a "back-tick", it is located (on most keyboards) on the same key as the ~, which is in the top left, but below the ESC key. <br/>
+
+<h3>So lets make a script!</h3>
+
+Lets make a quick directory just for the purpose of doing the quizzes and challenges.<br/>
+If you haven't already done so, please make a dir in your home directory just for these scripts, if you don't want to use what I provide, thats fine, just substitute as needed.<br/>
+<code class="codeInput">mkdir ~/quizzes &amp;&amp; cd ~/quizzes</code><br/>
+From here lets create a script called ifloop.sh like this <code class="codeInput">vim ifloop.sh</code> (please note this it is optional to use vi/m). <br/>
+<br/>
+From inside of this script, you need to open up with a shebang and a comment like this <code class="codeInput">#!/bin/sh</code>, <code class="codeInput">#Lesson 2 Challenge 1</code> then lets create 3 variables. <code class="codeInput">A=1</code>, <code class="codeInput">B=10</code>, <code class="codeInput">C=100</code>. Your script should look something like this:<br/>
+<br/>
+<code class="codeInput">
+#!/bin/sh<br/>
+#Lesson 2 Challenge 1<br/>
+A=1<br/>
+B=10<br/>
+C=100<br/>
+</code><br/>
+<br/>
+
+Now I want you, the reader, to take it from here!<br/>
+<ol>
+	<li>Create a if loop, that checks if C is less then A.</li>
+	<li>Echo that C is greater then A</li>
+	<li>If that fails, it should check if C is less then B</li>
+	<li>Echo that C is less then B if so</li>
+	<li>If that fails, it should check if B is less then A</li>
+	<li>Echo that B is less then A</li>
+	<li>If all else fails say that C is greater then B and A</li>
+	<li>Make sure that when you echo, you show the values of the variables, not the variables them selves</li>
+</ol>
+<h3>Extra Credit!</h3>
+<ul>
+	<li>Once you have the above completed:</li>
+	<li>Research the "read" command, it is meant for taking input from the user's keyboard</li>
+		<ol>
+			<li>Prompt the user for the values of A, B, and C instead of hard coding them</li>
+			<li>Try different combos to make sure it out puts the correct response every time.</li>
+			<li>What happens when one of the values is 0?</li>
+			<li>What happens when one of the values is -1?</li>
+			<li>What happens when one of the values are 100000000?</li>
+			<li>Can you think of a way to to make sure that the values are always numbers? What if the user input "ABCDEFG" instead of "12345"? Can you check the input to make sure that they gave you a number? (the answer is yes, you can, go figure out how!)</li>
+		</ol>
+</ul>
+
+A few helpful external links:<br/>
+<a href="http://www.shellcheck.net/">Shell Check</a><br/>
+<a href="http://explainshell.com/">Explain Shell</a><br/>
+<a href="http://wiki.bash-hackers.org/commands/classictest#file_tests">CLI Tests</a><br/>http://www.shellcheck.net/
 				<ul class="pager">
 					<li class="previous"><a href="3-lesson1.html">Previous - EoL 1 Questions</a></li>
 					<li class="next"><a href="5-shellloops-while.html">Next - while Loops</a></li>
@@ -96,10 +285,10 @@
     <!-- Footer -->
     <div id="footer"></div>
     <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
+    <script src="../../js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="../js/clean-blog.min.js"></script>
+    <script src="../../js/clean-blog.min.js"></script>
 </body>
 </html>

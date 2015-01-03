@@ -9,24 +9,24 @@
     <meta name="author" content="Chase Hallsted">
 	<title>Start Scripting</title>
 	<!-- Bootstrap Core CSS -->
-    <link type="text/css" rel="stylesheet" href="../css/bootstrap.dark.css">
+    <link type="text/css" rel="stylesheet" href="../../css/bootstrap.dark.css">
     <!-- Custom CSS -->
-    <link type="text/css" rel="stylesheet" href="../css/clean-blog.dark.css">
-    <link type="text/css" rel="stylesheet" href="../css/custom.css">
+    <link type="text/css" rel="stylesheet" href="../../css/clean-blog.dark.css">
+    <link type="text/css" rel="stylesheet" href="../../css/custom.css">
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <!-- Custom Favicon -->
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script>
 		$(function(){
-			$('#header').load('../content/header.html');
-			$('#footer').load('../content/footer.html');
-			$('#content').load('../content/startscripting.html');
-			$('#list').load('../content/lesson-list.html');
+			$('#header').load('../../content/header.html');
+			$('#footer').load('../../content/footer.html');
+			$('#content').load('../../content/startscripting.html');
+			$('#list').load('../../content/lesson-list.html');
 		});
 	</script>
 	<script>
@@ -52,7 +52,7 @@
 <body>
     <div id="header"></div>
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('../img/header.png')">
+    <header class="intro-header" style="background-image: url('../../img/header.png')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 col-md-12">
@@ -71,7 +71,59 @@
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1 col-md-12">
             	<div id="list"></div><!-- This pulls in the list for the lessons -->
-				<div id="content"></div><!-- This is where the content is pulled in -->
+				<h2>Writing Your First Script</h2>
+				Every good script has a few sections to it:<br/>
+				<ul>
+					<li><a href="#shebang">SheBang(#!)</a></li>
+					<li><a href="#comments">Comments</a></li>
+					<li>Logic</li>
+				</ul>
+
+				A shell script always starts out with what is known as a <strong id="shebang"><a href="https://en.wikipedia.org/wiki/Shebang_%28Unix%29">SheBang</a> </strong>, then a series of characters which tells the shell that is reading the script how to read it.<br/>
+				This might sound kind of strange to you, but Ill do my best to explain this. 
+
+				If you type "echo $SHELL" into your terminal, more then likely you will see 
+				"<code class="codeOutput">/bin/bash/</code>" or "<code class="codeOutput">/usr/bin/bash</code>" spit back out at you. This is normal, and if you get something else its ok too, as long as its not an error or nothing at all.<br/>
+
+				What this means is that you are in the "BAShell" which stands for "Bourn Again Shell" (sh stands for shell in this case).</br>
+
+				But the purpose of this article is not to write "Bash" scripts, its to write "Shell" scripts. If your goal is to learn "bash" or "ksh" or something similar, then this is where you need to start. Bash takes SH and builds on top of it to give it more features and better syntax. If you learn basic shell scripting, you can run these scripts on almost any Linux/Unix Box. Then if you want to start using the extra features of BASH, you will already have the basic knowledge, and all you will need is the special "sugar" that bash provides.<br/>
+
+				So, the main thing you will see as the top line of every script (well, you SHOULD always see this as the top line) is something like:<br/>
+
+				<code class="codeInput">#!/bin/sh</code>&lt;-- I recommend you use this one for everything we discuss here, unless specified otherwise.<br/>
+
+				<code class="codeInput">#!/bin/bash</code><br/>
+
+				<code class="codeInput">#!/bin/ksh</code><br/>
+
+				<code class="codeInput">#!/local/bin/bash</code><br/>
+
+				<code class="codeInput">#!/bin/zsh</code><br/>
+
+				<code class="codeInput">#!/usr/bin/ksh</code><br/>
+
+				<br/>
+				CAUTION: If you happen to run your script, and it says that it is not able to find /bin/sh. Please type "which sh" into your terminal, it will output a location to "sh" please use that at the top of your scripts. <br/><br/>
+
+				Next you need to know how to do something that is very important, and that separates good code form bad code.<br/>
+
+				<strong id="comments">COMMENTS!!</strong>
+
+				Anything that starts with a <code class="codeInput">#</code> and the 2nd character is not a <code class="codeInput">!</code> will be ignored by the shell.<br/>
+
+				This is a good time and place to add little notes to yourself, or notes to anyone who might read your script.<br/>
+
+				Some good times to write notes are:<br>
+
+				<ul>
+					<li>It is highly encouraged to open your script with a few details like what is the purpose of the script?, who made it (your name), when you last updated it(date), or even some kind of a version number.</li>
+					<li>Just wrote a big loop? Add a comment to explain what you wrote.</li>
+					<li>Even if you don't think ANYONE else will EVER read your script, you should still leave yourself a note, because its very likely, that one day you will look though the script again, and it would be nice if you could read a few simple notes/comments and know what it is for!</li>
+				</ul>
+
+				<strong>Logic</strong> will be covered starting in lesson 2. We need to understand basic commands first.<br/>
+
 				<ul class="pager">
 					<li class="previous"><a href="0-learnscripting-intro.html">Previous - Intro</a></li>
 					<li class="next"><a href="2-basiccommands.html">Next - Basic Commands</a></li>
@@ -94,10 +146,10 @@
     <!-- Footer -->
     <div id="footer"></div>
     <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
+    <script src="../../js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="../js/clean-blog.min.js"></script>
+    <script src="../../js/clean-blog.min.js"></script>
 </body>
 </html>

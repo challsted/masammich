@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<meta name="description" content="A homegrown blog about Linux and Learning">
+    <meta name="author" content="Chase Hallsted">
+	<title>Start Scripting</title>
+	<!-- Bootstrap Core CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap-dark.css">
+    <!-- Custom CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/clean-blog-dark.css">
+    <link type="text/css" rel="stylesheet" href="../css/custom.css">
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Custom Favicon -->
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		$(function(){
+			$('#header').load('../content/header.html');
+			$('#footer').load('../content/footer.html');
+		});
+	</script>
+	<script>
+		jQuery(document).ready(function() {
+		    var offset = 220;
+		    var duration = 500;
+		    jQuery(window).scroll(function() {
+		        if (jQuery(this).scrollTop() > offset) {
+		            jQuery('.back-to-top').fadeIn(duration);
+		        } else {
+		            jQuery('.back-to-top').fadeOut(duration);
+		        }
+		    });
+		    
+		    jQuery('.back-to-top').click(function(event) {
+		        event.preventDefault();
+		        jQuery('html, body').animate({scrollTop: 0}, duration);
+		        return false;
+		    })
+		});
+	</script>
+</head>
+<body>
+    <div id="header"></div>
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('../img/header.png')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 col-md-12">
+                    <div class="site-heading">
+                        <h1 class="textoutline" style="color: white">Beginner Scripting</h1>
+                        <hr class="small">
+                        <span class="subheading textoutline">This is part one of my start Shell Scripting Guide!</span>
+                        <span class="subheading textoutline">If you have never written a script, this is a place to start</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 col-md-12">
+            	<ul>
+					<li><a href="0-learnscripting-intro.html">Introduction</a></li>
+				    <li>Lesson 1</li>
+				    <ol>
+					    <li><a href="1-startscripting.html">Part 1: Start Scripting</a></li>
+					    <li><a href="2-basiccommands.html">Part 2: Bassic Commands</a></li>
+					    <li><a href="3-lesson1.html">Part 3: Lesson 1 Finals</a></li>
+					 </ol>
+				    <li>Lesson 2</li>
+				    <ol>
+					    <li><a href="4-shellloops-if.html">Part 1: Shell Loops "if"</a></li>
+					    <li><a href="5-shellloops-while.html">Part 2: Shell Loops "while"</a></li>
+					    <li><a href="6-shellloops-for.html">Part 3: Shell Loops "for"</a></li>
+					    <li><a href="7-lesson2.html">Part 4: Lesson 2 Finals</a></li>
+				    </ol>
+				</ul>
+				<h2>Writing Your First Script</h2>
+				Every good script has a few sections to it:<br/>
+				<ul>
+					<li><a href="#shebang">SheBang(#!)</a></li>
+					<li><a href="#comments">Comments</a></li>
+					<li>Logic</li>
+				</ul>
+
+				A shell script always starts out with what is known as a <strong id="shebang"><a href="https://en.wikipedia.org/wiki/Shebang_%28Unix%29">SheBang</a> </strong>, then a series of characters which tells the shell that is reading the script how to read it.<br/>
+				This might sound kind of strange to you, but Ill do my best to explain this. 
+
+				If you type "echo $SHELL" into your terminal, more then likely you will see 
+				"<code class="codeOutput">/bin/bash/</code>" or "<code class="codeOutput">/usr/bin/bash</code>" spit back out at you. This is normal, and if you get something else its ok too, as long as its not an error or nothing at all.<br/>
+
+				What this means is that you are in the "BAShell" which stands for "Bourn Again Shell" (sh stands for shell in this case).</br>
+
+				But the purpose of this article is not to write "Bash" scripts, its to write "Shell" scripts. If your goal is to learn "bash" or "ksh" or something similar, then this is where you need to start. Bash takes SH and builds on top of it to give it more features and better syntax. If you learn basic shell scripting, you can run these scripts on almost any Linux/Unix Box. Then if you want to start using the extra features of BASH, you will already have the basic knowledge, and all you will need is the special "sugar" that bash provides.<br/>
+
+				So, the main thing you will see as the top line of every script (well, you SHOULD always see this as the top line) is something like:<br/>
+
+				<code class="codeInput">#!/bin/sh</code>&lt;-- I recommend you use this one for everything we discuss here, unless specified otherwise.<br/>
+
+				<code class="codeInput">#!/bin/bash</code><br/>
+
+				<code class="codeInput">#!/bin/ksh</code><br/>
+
+				<code class="codeInput">#!/local/bin/bash</code><br/>
+
+				<code class="codeInput">#!/bin/zsh</code><br/>
+
+				<code class="codeInput">#!/usr/bin/ksh</code><br/>
+
+				<br/>
+				CAUTION: If you happen to run your script, and it says that it is not able to find /bin/sh. Please type "which sh" into your terminal, it will output a location to "sh" please use that at the top of your scripts. <br/><br/>
+
+				Next you need to know how to do something that is very important, and that separates good code form bad code.<br/>
+
+				<strong id="comments">COMMENTS!!</strong>
+
+				Anything that starts with a <code class="codeInput">#</code> and the 2nd character is not a <code class="codeInput">!</code> will be ignored by the shell.<br/>
+
+				This is a good time and place to add little notes to yourself, or notes to anyone who might read your script.<br/>
+
+				Some good times to write notes are:<br>
+
+				<ul>
+					<li>It is highly encouraged to open your script with a few details like what is the purpose of the script?, who made it (your name), when you last updated it(date), or even some kind of a version number.</li>
+					<li>Just wrote a big loop? Add a comment to explain what you wrote.</li>
+					<li>Even if you don't think ANYONE else will EVER read your script, you should still leave yourself a note, because its very likely, that one day you will look though the script again, and it would be nice if you could read a few simple notes/comments and know what it is for!</li>
+				</ul>
+
+				<strong>Logic</strong> will be covered starting in lesson 2. We need to understand basic commands first.<br/>
+
+				<ul class="pager">
+					<li class="previous"><a href="0-learnscripting-intro.html">Previous - Intro</a></li>
+					<li class="next"><a href="2-basiccommands.html">Next - Basic Commands</a></li>
+				</ul>
+				<div id="disqus_thread"></div>
+				<script type="text/javascript">
+					var disqus_shortname = 'masammich';
+					(function() {
+						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+						dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					})();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+				<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+			</div>
+		</div>
+	</div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../js/clean-blog.min.js"></script>
+</body>
+</html>

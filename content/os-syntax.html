@@ -1,0 +1,132 @@
+<h2>OS Specific Commands</h2>
+
+<ol>
+	<li><a href="#Ubuntu">Ubuntu Syntax</a></li><!-- Need To Remove this and make it a seperate page -->
+	<li><a href="#arch">Arch Syntax</a></li><!-- Need To Remove this and make it a seperate page -->
+</ol>
+
+<h3><em><strong id="Ubuntu">Ubuntu Syntax</strong></em></h3><br/>
+So Ubuntu, and Ubuntu's offspring &lpar;like Linux Mint&rpar; all share similar syntax when it comes to a lot of the commonly used commands. When I write articles, I usually try to include an Ubuntu source if i can find one so you that use Ubuntu can also play along.<br/>
+
+<em><strong>So before we can start, you need to know 2 things.</strong></em><br/>
+1&rpar; <em>What is "<code class="codeInput">sudo</code>" and why should I always be careful when using it?</em><br/>
+2&rpar; <em>What is "<code class="codeInput">apt-get</code>"?</em><br/>
+
+<em><strong>To answer the first part,</strong></em> sudo is short for "Super User DO". What does that mean? Super user is like an admin, the super user &lpar;known as the root account&rpar; has permissions to do anything to anyones stuff on the whole computer no matter what you say about it &lpar;yes, this can be curbed/thwarted&rpar;. So when you type "sudo" your telling the CLI that the next thing you type &lpar;everything after it&rpar; will be done with super user powers. So "sudo cd .." is kind of dumb, why move backwards a directory using super user powers? But "sudo apt-get install vlc" is necessary due to you telling the computer to use the super user account to install a program called VLC, and that will require system wide changes!<br/>
+So to summarize, "<code class="codeInput">sudo</code>" is simply a short word for when you want to do something, with admin powers, but not use an admin account.<br/>
+
+<em><strong>To answer the second part.</strong></em> "apt-get" is the short name of the "package-manager" in Ubuntu &lpar;well, for Debian based OS's... I'll cover this later&rpar;. "aptitude get" was the original syntax but you can simply type "apt-get" now. "Aptitude" is the full name, your telling aptitude to get whatever package your telling it to. Whether it be to install, remove, or add a repository, it's all done though getting information with aptitude!<br/>
+
+<strong><em>So, now that that's out of the way.</em> </strong><br/>
+
+If you want to install something in Ubuntu, you are going to need to use sudo &lpar;super user do&rpar; powers, you are also going to need to call upon aptitude to get a package, and you are going to need to tell aptitude what to do with that package, and what the name of the package you're looking for is called.
+
+So, lets give it a shot, lets say you want to install "VLC" which is an awesome light weight, open source media player. It supports a lot of different codec's out of the box and just works well on very little resources. You will need to type:<br/>
+<code class="codeInput">sudo apt-get install vlc</code><br/>
+
+Lets go over that really fast again:<br/>
+<code class="codeInput">sudo</code>, we know what that does now kind of, we're using the super user account to do something.<br/>
+<code class="codeInput">apt-get</code>, ok were using the built-in package manager to do something else<br/>
+<code class="codeInput">install</code>, ok, were using aptitude to install..<br/>
+<code class="codeInput">vlc</code>, a package named "vlc"<br/>
+
+Ok, so it asks you for a password! Is it safe to type in your password? What password do you use?<br/>
+You use your local computer password, so if you logged in with the password "fubar" then you use the password "fubar" now.<br/>
+
+<em><strong>OMG A BUNCH OF TEXT!</strong> </em><br/>
+This is perfectly ok and normal, just stay calm, assuming you typed everything ok, and your password was correct, apt-get is now doing all the heavy lifting for you, it's going out, finding the package you requested in its repositories, and it's also looking at the package and asking it what else it needs to install. It then checks your computer, and sees what packages you do not have that the package you requested needs. It then presents to you a "&lpar;Y/n&rpar;?" prompt that is asking you "Do you want to install the above packages? You can enter Y for yes or N for no, or just hit enter, because the "Y" is capital in this prompt, Y is the default. It will then do the heavy lifting again and download and install the package, and all of its dependencies it needs for you. When it's done, it will sit there and wait for the next command you want to give it.<br/>
+
+<strong>So, just for a quick comparison:</strong><br/>
+<strong>In Linux</strong> you opened a terminal, you typed 1 command &lpar;<code class="codeInput">sudo apt-get install vlc</code>&rpar; then typed your password, waited a second or two, hit the enter key to accept the download, then waited again and its done. You now have VLC installed and &lpar;hopefully&rpar; fully functional on your computer!<br/>
+If you were to do this same thing <strong>in windows</strong>, you would have to open a browser, go to your favorite search engine &lpar;or use a search toolbar &lpar;<em>shudder....</em>&rpar; type in "vlc" then using what ever search engine you choose, search though possibly many hundreds of millions of links, hoping that the top result is the one you want. You then look around the website for a "downloads" button or something of that nature, you download it and hope it's not filled with viruses. You then wait for your virus scanner to scan the package for known viruses, you then open up your downloads folder, double-click the vlc.exe icon, next, next, next finish though the install prompt, then open your start menu and you have VLC installed on your computer! <br/>Congratulations!<br/>
+
+See how much simpler this is on Linux??? This is just 1 example, I have more!<br/>
+
+<em><strong>So now lets uninstall a package! </strong></em><br/>
+
+The command is: <code class="codeInput">sudo apt-get remove</code> &lt;package&gt;, so for our example, lets use the vlc package we just installed. You don't have to do this, just as an example.<br/>
+
+<code class="codeInput">sudo apt-get remove vlc</code><br/>
+
+It will go though, find VLC's package, and remove it from where it was installed.<br/>
+
+Now, if you want to 100% remove a package, you can use something called a "flag" to assist you. If you were using vlc, you changed settings, you had all kinds of themes installed into it and special features and fancy stuff all over your desktop. Then you might need to do this instead. Due to sometimes if all you do is remove VLC, it will not remove the other packages that look for vlc/rely on VLC.<br/>
+
+<code class="codeInput">sudo apt-get --purge remove vlc</code><br/>
+
+This will purge all settings, and dependency that it had &lpar;that your computer doesn't need for other things&rpar;<br/>
+
+<em><strong>Ok, last thing I want to tell you about Ubuntu is PPA's</strong></em><br/>
+
+PPA &lpar;Personal Package Archive&rpar; is a neat little way to get software that Ubuntu would not normally support, and keep it up-to-date though the package manager! So if you're trying to install a piece of software that Ubuntu does not natively support, or maybe a version of a piece of software that Ubuntu doesn't have in their repository, then you would use a PPA.<br/>
+
+So for example, Ubuntu does not have the Cinnamon Desktop located in their repository's. So you search the internet and you find this:<br/>
+
+<code class="codeInput">sudo add-apt-repository ppa:gwendal-lebihan-dev/cinnamon-stable</code><br/>
+
+We can dissect this and find out what it is actually doing/saying.<br/>
+
+So, the first part, we already understand "sudo", then it's doing something we kind of understand, but not quite. Its calling "apt" but instead of "apt-get" its saying "add-apt" what is that? This is adding something TO apt, aka, it's adding a place for apt to look at to check for software and updates.<br/>
+So what is it adding? It's adding a repository: "add-apt-repository". Ok, so were using super user to add a repo to apt. Got it. Next!<br/>
+
+Ok so next is "ppa:" this is telling apt that its adding a ppa with the following name. In this case its "gwendal-lebihan-dev/cinnamon-stable" that is just how it is identified on launchpad. Launchpad is where these ppa's are hosted and where apt goes to look for them. So if you entered the above command, it would tell apt to look for that software.<br/>
+
+So lets create another little example. Lets assume that you have not added the ppa shown above.<br/>
+
+You want to install "cinnamon" to your desktop. That's easy, you just need to type:
+
+<code class="codeInput">sudo apt-get install cinnamon</code><br/>
+
+But guess what, apt has no idea what cinnamon is! So it returns that there was no package found with that name.<br/>
+
+So you go and you find the ppa above, you enter it into terminal, and then you run an update so:<br/>
+
+<code class="codeInput">sudo add-apt-repository ppa:gwendal-lebihan-dev/cinnamon-stable</code><br/>
+
+Now you need to do an "update", this is easy just run<br/>
+
+<code class="codeInput">sudo apt-get update</code><br/>
+
+Now apt knows about the repository that cinnamon is located at. So, now if you type "sudo apt-get install cinnamon" it will see that repository and install as it like normal!<br/>
+<hr width="50%">
+
+<h3><em><strong id="arch">Arch Syntax</strong></em></h3><br/>
+For the Arch CLI I won't go into extreme details like i did with the Ubuntu, I expect you to understand basic stuff once it's explained.<br/>
+
+All of the following are run as root or using sudo:<br/>
+
+<code class="codeInput">pacman -S </code>&lt;pkg&gt;<br/>
+- This installs a package<br/>
+
+<code class="codeInput">pacman -Ss </code>&lt;pkg&gt;<br/>
+- This searches for a package<br/>
+
+<code class="codeInput">pacman -R </code>&lt;pkg&gt;<br/>
+- Removes said package<br/>
+
+<code class="codeInput">pacman -Rns </code>&lt;pkg&gt;<br/>
+- This removes the package, the dependency's, and the config files<br/>
+
+<code class="codeInput">pacman -Syu </code>&lt;pkg&gt;<br/>
+- This does a full system update and re-syncs the package lists<br/>
+
+<em><strong>Now, a quick guide on how to install from the AUR.</strong></em><br/>
+So lets say you get a package off of the AUR, you download the PACKAGEBUILD and its sitting in your ~/Downloads folder. You untar and uncompress it with the following:<br/>
+
+<code class="codeInput">tar -zxvf </code>&lt;file.tar.gz&gt;<br/>
+
+This will "untar" and "unzip" the file, now you need to cd to the dir that was created.<br/>
+
+<code class="codeInput">cd </code>&lt;file&gt;<br/>
+
+Now you need to make the package, the easiest way is to run<br/>
+
+<code class="codeInput">makepkg -s</code><br/>
+
+This works about 75% of the time, it resolves the dependency's for the package and installs them. This is only a problem if one of the dependency are also only found in the AUR. If that's the case you must go out and find those dependency's &lpar;usually listed under the appropriate column in the AUR&rpar;. So assuming you now have all of the dependency installed you'll see a long ass string of code as the packages are compiled and then it will spit out and you need to run:<br/>
+
+<code class="codeInput">pacman -U </code>&lt;file.tar.xz&gt;<br/>
+
+This will actually install the file using pacman.<br/>
+
+Good luck with Arch!<br/>

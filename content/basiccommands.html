@@ -35,7 +35,7 @@ cd is use to "Change Directory"<br/>
 You can also use "cd" to go back to your "home" if you just type "cd" and press enter. This is the same as typeing "<code class="codeInput">cd ~</code>" or typeing "<code class="codeInput">cd ~/home/userid</code>"<br/>
 If you want to go back to the directory you came from, you can type <code class="codeInput">cd -</code><br/>
 You have to pass cd a parameter inorder for it to know where you want to change directory to.<br/>
-For example: <br/>
+Use: <br/>
 <code class="codeInput">cd /</code> will take you to the root directory of the system.<br/>
 <code class="codeInput">cd ../</code> will take you back 1 directory<br/>
 <code class="codeInput">cd ../../../../</code> will take you back 4 directorys (you can do this as few or as many times as you need)<br/>
@@ -46,14 +46,22 @@ You can also go back, then forward into a directory <code class="codeInput">cd .
 
 <h3><strong id="ls"><em>ls</em></strong><br/></h3>
 <p>
-list - Details coming soon<br/>
-
+ls stands for "list" and is used to "list directorys"<br/>
+As strange as this command looks, it will be esential to know both ls and cd. Knowning some of the "flags" for ls will make your life easier!<br/>
+Use:<br>
+<code class="codeInput">ls</code> - This simply lists all of the directorys and files in 1 long line, if it runs off screen, it stars over at the left and keeps going. This is useful but sometimes you need more info. <br/>
+<code class="codeInput">ls -a</code> - This will show "all" files and folders. Mainly used to show "hidden" files.<br/>
+<code class="codeInput">ls -l</code> - This will show a "long" format for all files, it shows owner, permissions, modified date, and size of the file<br/>
+<code class="codeInput">ls -al</code> - "list all long" will show all files in "long" format.<br/>
+<code class="codeInput">ls -d</code> - You have to provide a name for this one, its mainly useful if your in a place with a lot of directorys, and you need to find a certain subset of those folders. Example: <code class="codeInput">ls -d *project*</code> this will list all folders with the word "project" in the name. The wild card is optional. <br/>
+<code class="codeInput">ls -hl</code> - This one stands for "human readable" which sounds a little strange. You only ever use this one with "l" or it wont even make a difference. This will turn the "size" section of the "long" listing to use "human readable" sizes. So instead of 1024 it will say 1k for kilabytes, or instead of 6291456 it will say 6M for megabytes.<br/>
+<code class="codeInput">ls -lhart</code> - This is a command I like to use. It does a "long" listing of "all" directorys with human readable size, and it uses "reverse time" to sort them all out. This is nice because the most recently updated file will be on the bottom of the list. <br/>
 </p>
 <hr width="50%">
 
 <h3><strong id="man"><em>man</em>(ual) pages</strong></h3>
 <p>
-Man pages top this list because they are EXTREMELY helpful. They literally are the manual pages written by the people who made the tool. These are very under valued by many unfortunately, if you don't understand a command you can always read its man pages. So how do you get to them?
+Man pages top this list because they are EXTREMELY helpful. They literally are the manual pages written by the people who made the tool. These are very under valued by many unfortunately, if you don't understand a command you can always read its man pages. So how do you get to them?<br/>
 Use:<br/>
 <code class="codeInput">man &lt;command&gt;</code><br/>
 <code class="codeInput">man man </code>- Manual pages about the man command<br/>
@@ -75,7 +83,8 @@ So I can enter 1, or 1p or just hit enter and the page with the * next to it wil
 <h3><em><strong id="mkdir">mkdir</strong></em></h3><br/>
 <p>
 mkdir is used to "Make Directory" or make a folder ("d" in the first bit).<br/>
-Use: <code class="codeInput">mkdir test</code>  - Make a directory called "test"<br/>
+Use:<br/>
+<code class="codeInput">mkdir test</code>  - Make a directory called "test"<br/>
 <code class="codeInput">mkdir -p zone/info/test/logs</code>   - This makes a directory called "zone" inside of that a directory called "info" inside of that a directory called "test" and inside of that a directory called "logs"<br/>
 <code class="codeInput">mkdir test test2 folder random_word</code>  - Notice the spaces between words, this creates 4 directory's but not inside of each other with those names listed.<br/>
 </p>
@@ -168,9 +177,9 @@ Use:<br/>
 whereis is simply 2 words "Where Is" then you give it a value to look for.<br/>
 Use:<br/>
 <code class="codeInput">whereis java</code>  - this will output the location of java on your machine, for me i get<br/>
-<em>java: /etc/java /usr/share/java</em><br/>
+<code class="codeOutut">java: /etc/java /usr/share/java</code><br/>
 <code class="codeInput">whereis grep</code> - this will output all of the locations of "grep" for me i get:<br/>
-<em>grep: /bin/grep /usr/bin/grep /usr/share/man/man1/grep.1.gz /usr/share/man/man1p/grep.1p.gz</em><br/>
+<code class="codeOutput">grep: /bin/grep /usr/bin/grep /usr/share/man/man1/grep.1.gz /usr/share/man/man1p/grep.1p.gz</code><br/>
 </p>
 <hr width="50%">
 
@@ -187,6 +196,7 @@ Use:<br/>
 <h3><em><strong id="less">less</strong></em></h3><br/>
 <p>
 Less is kind of confusing term, but pretty nice if you need to output a TON of text to your screen and you want to actually read it. So for example, if you needed to output a huge file to your screen, you don't need to edit it/don't want to open in VI and you need to actually read it. You can cat the file, and pipe it to less like this:<br/>
+Use:<br/>
 <code class="codeInput">cat hugefileoftext.txt | less</code> - This will print 1 screen of text to your screen at a time, it will not move until you hit the "SPACE" key on your keyboard, which prints a full new screen of text, or you hit the "ENTER" key on your keyboard which prints only 1 new line to your screen (the bottom most line appears). Or if you hit "q" on your keyboard it will "quit" from the command.<br/>
 </p>
 <hr width="50%">

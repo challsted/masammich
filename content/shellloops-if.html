@@ -143,4 +143,48 @@ Please note that after the equal's symbol i have a "`" which is not a single quo
 
 <h3>So lets make a script!</h3>
 
-Lets make a quick directory just for the purpose of doing the quizes and chalanges 
+Lets make a quick directory just for the purpose of doing the quizes and challenges.<br/>
+If you havnt already done so, please make a dir in your home directory just for these scripts, if you dont want to use what I provide, thats fine, just substitute as needed.<br/>
+<code class="codeInput">mkdir ~/quizzes &amp;&amp; cd ~/quizzes</code><br/>
+From here lets create a script called ifloop.sh like this <code class="codeInput">vim ifloop.sh</code> (please note this it is optional to use vi/m). <br/>
+<br/>
+From inside of this script, you need to open up with a shebang and a comment like this <code class="codeInput">#!/bin/sh</code>, <code class="codeInput">#Lesson 2 Challenge 1</code> then lets create 3 variables. <code class="codeInput">A=1</code>, <code class="codeInput">B=10</code>, <code class="codeInput">C=100</code>. Your script should look something like this:<br/>
+<br/>
+<code class="codeInput">
+#!/bin/sh<br/>
+#Lesson 2 Challenge 1<br/>
+A=1<br/>
+B=10<br/>
+C=100<br/>
+</code><br/>
+<br/>
+
+Now I want you, the reader, to take it from here!<br/>
+<ol>
+	<li>Create a if loop, that checks if C is less then A.</li>
+	<li>Echo that C is greater then A</li>
+	<li>If that fails, it should check if C is less then B</li>
+	<li>Echo that C is less then B if so</li>
+	<li>If that fails, it should check if B is less then A</li>
+	<li>Echo that B is less then A</li>
+	<li>If all else fails say that C is greater then B and A</li>
+	<li>Make sure that when you echo, you show the values of the varialbes, not the variables them selves</li>
+</ol>
+<h3>Extra Credit!</h3>
+<ul>
+	<li>Once you have the above completed:</li>
+	<li>Research the "read" command, it is ment for takeing input from the user's keyboard</li>
+		<ol>
+			<li>Prompt the user for the values of A, B, and C instead of hard codeing them</li>
+			<li>Try differnt combos to make sure it out puts the correct response everytime.</li>
+			<li>What happens when one of the values is 0?</li>
+			<li>What happens when one of the values is -1?</li>
+			<li>What happens when one of the values are 100000000?</li>
+			<li>Can you think of a way to to make sure that the values are always numbers? What if the user input "ABCDEFG" instead of "12345"? Can you check the input to makesure that they gave you a number? (the answer is yes, you can, go figure out how!)</li>
+		</ol>
+</ul>
+
+A few helpful external links:<br/>
+<a href="http://www.shellcheck.net/">Shell Check</a><br/>
+<a href="http://explainshell.com/">Explain Shell</a><br/>
+<a href="http://wiki.bash-hackers.org/commands/classictest#file_tests">CLI Tests</a><br/>

@@ -46,6 +46,16 @@
 		    })
 		});
 	</script>
+	<script>
+		$(function () { 
+			$("[data-toggle='tooltip']").tooltip(); 
+		});
+	</script>
+	<script>
+		$(function () { 
+    		$("[data-toggle='popover']").popover(); 
+		});
+	</script>
 </head>
 
 <body>
@@ -84,7 +94,11 @@
 					    <li><a href="7-lesson2.html">Part 4: Lesson 2 Finals</a></li>
 				    </ol>
 				</ul>
-				<div id="content"></div><!-- This is where the content is pulled in -->
+				Answer 1
+				<div id="myDiv"><button class="btn btn-large btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top">Tooltip on top</button></div>
+				<div id="myDiv"><button class="btn btn-large btn-danger" data-toggle="popover" data-placement="bottom" title="" data-original-title="Tooltip on bottom">Popover on bottom</button></div>
+
+
 				<ul class="pager">
 					<li class="previous"><a href="2-basiccommands.html">Previous - Basic Commands</a></li>
 					<li class="next"><a href="4-shellloops-if.html">Next - Shell Loops "if"</a></li>

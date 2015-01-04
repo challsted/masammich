@@ -46,6 +46,13 @@
 		    })
 		});
 	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		    $('[data-toggle="popover"]').popover({
+		        placement : 'bottom'
+		    });
+		});
+	</script>
 </head>
 
 <body>
@@ -91,7 +98,24 @@
 				    	<li><a href="11-lesson3.html">Part 4: Lesson 3 Finals</a></li>
 				    </ol>
 				</ul>
-				<div id="content"></div><!-- This is where the content is pulled in -->
+				<code class="codeInput">#!/bin/sh</code><br/>
+				<code class="codeInput">A=0</code><br/>
+				<code class="codeInput">if [ $A -lt 100 ]</code><br/>
+				<code class="codeInput">then</code><br/>
+				<code class="codeInput">    while [ $A -le 100 ]</code><br/>
+				<code class="codeInput">    do</code><br/>
+				<code class="codeInput">        for i in $A; do</code><br/>
+				<code class="codeInput">            A=`expr $A + 1`</code><br/>
+				<code class="codeInput">            echo "A is equal to $A"</code><br/>
+				<code class="codeInput">        done</code><br/>
+				<code class="codeInput">    done</code><br/>
+				<code class="codeInput">fi</code><br/>
+				Will the above script ever print "A is equal to 0"?
+				<div id="myDiv">
+					<button class="btn btn-danger" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="No, it increments the variable before it prints the value, so it will never print 0">Yes</button>
+					<button class="btn btn-danger" data-toggle="popover" tabindex="0" data-trigger="focus" title="Correct" data-content="Correct!">No</button>
+				</div>
+
 				<ul class="pager">
 					<li class="previous"><a href="10-userinput.html">Previous - User Input</a></li>
 					<!-- <li class="next"><a href="#.html">Next - </a></li>  -->

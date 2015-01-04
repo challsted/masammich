@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 col-md-12">
                     <div class="site-heading">
-                        <h1 class="textoutline" style="color: white">Shell Loops - If</h1>
+                        <h1 class="textoutline" style="color: white">Shell Loops - While</h1>
                         <hr class="small">
                         <span class="subheading textoutline">while loops, use, strucutre, examples</span><br/>
                         <span class="subheading textoutline">while [ $READER == $READING ] then; echo "Your learning the Linux!"</span>
@@ -73,9 +73,6 @@
             	<ul>
 					<li><a href="0-learnscripting-intro.html">Introduction</a></li>
 				    <li>Lesson 1</li>
-				    <ul>
-					<li><a href="0-learnscripting-intro.html">Introduction</a></li>
-				    <li>Lesson 1</li>
 				    <ol>
 					    <li><a href="1-startscripting.html">Part 1: Start Scripting</a></li>
 					    <li><a href="2-basiccommands.html">Part 2: Bassic Commands</a></li>
@@ -89,7 +86,81 @@
 					    <li><a href="7-lesson2.html">Part 4: Lesson 2 Finals</a></li>
 				    </ol>
 				</ul>
-				<div id="content"></div><!-- This is where the content is pulled in -->
+				<h2>While Loops!</h2>
+
+				<h3>Types of loops</h3>
+
+				There are several types of loops, and each type has a different purpose, we will be covering the following types of loops.
+
+				<ul>
+					<li><a href="4-shellloops-if.html">if</a></li>
+					<li><a href="5-shellloops-while.html">while</a></li>
+					<li><a href="6-shellloops-for.html">for</a></li>
+				</ul>
+
+				<h3>What is a "loop"?</h3>
+				<p>
+				They are called this because they "loop" or iterate though data or instructions until they are no longer true. To be able to understand what I mean by "until they are no longer true", you must understand what is known as "Boolean Logic". Boolean logic (very simplified) is a "true or false" "1 or 0", basically, its always one way or the other.<br/>
+				</p>
+
+				<h3>What is an "while" loop?</h3>
+				<p>
+				A while loop is a little like a <a href="4-shellloops-if.html">if loop</a>. As in they check if something is true right off the bat, where they start to differ is if they are true, they continue doing what you tell them to, until they are false. This opens up the chance of an infinite loop (usually considered a bad thing). 
+				</p>
+
+				<p>
+				A while loop only has 5 things it has to have, and several optional things:<br/>
+				<ul>
+					<li>A while loop Must have:</li>
+					<ol>
+						<li>They always opens with the word "while"</li>
+						<li>A condition that must be true</li>
+						<li>On the next line the word "do" or on the same line with a semicolon after "do;"</li>
+						<li>A command to do while the condition is ture</li>
+						<li>The word "done" when the while loop is completed (with 1 iteration)</li>
+					</ol>
+					<li>A while loop can include:</li>
+					<ol>
+						<li>A way to end the loop</li>
+						<li>???</li>
+					</ol>
+				</p>
+				<p>
+				<code class="codeInput">An example while loop:</code><br/>
+				<code class="codeInput">FIVE=5</code><br/>
+				<code class="codeInput">while [ $FIVE == 5 ]</code><br/>
+				<code class="codeInput">do</code><br/>
+				<code class="codeInput">echo "$FIVE is equal to 5!"</code><br/>
+				<code class="codeInput">done</code><br/>
+				<br/>
+				You might be able to see, even with out running this program, that this will cause what is called an "infinite loop". This loop will never be able to stop running because 5 will always be equal to 5!<br/>
+				But this is a perfectly functioning example of a while loop. In this case you will have to type hit CTRL+C on your keyboard to "Cancel" the script.<br/>
+				Lets try to write a script that will stop eventually!<br/><br/>
+				<code class="codeInput">A=1</code><br/>
+				<code class="codeInput">while [ $A -lt 10 ]</code><br/>
+				<code class="codeInput">do</code><br/>
+				<code class="codeInput">echo "A is currently $A"</code><br/>
+				<code class="codeInput">A=`expr $A + 1`</code><sup><sup><strong>1</strong></sup></sup><br/>
+				<code class="codeInput">done</code>
+				<h6><sup>1</sup> expr is to "evaluate expressions (man expr)</h6>
+				This will output the following:<br/>
+				<code class="codeOutput">A is currently 1</code><br/>
+				<code class="codeOutput">A is currently 2</code><br/>
+				<code class="codeOutput">A is currently 3</code><br/>
+				<code class="codeOutput">A is currently 4</code><br/>
+				<code class="codeOutput">A is currently 5</code><br/>
+				<code class="codeOutput">A is currently 6</code><br/>
+				<code class="codeOutput">A is currently 7</code><br/>
+				<code class="codeOutput">A is currently 8</code><br/>
+				<code class="codeOutput">A is currently 9</code><br/>
+				<br/>
+				This is exactly what we want it to do! It printed the value of A until it no longer was true.<br/>
+				We gave our script the varible "A", A was holding the value "1".<br/>
+				We then told the script "while the value of A is less then 10 tell me that A is currently a value, then add 1 to the value of A"<br/>
+				As you can see it did not print that A was equal to 10, because of the way we worded our condition. "$A -lt 10" or "A is less then 10". So, it stopped doing anything when $A was equal to 10. We could of said "$A -le 10" and it would have printed "A is currently 10" or we could of said "$A -le 11" and it would of stopped at 10.<br/>
+				</p>
+
+
 				<ul class="pager">
 					<li class="previous"><a href="4-shellloops-if.html">Previous - if Loops</a></li>
 					<li class="next"><a href="6-shellloops-for.html">Next - for Loops</a></li>

@@ -85,6 +85,13 @@
 					    <li><a href="6-shellloops-for.html">Part 3: Shell Loops "for"</a></li>
 					    <li><a href="7-lesson2.html">Part 4: Lesson 2 Finals</a></li>
 				    </ol>
+				    <li>Lesson 3 - Better Tools</li>
+				    <ol>
+				    	<li><a href="8-sed.html">Part 1: Sed</a></li>
+				    	<li><a href="9-awk.html">Part 2: Awk</a></li>
+				    	<li><a href="10-userinput.html">Part 3: User Input</a></li>
+				    	<li><a href="11-lesson3.html">Part 4: Lesson 3 Finals</a></li>
+				    </ol>
 				</ul>
 				<h2>While Loops!</h2>
 
@@ -128,9 +135,9 @@
 				<p>
 				<code class="codeInput">An example while loop:</code><br/>
 				<code class="codeInput">FIVE=5</code><br/>
-				<code class="codeInput">while [ $FIVE == 5 ]</code><br/>
+				<code class="codeInput">while [ $FIVE = 5 ]</code><br/>
 				<code class="codeInput">do</code><br/>
-				<code class="codeInput">echo "$FIVE is equal to 5!"</code><br/>
+				<code class="codeInput">&emsp;&emsp;echo "$FIVE is equal to 5!"</code><br/>
 				<code class="codeInput">done</code><br/>
 				<br/>
 				You might be able to see, even with out running this program, that this will cause what is called an "infinite loop". This loop will never be able to stop running because 5 will always be equal to 5!<br/>
@@ -139,8 +146,8 @@
 				<code class="codeInput">A=1</code><br/>
 				<code class="codeInput">while [ $A -lt 10 ]</code><br/>
 				<code class="codeInput">do</code><br/>
-				<code class="codeInput">echo "A is currently $A"</code><br/>
-				<code class="codeInput">A=`expr $A + 1`</code><sup><sup><strong>1</strong></sup></sup><br/>
+				<code class="codeInput">&emsp;&emsp;echo "A is currently $A"</code><br/>
+				<code class="codeInput">&emsp;&emsp;A=`expr $A + 1`</code><sup><sup><strong>1</strong></sup></sup><br/>
 				<code class="codeInput">done</code>
 				<h6><sup>1</sup> expr is to "evaluate expressions (man expr)</h6>
 				This will output the following:<br/>

@@ -102,13 +102,13 @@
 				<code class="codeInput">A=0</code><br/>
 				<code class="codeInput">if [ $A -lt 100 ]</code><br/>
 				<code class="codeInput">then</code><br/>
-				<code class="codeInput">    while [ $A -le 100 ]</code><br/>
-				<code class="codeInput">    do</code><br/>
-				<code class="codeInput">        for i in $A; do</code><br/>
-				<code class="codeInput">            A=`expr $A + 1`</code><br/>
-				<code class="codeInput">            echo "A is equal to $A"</code><br/>
-				<code class="codeInput">        done</code><br/>
-				<code class="codeInput">    done</code><br/>
+				<code class="codeInput">&emsp;&emsp;while [ $A -le 100 ]</code><br/>
+				<code class="codeInput">&emsp;&emsp;do</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;for i in $A; do</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;A=`expr $A + 1`</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;echo "A is equal to $A"</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;done</code><br/>
+				<code class="codeInput">&emsp;&emsp;done</code><br/>
 				<code class="codeInput">fi</code><br/>
 				Will the above script ever print "A is equal to 0"?
 				<div id="myDiv">

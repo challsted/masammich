@@ -46,14 +46,11 @@
 		    })
 		});
 	</script>
-	<script>
-		$(function () { 
-			$("[data-toggle='tooltip']").tooltip(); 
-		});
-	</script>
-	<script>
-		$(function () { 
-    		$("[data-toggle='popover']").popover(); 
+	<script type="text/javascript">
+		$(document).ready(function(){
+		    $('[data-toggle="popover"]').popover({
+		        placement : 'bottom'
+		    });
 		});
 	</script>
 </head>

@@ -60,7 +60,7 @@
                         <h1 class="textoutline" style="color: white">Shell Loops - While</h1>
                         <hr class="small">
                         <span class="subheading textoutline">while loops, use, strucutre, examples</span><br/>
-                        <span class="subheading textoutline">while [ $READER == $READING ] then; echo "Your learning the Linux!"</span>
+                        <span class="subheading textoutline">while [ $READER = $READING ] then; echo "Your learning the Linux!"</span>
                     </div>
                 </div>
             </div>
@@ -132,6 +132,7 @@
 						<li>???</li>
 					</ol>
 				</p>
+
 				<p>
 				<code class="codeInput">An example while loop:</code><br/>
 				<code class="codeInput">FIVE=5</code><br/>
@@ -166,6 +167,37 @@
 				We then told the script "while the value of A is less then 10 tell me that A is currently a value, then add 1 to the value of A"<br/>
 				As you can see it did not print that A was equal to 10, because of the way we worded our condition. "$A -lt 10" or "A is less then 10". So, it stopped doing anything when $A was equal to 10. We could of said "$A -le 10" and it would have printed "A is currently 10" or we could of said "$A -le 11" and it would of stopped at 10.<br/>
 				</p>
+				
+				<h3>Shell Embedded Loops</h3>
+				<p>
+				Something cool you can do with loops, is you can put a loop INSIDE a loop!<br/>
+				So, for example:<br/>
+				<code class="codeInput">A=1</code><br/>
+				<code class="codeInput">if [ $A -lt 101 ]</code><br/>
+				<code class="codeInput">then</code><br/>
+				<code class="codeInput">&emsp;&emsp;echo "A is equal to $A"</code><br/>
+				<code class="codeInput">&emsp;&emsp;while [ $A -lt 101 ]</code><br/>
+				<code class="codeInput">&emsp;&emsp;do</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;A=`expr $A + 1`</code><br/>
+				<code class="codeInput">&emsp;&emsp;done</code><br/>
+				<code class="codeInput">fi</code><br/>
+				<br/>
+				As you will see, I set a varible of "A" to 1, then I open a if loop and I check if the value of A is less then 101 (which at the moment it is), then as the command for the if loop, I execute another loop (in this case a while loop) which also checks if the value A is less then 101. The command for the while loop is then to echo the current value of A, then it preforms a little math on the value of A and assigns it to A, then ends both loops.<br/>
+				This simply prints "A is equal to N" 100 times.<br/>
+				</p>
+
+				<h3>Continue</h3>
+				<p>
+				</p>
+
+				<h3>Exit Codes</h3>
+				<p>
+				</p>
+
+
+
+
+
 
 
 				<ul class="pager">

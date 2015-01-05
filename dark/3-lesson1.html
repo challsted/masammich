@@ -46,14 +46,11 @@
 		    })
 		});
 	</script>
-	<script>
-		$(function () { 
-			$("[data-toggle='tooltip']").tooltip(); 
-		});
-	</script>
-	<script>
-		$(function () { 
-    		$("[data-toggle='popover']").popover(); 
+	<script type="text/javascript">
+		$(document).ready(function(){
+		    $('[data-toggle="popover"]').popover({
+		        placement : 'bottom'
+		    });
 		});
 	</script>
 </head>
@@ -101,9 +98,17 @@
 				    	<li><a href="11-lesson3.html">Part 4: Lesson 3 Finals</a></li>
 				    </ol>
 				</ul>
-				Answer 1
-				<div id="myDiv"><button class="btn btn-large btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top">Tooltip on top</button></div>
-				<div id="myDiv"><button class="btn btn-large btn-danger" data-toggle="popover" data-placement="bottom" title="" data-original-title="Tooltip on bottom">Popover on bottom</button></div>
+				<h3>Welcome To the End of Lesson 1!</h3>
+				Please answer the following questions, you are not scored on the below, it will simply tell you if you are right or wrong. Feel free to click again if you get it wrong. I will do what I can to tell you why you are wrong also.<br/><br/><br/>
+
+
+
+				1&#41; What command do you use if you needed to remove a directory that is not empty?
+				<div id="myDiv">
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="rmdir is removed to remove a directory, but only if the directory is empty">rmdir</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="The command your looking for is shorthand for this, but this is not the command">remove</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="This command preforms a long listing of all files and folders in a folder in reverse time order">ls -lart</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Correct" data-content="Correct, rm is remove, and -r is for directorys. You can use rm -rf to remove directorys with 'force' also">rm -r</button>
 
 
 				<ul class="pager">
@@ -132,5 +137,6 @@
     <script src="../js/bootstrap.min.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="../js/clean-blog.min.js"></script>
+    <!-- <button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>  -->
 </body>
 </html>

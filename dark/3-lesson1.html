@@ -103,13 +103,29 @@
 
 
 
-				1&#41; What command do you use if you needed to remove a directory that is not empty?
-				<div id="myDiv">
+				1&#41; What command do you use if you needed to remove a directory that is not empty?<br/>
 					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="rmdir is removed to remove a directory, but only if the directory is empty">rmdir</button>
 					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="The command your looking for is shorthand for this, but this is not the command">remove</button>
 					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="This command preforms a long listing of all files and folders in a folder in reverse time order">ls -lart</button>
 					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Correct" data-content="Correct, rm is remove, and -r is for directorys. You can use rm -rf to remove directorys with 'force' also">rm -r</button>
+					
+					<br/><br/>
 
+				2&#41; If you want to make a directory inside of a directory inside of an existing directory, which command would you run?<br/>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="This will fail due to /dir1 already exists in this example">mkdir /dir1/dir2/dir3</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="you cant create a directory inside of a directory that dosnt exist with out -p 'parent'">cd dir 1 &amp;&amp; mkdir dir2/dir3</button>
+					<br/>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Correct" data-content="The '-p' on mkdir allows for 'parent' directorys to be used and not touched if they exist">mkdir -p /dir1/dir2/dir3</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="Dir1 already exists, you cant create a directory that already exists">mkdir dir1; mkdir dir2; mkdir dir3</button>
+
+					<br/><br/>
+				
+				3&#41; Which of the following will redirect output to a text file called "stdio.txt"?<br/>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Correct" data-content="This sends the output of 'cat $FILE to a file called stdio.txt!">cat $FILE > stdio.txt</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="This sends the output of 'cat $FILE' to the end of a file called .stdio.txt which is a hidden file">cat $FILE >> .stdio.txt</button>
+					<br/>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="his sends the output of 'cat $FILE' to a file called stdio.txt">cat $FILE > stdio.tar</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="his sends the output of 'cat $FILE' to the end of a file called stdout.txt">cat $FILE >> stdout.txt</button>
 
 				<ul class="pager">
 					<li class="previous"><a href="2-basiccommands.html">Previous - Basic Commands</a></li>

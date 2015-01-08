@@ -1,9 +1,3 @@
-<!-- Navigation -->
-    <!--
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    Something about the navar-custom is not working
-    need to investigate...
-    -->
  <nav>   
     <div class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -11,7 +5,6 @@
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-header">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -25,12 +18,13 @@
                     <li>
                         <a href="../projects/index.html">Home</a>
                     </li>
-                    <li>
-                        <a href="../projects/about.html">About</a>
-                    </li>
                     <!-- Link directly to the "Code Monkeys" section of the forum -->
-                    <li>
-                        <a href="http://forum.technoanomaly.com/viewforum.php?f=7">Forums</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                                <li><a href="http://forum.technoanomaly.com/viewforum.php?f=7">Forums</a>
+                                <li><a href="../projects/rpi.html">Rasberry Pi</a></li>
+                        </ul>
                     </li>
                     <!-- Contact Dropdown -->
                     <li class="dropdown">
@@ -38,6 +32,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="https://ello.co/masammich">Ello</a></li>
                             <li><a href="https://keybase.io/hackinginfo">KeyBase.io</a></li>
+                            <li><a href="../projects/about.html">About</a></li>
                             <li><a href="../projects/contact.html">Send me an email!</a></li>
                         </ul>
                     </li>

@@ -4,15 +4,16 @@
 
 <ol>
 <li><a href="#what">What is GitHub?</a></li>
-<ol>
-	<li><a href="#what-git">What is Git?</a></li>
-</ol>
-<li><a href="#how">How can I start using it?</a></li>
-<li><a href="#now">Ok, now what?</a></li>
-<ol>
-	<li><a href="#now-fork">Forking</a></li>
-	<li><a href="#now-clone">Cloning</a></li>
-</ol>
+	<ol>
+		<li><a href="#what-git">What is Git?</a></li>
+	</ol>
+	<li><a href="#how">How can I start using it?</a></li>
+	<li><a href="#now">Ok, now what?</a></li>
+	<ol>
+		<li><a href="#now-fork">Forking</a></li>
+		<li><a href="#now-clone">Cloning</a></li>
+	</ol>
+	<li><a href="#gist">Gist's</a></li>
 </ol>
 
 <h3 id="what">What is GitHub?</h3>
@@ -178,56 +179,59 @@ If not you need to troubleshoot. You can send me an email if needed via the cont
 <p>
 Now you can start making your own stuff! If you're already a developer in any language, you should already be pretty excited.  If you're just getting your feet wet in this world then you're probably meaning this more literally. Let's go over 2 very important things you can do in GitHub/Git that are VERY useful. Cloning and Forking.
 </p>
+<h4 id="now-clone">Cloning</h4>
 
-<div class="col-md-6">
+<p>
+	<code class="codeInput">git clone https://github.com/user.name/repo.git</code><br/>
 
-	<h4 id="now-clone">Cloning</h4>
+	<strong>OR</strong><br/>
 
-	<p>
-		<code class="codeInput">git clone https://github.com/user.name/repo.git</code><br/>
+	<code class="codeInput">git clone git@github.com:user.name/repo.git</code><br/>
 
-		<strong>OR</strong><br/>
+	If you have setup ssh access to GitHub, this is a quick and easy way to preform this.<br/>
+</p>
+<p>
+	If you followed the above, you have already cloned an empty repository, added a file, and re-uploaded it back to your GitHub, all in a few lines of code.<br/>
 
-		<code class="codeInput">git clone git@github.com:user.name/repo.git</code><br/>
+	Cloning(in git) is the act of copying the current set of code from any public repository on the web to your local machine, you don't have to have an account on GitHub to clone someone, you just need to have git installed! The command is <code class="codeInput">git clone</code> <em>repository</em><br/>
 
-		If you have setup ssh access to GitHub, this is a quick and easy way to preform this.<br/>
-	</p>
-	<p>
-		If you followed the above, you have already cloned an empty repository, added a file, and re-uploaded it back to your GitHub, all in a few lines of code.<br/>
+	As I suggested above, you should probably create a folder to host all of the clones you make in, my suggestion is to do it in a place you are frequently at, so on Linux its your "home" directory, and I suggest your folder be called "git", "Git", "GIT" or if you want it slightly hidden name it ".git". <br/>
 
-		Cloning(in git) is the act of copying the current set of code from any public repository on the web to your local machine, you don't have to have an account on GitHub to clone someone, you just need to have git installed! The command is <code class="codeInput">git clone</code> <em>repository</em><br/>
+<br/>
+</p>
+<p>
+	Something cool you can do if you can search GitHub, and it will return public repository's. You can start the search by typing whatever words you want to appear in the repo or description. Then if you want to change it to only a certain language, you can click a desired language on the left, you can change the sort option to see the repo thats has been followed the most, or started the most (or whatever option you want). Then when you get something you might like, you can open up the repo and take a look around. If you like what you see, and want to play with it on your local machine, simply clone it. If you want to take a copy of this for your own to edit, you need to <a href="#now-fork">fork it</a> (next section).
+</p>
+<p>
+	The main thing I use cloning for, is if I want to have local copie(s) of my code on a local machine, or on a server or my RPi. You can pre-write the little clone command, and give it to friends so they can simply copy pasta and get your code. You can use it in scripts to copy down code from GH, execute something against it, then delete it, or what ever you need. Its a very simple, yet very awesome little command.
+</p>
 
-		As I suggested above, you should probably create a folder to host all of the clones you make in, my suggestion is to do it in a place you are frequently at, so on Linux its your "home" directory, and I suggest your folder be called "git", "Git", "GIT" or if you want it slightly hidden name it ".git". <br/>
+<h4 id="now-fork">Forking</h4>
 
-	<br/>
-	</p>
-	<p>
-		Something cool you can do if you can search GitHub, and it will return public repository's. You can start the search by typing whatever words you want to appear in the repo or description. Then if you want to change it to only a certain language, you can click a desired language on the left, you can change the sort option to see the repo thats has been followed the most, or started the most (or whatever option you want). Then when you get something you might like, you can open up the repo and take a look around. If you like what you see, and want to play with it on your local machine, simply clone it. If you want to take a copy of this for your own to edit, you need to <a href="#now-fork">fork it</a> (next section).
-	</p>
-	<p>
-		The main thing I use cloning for, is if I want to have local copie(s) of my code on a local machine, or on a server or my RPi. You can pre-write the little clone command, and give it to friends so they can simply copy pasta and get your code. You can use it in scripts to copy down code from GH, execute something against it, then delete it, or what ever you need. Its a very simple, yet very awesome little command.
-	</p>
+<p>
+	Forking is used to make a copy of someone else's code into your profile so that you can edit it as needed with out hurting the original project.<br/>
 
-</div>
+	Due to this is only done via a web-gui (To my knowledge) i cant provide you any code examples...<br/>
 
-<div class="col-md-6">
+	BUT I can give you a repo that's only purpose is to fork!<br/>
 
-	<h4 id="now-fork">Forking</h4>
+	If you go over to the octocat profile and go to the "spoon-knife" repo (<a href="https://github.com/octocat/Spoon-Knife">HERE</a>)<br/>
 
-	<p>
-		Forking is used to make a copy of someone else's code into your profile so that you can edit it as needed with out hurting the original project.<br/>
+	You can click "fork" in the top right, this will then give you a fun little animation of a book being photo copied then it will forward you back to your profile, but with the new repo (in this case Spoon-Knife) selected! Now you can clone it, make edits, and upload it back as you please. It wont effect the original repo owned by "Octocat".
+</p>
+<p>
+	Now, lets say that you were forking a project, with the intention of pushing it back to the master repo! You would do this for a few reasons, 1 of which is due to you having tried your hand at patching something, or at adding a feature, but you are not one of the collaborators. <br/>
 
-		Due to this is only done via a web-gui (To my knowledge) i cant provide you any code examples...<br/>
+	After you fork their repo, make the changes you need to, push the code back to your forked repo on GH. You can go to the original repo, and click "create pull request". It will ask you to put in comments on what you're doing. This is where you say "I added X feature" or "Fixed Y bug" it's best if you identify bugs by the issued code if its a known bug. You should be able to get this information from the "issues" tab (I'm assuming you know what I'm talking about if you're contributing to open source projects right now). Then the owner of the repo (when they have time) can look though your changes, and if they feel it's good enough, they can "merge" it back in. If this happens, congratulations! You made a change to someone else's code :D
+</p>
 
-		BUT I can give you a repo that's only purpose is to fork!<br/>
-
-		If you go over to the octocat profile and go to the "spoon-knife" repo (<a href="https://github.com/octocat/Spoon-Knife">HERE</a>)<br/>
-
-		You can click "fork" in the top right, this will then give you a fun little animation of a book being photo copied then it will forward you back to your profile, but with the new repo (in this case Spoon-Knife) selected! Now you can clone it, make edits, and upload it back as you please. It wont effect the original repo owned by "Octocat".
-	</p>
-	<p>
-		Now, lets say that you were forking a project, with the intention of pushing it back to the master repo! You would do this for a few reasons, 1 of which is due to you having tried your hand at patching something, or at adding a feature, but you are not one of the collaborators. <br/>
-
-		After you fork their repo, make the changes you need to, push the code back to your forked repo on GH. You can go to the original repo, and click "create pull request". It will ask you to put in comments on what you're doing. This is where you say "I added X feature" or "Fixed Y bug" it's best if you identify bugs by the issued code if its a known bug. You should be able to get this information from the "issues" tab (I'm assuming you know what I'm talking about if you're contributing to open source projects right now). Then the owner of the repo (when they have time) can look though your changes, and if they feel it's good enough, they can "merge" it back in. If this happens, congratulations! You made a change to someone else's code :D
-	</p>
-</div>
+<h4 id="gist">Gist's</h4>
+<p>
+A gist is a tiny snippet of a program or it can be a full program. It makes it easily shareable by posting it to a single spot of github and it provides a link directly to your snippit, script, or program. This is very useful if you want to post a bit of code to a forum (or my posts at the bottom of every page), and it is useful to keep small snippets to just give a direct link to others to your script or code but dont want a fully tracked and revisioned code like a respository<br/>
+<br/>
+<a href="https://gist.github.com/">gist.github.com</a><br/>
+<br/>
+For example, I utalize a website called "<a href="https://keybase.io/">keybase.io</a>"" to create a "web-of-trust", and one of the ways to prove your identity is though github with a gist. So my gist can be read publically <a href="https://gist.github.com/hackinginformation/993bc06065d48605ee4d">here</a>.<br/>
+<script src="https://gist.github.com/hackinginformation/993bc06065d48605ee4d.js"></script><br/>
+Feel free to look at my key, trust it if you please!<br/>
+</p>

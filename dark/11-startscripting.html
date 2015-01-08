@@ -75,7 +75,8 @@
 				<ul>
 					<li><a href="#shebang">SheBang(#!)</a></li>
 					<li><a href="#comments">Comments</a></li>
-					<li>Logic</li>
+					<li><a href="#orderofoperations">Order Scripts are Read</a></li>
+					<li><a href="#logic">Logic</a></li>
 				</ul>
 
 				A shell script always starts out with what is known as a <strong id="shebang"><a href="https://en.wikipedia.org/wiki/Shebang_%28Unix%29">SheBang</a> </strong>, then a series of characters which tells the shell that is reading the script how to read it.<br/>
@@ -121,7 +122,14 @@
 					<li>Even if you don't think ANYONE else will EVER read your script, you should still leave yourself a note, because its very likely, that one day you will look though the script again, and it would be nice if you could read a few simple notes/comments and know what it is for!</li>
 				</ul>
 
-				<strong>Logic</strong> will be covered starting in lesson 2. We need to understand basic commands first.<br/>
+				<strong id="orderofoperations">Order Scripts are Read</strong> If you have ever written a program in C/C++, then you have "compiled" the program, and while it was compiling, every missing semicolon, every missing &gt; or &lt; will throw an error, and when it does actually compile, the program is at the very least, devoid of typing errors. This is not so in shell. You type the script out, then you run the script. There is no compile, there is no error checking. <br/>
+
+				If you have never written in any other languages, then you wont have any expectations! I will still go over how a script is read in shell (and its derivatives). <br/>
+
+				A shell script is read from top to bottom, and only while its needed. So you can have an error at the bottom of your script, and you wont know about it until you get to the bottom of the script. If you write a loop, that has an value initial value, 3 other options, then a else at the end. You need to input values that will output to all of the options to make sure they all work. We call this "QA" or "Quality Assurance" of the script. If you have 50 features, each feature with 3 different outcomes, then you need to test the script AT LEAST 150 times, getting the appropriate response each time. <br/>
+				You might noise that the script works perfectly, as long as the user inputs the information you expect. But what if they put in something you didn't expect? This is where we need to test to make sure that the script doesn't break when we hit these not-so-often utilized pieces of our scripts. I will sometimes give you example input to test, and ideas of what to expect users to input sometimes and to check for this type of info. <br/>
+
+				<strong id="logic">Logic</strong> will be covered starting in <a href="21-shellloops-if.html">lesson 2</a>. We need to understand <a href="12-basiccommands.html">basic commands</a> first.<br/>
 
 				<ul class="pager">
 					<li class="previous"><a href="00-learnscripting-intro.html">Previous - Intro</a></li>

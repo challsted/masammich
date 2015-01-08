@@ -73,17 +73,83 @@
 				
 				<h2>User Input</h2>
 				<p>
-
+				So, before we actually start working on scripts, you might want to know how to take input from a user, which sometimes is very important to a script's functionality.<br/>
+				As you might imagine, there is multiple ways to do this, and multiple ways to communicate.<br/>
+				You can send things to the user with "echo" or "printf", and you can get info from the user with "read" and you can do both at the same time with "case"<br/>
 				</p>
 
-				<h3>The "read" command</h3>
+				<h3>echo vs printf</h3>
 				<p>
-
+				So, even as someone who has been doing this for a long time, I never realized that there was a difference between the two commands... BUT for the purposes of this class, I have researched it!<br/>
 				</p>
 
-				<h3>The "case" command</h3>
+				<h4>echo</h4>
 				<p>
+				<code class="codeInput">echo</code> just simply prints a line to the screen, a lot of sources I read say that it will also add a newline to the end, but in my experience you cannot rely on that feature. So always use "\n" when you need to add a "newline"<br/>
+				</p>
 
+				<h4>printf</h4>
+				<p>
+				<code class="codeInput">printf</code> comes from the original C Language function, and it is apparently very customizable! This is news to me, as I personally have never needed to do anything special to text i was printing to the screen. If you ever find your self needing to do something special, feel free to look into it! <br/>
+				</p>
+
+				<h3 id="read">The "read" command</h3>
+				<p>
+				I now you guys have not yet started writhing scripts for this class yet, but I really want sure where else to put these details. If nothing else you can use them as a reference! They will always be here, and I will reference to this when it is needed. <br/>
+				So, the "read" command as mentioned above is to take input from the user, its most often used after an echo or printf statement, and is very easy to use!<br/>
+				Example<br/>
+				<code class="codeInput">read USERINPUT</code><br/>
+				<code class="codeInput">echo "You said $USERINPUT"</code><br/>
+				Thats it! Super simple! You'll learn about variables in the next lesson, so if you don't understand the "$..." syntax then don't worry about it right now.<br/>
+				When you add this to a script, you'll notice that you are presented with a flashing line of nothing, this is the terminal waiting for the user to input something (hence why you want to tell the user what you want the to input first).<br/>
+				You should also notice that after the "read" command is a variable and nothing else. This is a little strange to explain but I will do my best: When the shell sits there waiting for input (due to the "read" command), the user inputs what ever value is asked for, and the read command assigns that value to the variable after itself. So in the example used, $USERINPUT now holds the value of the users input!<br/>
+				You can then use this variable anywhere else in your script, as many times as you want (as long as you don't overwrite the value).<br/>
+				</p>
+
+				<h3 id="case">The "case" command</h3>
+				<p>
+				Case is used for input and output at the same time, kind of, because it is used in conjunction with read.<br/>
+				case takes a bit to explain, so I'm going to show you an example how how to use it, then explain it to you after words<br/>
+
+				<code class="codeInput">echo "Do you agree with this? [yes or no]: \n"</code><br/>
+				<code class="codeInput">read YNO</code><br/>
+				<code class="codeInput">case $YNO in</code><br/>
+				<code class="codeInput">&emsp;&emsp;[yY] | [yY][Ee][Ss] &#41;</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;echo "Agreed"</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;;;</code><br/>
+				<code class="codeInput">&emsp;&emsp;[nN] | [n|N][O|o] &#41;</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;echo "Not agreed, you can't proceed the installation";</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;exit 1</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;;;</code><br/>
+				<code class="codeInput">&emsp;&emsp;*&#41; echo "Invalid input"</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;;;</code><br/>
+				<code class="codeInput">esac</code><br/>
+				<br/>
+				So, as you can see, I open with an echo statement, with a newline character at the end. I ask my user "Do you agree with this? Then I give the an example of what I expect from them"<br/>
+				I then use read to get the value of what they said and assign it to the value "YNO"<br/>
+				Then I start using "case" with the value I created with "read"<br/>
+				I then start doing something strange, I write <code class="codeInput">[yY] | [yY][eE][sS] &#41;</code> which looks very strange. Lets break it down!<br/>
+				<code class="codeInput">[yY]</code> This is saying "y" OR "Y" can be an accepted answer from the user, all by its self.<br/>
+				<code class="codeInput"> | </code> This is saying "OR they can say" as a completely different option then [yY] and get the same results as below (printing agreed)<br/>
+				<code class="codeInput">[yY][eE][sS]</code> This is where a little magic happens, the user can type any of the following and get the same results: YES, yes, YEs, YeS, Yes, yES, yEs, yeS and so on, and it will accept the answer as just plain agreeing.<br/>
+				<code class="codeInput">&#41;</code> This is a little piece of code that is needed by case, it says "this is the end of this section"<br/>
+				I then print to the screen "Agreed" so they can confirm that we both know they said yes, and then i do another piece of strange code "<code class="codeInput">;;</code>", this is saying "this section is done". It will then move on to the next "section" of code and not try to interpret it as the previous section.<br/>
+				</p>
+				<p>
+				I also use "<code class="codeInput">exit 1</code>" when you disagree, this is called an "exit code" and at the moment I do not have an article about them. I will come back and edit this section if I ever write about them. For now, you only need to know that it simply exits the script with a value of "1", this value is optional and can be read from other programs if needed to correspond accordingly. If you want to learn more about exit codes, feel free to Google it.
+				</p>
+				<p>
+				I then have 1 last thing that might be strange to you<br/>
+				<code class="codeInput">*&#41;</code> this is a "catch all" at the end of the statement, it basically is saying "they didnt say yes, they didn't say no, so i don't know what they are saying" and in this case, it says "invalid input"
+				</p>
+				<p>
+				Then 1 last needed piece of code to make this case statement complete, is "esac" which is simply "case" in reverse, this "ends" the whole loop of code and questioning. 
+				</p>
+				<h4>Main use of case</h4>
+				<p>
+				You can use case statements to add "flags" to programs you write.<br/>
+				For example, <code class="codeInput">mkdir</code> makes a directory. But it can only make 1 directory at a time, or multiple directory's in the same directory. If you add the "flag" of <code class="codeInput">-p</code> to the end of mkdir it gives it the "parent" option, which allows you to make directories inside of each other, and allows for you to create directory's inside directory's that already exist with out hurting the original directory.<br/>
+				You can add many of these flags to your program and allow for extended functionality! Neat huh?<br/>
 				</p>
 				
 				<ul class="pager">

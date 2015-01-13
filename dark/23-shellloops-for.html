@@ -82,6 +82,7 @@
 					<li><a href="21-shellloops-if.html">if</a></li>
 					<li><a href="22-shellloops-while.html">while</a></li>
 					<li><a href="23-shellloops-for.html">for</a></li>
+					<li><a href="24-shellloops-until.html">until</a></li>
 				</ul>
 
 				<h3>What is a "loop"?</h3>
@@ -91,15 +92,62 @@
 
 				<h3>What is an "for" loop?</h3>
 				<p>
-				A for loop is a little like a <a href="22-shellloops-while.html">while loop</a>. As in they repeate an action over and over and over. Where they differ is that a for loop preforms an action a specific number of times. This number can be set statically, or it can be pulled in from a variable that can change. Once it is complete, it will stop. This still has a chance of creating an infinite loop, so dont think your out of the water yet!
+				A for loop is a little like a <a href="22-shellloops-while.html">while loop</a>. As in they repeate an action over and over and over. Where they differ is that a for loop preforms an action a specific number of times. This number can be set statically, or it can be pulled in from a variable that can change. Once it is complete, it will stop. This still has a chance of creating an infinite loop, so dont think your out of the water yet!<br/>
 				</p>
 				<p>
-
+				A for loop has several needed pieces:<br/>
+				<ol>
+					<li>They always open with the word "for"</li>
+					<li>A variable, or static command that needs to be true</li>
+					<ul><li>This can be changed with the next part though</li></ul>
+					<li>(Optional, but almost always used) the word "in"</li>
+					<li>Another Variable or static command that the previous needs to be apart of</li>
+					<li>The word "do"</li>
+					<li>Something to happen for each of the above</li>
+					<li>The word "done"</li>
+				</ol>
+				</p>
+				<p>
+				Here is an example for loop:<br/>
+				<code class="codeInput">for i in 1 2 3 4 5</code><br/>
+				<code class="codeInput">do</code><br/>
+				<code class="codeInput">&emsp;&emsp;echo "The Variable i is currently $i"</code><br/>
+				<code class="codeInput">&emsp;&emsp;j=`expr $i \* 10`</code>  (Make sure you escape the * or it wont work!)<br/>
+				<code class="codeInput">&emsp;&emsp;echo "$j is $i times 10!"</code> <br/>
+				<code class="codeInput">done</code><br/>
+				This will output the following:<br/>
+				<code class="codeOutput">The Variable i is currently 1</code><br/>
+				<code class="codeOutput">10 is 1 times 10!</code><br/>
+				<code class="codeOutput">The Variable i is currently 2</code><br/>
+				<code class="codeOutput">20 is 2 times 10!</code><br/>
+				<code class="codeOutput">The Variable i is currently 3</code><br/>
+				<code class="codeOutput">30 is 3 times 10!</code><br/>
+				<code class="codeOutput">The Variable i is currently 4</code><br/>
+				<code class="codeOutput">40 is 4 times 10!</code><br/>
+				<code class="codeOutput">The Variable i is currently 5</code><br/>
+				<code class="codeOutput">50 is 5 times 10!</code><br/>
+				</p>
+				<p>
+				Kind of neat huh? Its like a controlled while loop. <br/>
+				Lets change the above loop just a little to show you what else it can do<br/>
+				<code class="codeInput">A=5</code><br/>
+				<code class="codeInput">for i in $A</code><br/>
+				<code class="codeInput">do</code><br/>
+				<code class="codeInput">&emsp;&emsp;echo "The Variable i is currently $i"</code><br/>
+				<code class="codeInput">&emsp;&emsp;j=`expr $i \* 10`</code><br/>
+				<code class="codeInput">&emsp;&emsp;echo "$j is $i times 10!"</code> <br/>
+				<code class="codeInput">done</code><br/>
+				This will produce the exact same results, its 1 line longer then the origional, but it turns the "1 2 3 4 5" into a variable for the example factor of it. <br/>
 				</p>
 
-
-
-
+				<h3>Lets make another script!</h3>
+				<p>
+				<ol>
+					<li>Ask 2 numbers from the user</li>
+					<li>Use an for loop to print out all of the odd numbers between the 2 numbers</li>
+				</ol>
+				You can either inbed the for inside of an if, to check if 1 number is greater then the other, and complain if the 2nd isnt higher, or you can (I suggest) just simply put the higher number 2nd.<br/>
+				If you cant figure out how to get the odd's, you can find the first odd, then add 2 and print. OR (I suggest) use the "modulo" command "%"<br/>
 				
 				<h3>+3 Points to $HOUSE</h3>
 				<ol>
@@ -114,7 +162,7 @@
 				<a href="http://wiki.bash-hackers.org/commands/classictest#file_tests">CLI Tests</a><br/>
 				<ul class="pager">
 					<li class="previous"><a href="22-shellloops-while.html">Previous - while Loops</a></li>
-					<li class="next"><a href="20-lesson2.html">Next - EoL 2 Questions</a></li>
+					<li class="next"><a href="24-shellloops-until.html">Next - until Loops</a></li>
 				</ul>
 				<div id="disqus_thread"></div>
 				<script type="text/javascript">

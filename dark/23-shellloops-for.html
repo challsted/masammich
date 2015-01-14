@@ -106,6 +106,8 @@
 					<li>Something to happen for each of the above</li>
 					<li>The word "done"</li>
 				</ol>
+				I have read it somewhere like this: "<strong>for</strong> (Each Item) <strong>in</strong> (A list of Items) <strong>do</strong> (Command(s))"<br/>
+				If that sentence helps you (I know it helped me) feel free to use it/remember it!<br/>
 				</p>
 				<p>
 				Here is an example for loop:<br/>
@@ -140,9 +142,51 @@
 				This will produce the exact same results, its 1 line longer then the origional, but it turns the "1 2 3 4 5" into a variable for the example factor of it. <br/>
 				</p>
 
+				<h3>There are many ways to write the opening line of a for loop</h3>
+				I will attempt to list as many of them as I can think of, and as I can find via simple google searches. I will explain them also. 
+				I will only list additonal details if needed, so i will only be listing the first "line" of the loop for example purposes. <br/>
+				Please note these DO NOT work in SH, but they do in more advanced shells like Bash.<br/>
+
+				<h2>C/C++ Like</h2>
+				<p>
+				Explained:<br/>
+				<code class="codeInput">for (( expr1; expr2; expr3 ))</code><br/>
+				Example:<br/>
+				<code class="codeInput">for (( i=1; i &lt;= 10; i++ ))</code><br/>
+				For those that dont know <code class="codeInput">i++</code> simply increments i by 1<br/>
+				This will print <code class="codeOutput">Number: 1</code> all the way to <code class="codeOutput">Number: 10</code><br/>
+				</p>
+				<h2>Range of Numbers</h2>
+				<p>
+				Explained:<br/>
+				<code class="codeInput">for num in {START..END}</code><br/>
+				Example:<br/>
+				<code class="codeInput">for num in {1..20}</code><br/>
+				<code class="codeInput">do</code><br/>
+				<code class="codeInput">&emsp;&emsp;echo "Number: $num"</code><br/>
+				<code class="codeInput">done</code><br/>
+				In this case the "<code class="codeInput">..</code>" is a kind of "filler" for everything between the numbers on each side.<br/>
+				This will print <code class="codeOutput">Number: 1</code> all the way to <code class="codeOutput">Number: 20</code><br/>
+				</p>
+
+
+				<h2>Incremental Range of Numbers</h2>
+				<p>
+				Explained:<br/>
+				<code class="codeInput">for num in {START..END..COUNT_BY}</code><br/>
+				Example:<br/>
+				<code class="codeInput">for num in {1..99..3}</code><br/>
+				<code class="codeInput">do</code><br/>
+				<code class="codeInput">&emsp;&emsp;echo "Number: $num"</code><br/>
+				<code class="codeInput">done</code><br/>
+				Just like above, the first "<code class="codeInput">..</code>" is a filler, but the 2nd "<code class="codeInput">..</code>" is saying "count by this".<br/>
+				This will count from 1 to 99, by 3's and print it like <code class="codeOutput">Number: 67</code>, do you know why its 67, and not 66?
+
+
 				<h3>Lets make another script!</h3>
 				<p>
 				<ol>
+					<li>Make sure you use sh, not bash!</li>
 					<li>Ask 2 numbers from the user</li>
 					<li>Use an for loop to print out all of the odd numbers between the 2 numbers</li>
 				</ol>

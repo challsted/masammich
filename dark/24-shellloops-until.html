@@ -90,10 +90,16 @@
 				A until loop is a lot like a <a href="22-shellloops-while.html">while loop</a>. As in they repeate an action over and over and over. Where they differ is that a while loop does something while the statement is true (could also be said "While the statment is true"). An until loop preform an action over and over until it is true. <br/>
 				</p>
 				<p>
-				</p>
-				<p>
 				Here is an example until loop:<br/>
 				<p>
+				<code class="codeInput">a=1</code><br/>
+				<code class="codeInput">until [ $a -gt 6 ]</code><br/>
+				<code class="codeInput">do</code><br/>
+				<code class="codeInput">&emsp;&emsp;echo "\"A\" is equal to $a"</code><br/>
+				<code class="codeInput">&emsp;&emsp;a=`exec $a + 1`</code><br/>
+				<code class="codeInput">done</code><br/>
+				This will not print anyting until a is greater then 6 (so starting at 7).<br/>
+				If you plan on running this, script, note that there is no end to it (infinite loop) so you'll have to ctrl+c to exit the loop<br/>
 				</p>
 
 				<h3><strong>A few helpful external links:</strong></h3>

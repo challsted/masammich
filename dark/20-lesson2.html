@@ -97,77 +97,76 @@
 
 				<br/><br/>
 				
-				<p>I plan to have 4-6 small sample scripts. With 1 or 2 questions about each script please check back frequently!</p><br/>
-				2&#41; Question 2<br/>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
+				2&#41; Will script 1 ever print "A is equal to 100"?
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Correct" data-content="Correct!">Yes</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="It is using -le which is less then or EQUAL to 100">No</button>
+
+				<br/><br/>
+				
+				<p>Script 2</p>
+				<code class="codeInput">#!/bin/sh</code><br/>
+				<code class="codeInput">echo "What would you like to do?"</code><br/>
+				<code class="codeInput">echo "Code"</code><br/>
+				<code class="codeInput">echo "Debug"</code><br/>
+				<code class="codeInput">echo "Search"</code><br/>
+				<code class="codeInput">echo "Rooster"</code><br/>
+				<code class="codeInput">read WhatDo</code><br/>
+				<code class="codeInput">case $WhatDo in</code><br/>
+				<code class="codeInput">&emsp;&emsp;[code] | [cC][oO][dD][eE] &#41;</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;echo "Good! Your well on your way!"</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;echo "Keep takeing these class's and you'll master it all!"</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;;;</code><br/>
+				<code class="codeInput">&emsp;&emsp;[debug] | [dD][eB][bB][uU][gG] &#41;</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;echo "Please enter the name of the script to debug:"</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;read SCRIPT</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;debug $SCRIPT</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;;;</code><br/>
+				<code class="codeInput">&emsp;&emsp;[search] | [sS][eE][aA][rR][cC][hH] &#41;</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;echo "Enter your search term!"</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;read SEARCH</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;search $SEARCH</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;;;</code><br/>
+				<code class="codeInput">&emsp;&emsp;[rooster] | [rR][oO][oO][sS][tT][eE][rR] &#41;</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;echo "Cocka-doodle-do?"</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;;;</code><br/>
+				<code class="codeInput">&emsp;&emsp;* &#41;</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;echo "That is not an option"</code><br/>
+				<code class="codeInput">&emsp;&emsp;&emsp;&emsp;;;</code><br/>
+				<code class="codeInput">esac</code><br/>
+
+				3&#41; Regarding Script 2, if you enter the term "DEBUG" then tell it the name "script.sh" will it debug script.sh?<br/>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="You should notise that you need to debug your debug option! The 'eB' letter needs to be 'eE'!">Yes</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Correct" data-content="Correct!">No</button>
 
 				<br/><br/>
 
-				3&#41; Question 3<br/>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
+
+				4&#41; If you entered the option "roosters" what output would you get?<br/>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="But does your rooster have an s?">Cocka-doodle-do?</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="Just because you entered rooster with an 's', dosnt mean your crowing will have it too!">Cocka-doodle-dos</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Correct" data-content="Correct!">This is not an option</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="Wrong option entirely!">Please enter the name of the script to debug:</button>
 
 				<br/><br/>
 
+				<p>YOU will write the last script! Your going to make a calculator!<br/>
+				First, some rules about what you need in this program<br/>
+				<ol>
+					<li>You will need multipule scripts to accomplish this goal</li>
+					<li>The first script will be a "case" statement, that is ment to be run primarily. This will be the calculator</li>
+					<ol>
+						<li>The script that you will actually run, is a case statement that offers the following options</li>
+						<ol>
+							<li>Addition</li>
+							<li>Subtraction</li>
+							<li>Multiplication</li>
+							<li>Division</li>
+						</ol>
+						<li>You will need to write 4 addtional scripts that are called from your main "case" script that preform only 1 of the above functions each</li>
+						<li>From the case script you need to offer the option to press + for addition, - for subtraction, * for multiplication, and / for division</li>
+					</ol>
+				</ol>
 
-				4&#41; Question 4<br/>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-
-				<br/><br/>
-
-				5&#41; Question 5<br/>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-
-				<br/><br/>
-
-				6&#41; Question 6<br/>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-
-				<br/><br/>
-
-				7&#41; Question 7<br/>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-
-				<br/><br/>
-
-				8&#41; Question 8<br/>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-
-				<br/><br/>
-
-				9&#41; Question 9<br/>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-
-				<br/><br/>
-
-				10&#41; Question 10<br/>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
-					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>
 				<ul class="pager">
 					<li class="previous"><a href="25-break-continue-exit.html">Previous - Break, Continue and Exit Codes</a></li>
 					<li class="next"><a href="31-sed.html">Next - Sed</a></li> 

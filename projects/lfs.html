@@ -69,6 +69,7 @@
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1 col-md-12">
 				<h2>Linux From Scratch</h2>
+				<h3>Friday, Feb 6</h3>
 				<p>
 				So, i have gatherd together a few fellow uber geeks, and in an attempt to help teach them the true path that is linux I have been helping them with simple tasks but from a linux desktop. Now that i have convereted 1 of them to a "fulltime" linux user, 1 of them has it as his primary OS (but windows is a backup) and the other has several linux VMs.<br/>
 				<br/>
@@ -78,6 +79,32 @@
 				As i type this im in the process of useing "dd" to copy the 1 full HDD over to another HDD (sadly, this takes about 4 hours for 80GB) then ill have 2 HDD's, then ill start the process over again but with 2 desktops to make 4 HDD's!!! and the 5th one was hawled off today by one of the guys who wants to catch up to the game with out risking his personal laptop (which does have linux on it)<br/>
 				<br/>
 				I plan on updateing this weekly (we meet up on fridays) to detail everything we do. But due to that i have a lot to do still before the night ends, Ill just push this out.<br/>
+				UPDATE: I discovered that you can change the blockside to 32M, and get MUCH faster writes, but also faster fails if anything happens...) for reference the command i used in the end was <code class="codeInput">dd if=/dev/sda of=/dev/sdb bs=32M conv=sync,noerror</code>
+				</p>
+				<h3>Saturday, Feb 7 - Monday Feb 9</h3>
+				<p>
+				So, after my normal DND Campaign on Saturday, the one hardcharger who wanted to be ahead called me on google hangouts and we worked though LFS untill 4am. We got much further then when i had attempted the same useing XUbuntu 14.04, and i 100% say that this is due to Debian having much older packages not only in there repository, but also by default. Many of these needed packages were already in the supported versions and i only had to install a few things and make some symlinks to get it all uptodate (((Include GIST of stuff i changed)))<br/>
+				This trend continued until Monday, when he was working though chapter 6, and he had a fatal error complaining that a certain package was so old it couldnt be used anymore. It was late, we didnt know what to do, we started trying to recompile again, still same error, bcked up a step, recompiled the previous package, then went forward, still same error. Backed all the way to chapter 5, and tried compileing glibc again and then come back (hopeing it was an error with the origional), still same error.<br/>
+				Disheartened, angry, quite depressed, we decided to go to bed and try again the next day. Im not sure exactly what happened at this point, but FullOverRide had desided to wipe the partisions, and start fresh.
+				I also discovered Monday, that my attempts at cloneing a harddrive somehow was an epic failure. Im still not sure what happened...
+				One of the members of my group who is known as "Gretiem" installed Debian onto one of the 5 harddrives, created a user called "gretiem" and setup a few basic things. The issue is that by default Debian uses Gnome 3 and im not a fan at all of Gnome 3 (gnome 2 fan...). So I installed XFCE from the default repo's, I added all of the users we would need (MaSammich, FullOverRide, Rhyvin, lfs, and obviously Gretiem was already there), i setup ssh on the box, i played with the GUI if we ever even get to see it, tweeked ZSH for all of the new users, tweeked vim for all of hte users, setup a more sensible password for the root user, downloaded all of the source code from the LFS book and md5sum'd it all to make sure it was good.<br/>
+				I felt like everything was going great! I shut down the computer, booted to a live USB, launched a terminal and ran the command i gave above (dd) and let it do its thing. Afterwords i ran a md5sum on both hdd's and they came out ot the exact same sum. I was soo happy! I shut down the computer again, unplugged the origional hdd, and only left the 2nd hdd plugged in.<br/>
+				NO OS FOUND PRESS ANY KEY TO CONTINUE... repeats accrost my screen.<br/>
+				Ok, not that bad, BIOS must not be able to boot from the 2nd hdd b/c its plugged into where the DVD Drive was. I turn off the computer, unplug the 2nd hdd and plug it into where the first HDD was located. Turn it back on.<br/>
+				NO OS FOUND PRESS ANY KEY TO CONTINUE...<br/>
+				Well thats just great... i guess the clone didnt work after all! So i unplug the 2nd hdd, angry, but its ok i thought. Plug the first back in, and boot. Im greeted with only 1 user (Gretiem), and only Gnome 3 installed...., i try to log in with the password i reset his account to its a no-go. I knew the password he had used (it was a simple one so i could login and configure), i launch a terminal, its bash (not ZSH), i try to vi a random text file in hit home dir and im not greeted with the beautifual VIM i had configured instead im gretted with the default VI package....<br/>
+				That was only a few days ago as i write this, but i still have no idea what happened. None of the changes i made saved, i shut down properly, i made sure everything was peachy-keen before i shut the box down. Yet i still had none of the changes saved, and also the clone of sda to sdb (even with md5sum) was non-successful. Im not sure if md5sum dosnt check the contents of the hdd or something, but im still not sure why it reported them being exactly the same when 1 didnt have a OS on it (i also tried mounting the 2nd hdd and takeing a look inside, nothing was in it but "lost+found")
+				</p>
+				<h3>Tuesday Feb 10</h3>
+				<p>
+				I discover that FullOverRide had wiped the partisions clean, and was starting over from scratch again. This is ok as it prevents any potential errors that he had introduced. But this time i could only listen to him and not help, i was sitting in my chair at home but was still working away with him on my phone talking about what he was doing and if he ran into any issues (he understood the process much better going though it all a 2nd time, so he had far fewer questions). <br/>
+				He managed to knock out Chapter 5 in about an hour, maybe 2 (i wasnt counting)<br/>
+				Then when we started chapter 6 (where we failed lasttime was at glibc) he got to that point, read the full page, before starting, and realized that on the page, in BIG, BOLD, RED lettering was a note... that said that the specific package that he was having an error that prevented his package from comileing is expected, and gave him a piece of code to help make the error go away...<br/>
+				So due to the amount of time it will take to complete, he ran the make, then when he woke up for work in the morning he ran the test. As i type this he is at work, ancious to get back and make sure the test was successful<br/>
+				</p>
+				<h3>Wednesday Feb 11</h3>
+				<p>
+				Nothing Yet! If anyone is reading this, Friday ill be much more specific about errors and such, at the moment everything is being relayed to me via a hangouts session, so i dont have any errors taken down or anything like that.<br/>
 				</p>
 
 				<div id="disqus_thread"></div>

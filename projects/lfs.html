@@ -70,6 +70,21 @@
             <div class="col-lg-10 col-lg-offset-1 col-md-12">
 				<h2>Linux From Scratch</h2>
 
+				I help a couple of my friends learn linux, the hardway!<br/>
+				<h3>Who will be joining me?</h3>
+				<srong>Rhyvin</srong>, long time friend of mine, and huge geek. He has mostly worked in the windows administration side of things though. But hes not "new" to linux by any means! He partisipated in a pervious exercise i chalanged everyone to do known as the "10 Days of Arch", and he even took a stab at installing SlackWare before he knew much of anything about linux. He will be working 100% remote due to that he is located somethign like 2,000 miles away from me now. He also has a website, which you are reading a sub-domain of, go check out whats hes doing if your interested at <a href="http://technoanomaly.com">technoanomaly.com</a>, or reach out to us on the <a href="http://forum.technoanomaly.com/viewforum.php?f=1">forums</a> <br/>
+				<strong>Gretiem</strong>, quickly becoming a close friend of mine due to his willingness to learn anything i throw at him, and ability to retain knowledge better then most has landed him a spot in this chalange. Prior to this chalange i have already 'converted' him to Linux. He has his laptop running linux fulltime, and his desktop has a windows partision that he only uses when he wants to play a game he cant get to work on linux first.<br/>
+				<strong>FullOverRide</strong>, a recent addition to my group of friends, he had very little linux expierence when he joined this team. He has a light background in C/C++, but never had a reason to touch Linux. I will be spending an extra week with him prior to everyone else pushing him though a kind of "Linux Bootcamp" to help force into his fingers linux commands and struture. He has already made the comment that he loves linux so far, and even installed linux(Xubuntu) onto his laptop.<br/>
+				<br/>
+				We all have the same computers. Intel Core2Duo's, with 2GB of 800mhz DDR3 RAM<br/>
+				An 80GB HDD that for at leats 4 of them i have partisioned to have a 6.1 GB at the start of the hdd running Debian 7.8, and a 3.3 GB partision at the end for SWAP. Leaving about 70GB in the middle to do what ever everyone wants to with it.<br/>
+				We bought 5 of them because they were cheap, so we have 1 for each of us, and a 5th is planned to be setup as a server for various stuff<br/>
+				I also found that we needed to install a few packages, and make a few symlinks. I saved all of this into a <a href="https://gist.github.com/hackinginformation/7fd7ddd7ac3855e420bf#file-debian2lfs">gist</a> and put it on <a href="https://github.com/hackinginformation/linuxfromscratch">my GitHub</a>. 
+				<br/>
+				Click each date below to expand and see whats going on each date.<br/>
+				If comments from the members (other then me) are available i will add a comment section to that date expressing what they asked me to add.<br/>
+
+
 				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"><!-- Start of Acordian -->
 
 				  <div class="panel panel-default">
@@ -83,10 +98,7 @@
 				    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 				      <div class="panel-body">					    
 						<p>
-						So, i have gatherd together a few fellow uber geeks, and in an attempt to help teach them the true path that is linux I have been helping them with simple tasks but from a linux desktop. Now that i have convereted 1 of them to a "fulltime" linux user, 1 of them has it as his primary OS (but windows is a backup) and the other has several linux VMs.<br/>
-						<br/>
-						So, i suggested them, if we all had a way to build a linux OS, would they use it? They all seemed to be interested, so after a little research i raninto the Linux From Scratch Project. I have had a previous expierence with this project and had a lot of fun playing with it in the end. So, we setout on a mission, we wanted to find 4+ of the exact same computers for cheap. We were searching Craigs List and Ebay and Amazon, then one of the team rememberd we have a local company who recycles used electronics and has many many computers at hand! So we took a trip down to them and obtained 5 Lenovo Desktop (2GB DDR3 RAM, Intel Core 2 Duo, 80GB HDD, 10/100 NIC and a attached DVD-RW Drive (yay extra Sata and power!)) for a very cheap price (im not sure if im allowed to talk about how cheap we got them... with out actually stealing them!) <br/>
-						<br/>
+						We start this journey with fresh hardware, all we have done so far is power them on, make sure they boot from USB (they dont) and then begin trying to install an OS<br/>
 						So we started instaling XUbuntu 14.04 onto them, then realized that Ubuntu (and its diritives) have many many issues when building LFS. So we desided to go with Debian. <br/>
 						As i type this im in the process of useing "dd" to copy the 1 full HDD over to another HDD (sadly, this takes about 4 hours for 80GB) then ill have 2 HDD's, then ill start the process over again but with 2 desktops to make 4 HDD's!!! and the 5th one was hawled off today by one of the guys who wants to catch up to the game with out risking his personal laptop (which does have linux on it)<br/>
 						<br/>
@@ -108,7 +120,7 @@
 				    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 				      <div class="panel-body">
 					    <p>
-						So, after my normal DND Campaign on Saturday, the one hardcharger who wanted to be ahead called me on google hangouts and we worked though LFS untill 4am. We got much further then when i had attempted the same useing XUbuntu 14.04, and i 100% say that this is due to Debian having much older packages not only in there repository, but also by default. Many of these needed packages were already in the supported versions and i only had to install a few things and make some symlinks to get it all uptodate (((Include GIST of stuff i changed)))<br/>
+						So, after my normal DND Campaign on Saturday, the one hardcharger who wanted to be ahead called me on google hangouts and we worked though LFS untill 4am. We got much further then when i had attempted the same useing XUbuntu 14.04, and i 100% say that this is due to Debian having much older packages not only in there repository, but also by default. Many of these needed packages were already in the supported versions and i only had to install a few things and make some symlinks to get it all up-to-date <a href="https://gist.github.com/hackinginformation/7fd7ddd7ac3855e420bf#file-debian2lfs">Gist I saved</a><br/>
 						This trend continued until Monday, when he was working though chapter 6, and he had a fatal error complaining that a certain package was so old it couldnt be used anymore. It was late, we didnt know what to do, we started trying to recompile again, still same error, bcked up a step, recompiled the previous package, then went forward, still same error. Backed all the way to chapter 5, and tried compileing glibc again and then come back (hopeing it was an error with the origional), still same error.<br/>
 						Disheartened, angry, quite depressed, we decided to go to bed and try again the next day. Im not sure exactly what happened at this point, but FullOverRide had desided to wipe the partisions, and start fresh.
 						I also discovered Monday, that my attempts at cloneing a harddrive somehow was an epic failure. Im still not sure what happened...
@@ -200,21 +212,79 @@
 				    </div>
 				  </div>
 
-				  <!-- EXAMPLE!!!
-				  <div class="panel panel-default">
+				<div class="panel panel-default">
+				    <div class="panel-heading" role="tab" id="headingSeven">
+				      	<h4 class="panel-title">
+				        	<a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+				          	Saturday Feb 14, 2015
+				        	</a>
+				      	</h4>
+				    </div>
+				    <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+				      	<div class="panel-body">
+							<p>
+							Yes, I worked on this project on Valentines day! Yes, my wife was ok with it :P<br/>
+							FullOverRide came over and we actually got his DHCP issues fixed, (well they were actually kernel not loading driver issues), then we ran into an issue where his computer didnt have a /dev/random or /dev/urandom (or MANY other things), turned out he had not remounted tempfs when trying to compile OpenSSL and there for it was failing (it didnt have a way to get entropy). Once we got that fixed he was fully setup and ready to go :D<br/>
+							I also finaly started this project, giving everyone an equal chance to start along with me.<br/>
+							I completed Chapter 5 of the LFS 7.6 book and began going though chapter 6. Ill document here that im doing it slightly different then everyone else.<br/>
+
+							I am useing a 2nd 3TB hdd, that has had a few partisions cut out of the begining.<br/>
+
+							<ol>
+								<li>A 512MiB /boot primary partision formateed to ext4, marked as sdx1</li>
+								<li>A 30GiB Extended partision that is split up into several smaller partisions, marked as sdx2</li>
+								<ol>
+									<li>10GiB / (root) partision formated to ext4, marked as sdx5</li>
+									<li>20GiB /home partision formated to ext4, marked as sdx6</li>
+								</ol>
+							</ol>
+
+							I am also doing it all over SSH, instead of connecting directly to the compuer. Everything went Smoothly until I started getting to some of the programs that were takeing 10+ minutes to compile or do their tests, my ssh session was ending in the middle of me doing something. Then wouldnt allow me to reconnect for several minutes.<br/>
+							I fixed this by adding the following to my ~/.ssh/config<br/>
+							&emsp;<code class="codeOutput">Serveraliveinterval 100</code>, this sends a keepalive packet to the server every 100 seconds to keep my session alive. I didnt have any issues after that!<br/>
+
+							I believe thats all I'm doing differently then the "standard" listed above.<br/>
+							<br/>
+							OPTIONAL: you can download my "Expand" script <a href="https://github.com/hackinginformation/linuxfromscratch/blob/master/expand.sh">here</a>. You can add the contents of this to your lfs user's ~/.bashrc. I personally also added it to my root user's bashrc, and when you get into the LFS enviroment, you can add it to your root users bashrc by running <code class="codeOutput">cat /sources/expand.sh ~/.bashrc &amp;&amp; source ~/.bashrc</code>, this assumes you have put my script into your /sources dir. Change the aboe to suit your specific builds needs. This script is used to expand every file I have ran into during the building process of LFS.<br/>
+							</p>
+				     	</div>
+				    </div>
+				</div>
+
+				<div class="panel panel-default">
+				    <div class="panel-heading" role="tab" id="headingEight">
+				      	<h4 class="panel-title">
+				        	<a data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+				          	Sunday Feb 15, 2015
+				        	</a>
+				      	</h4>
+				    </div>
+				    <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+				      	<div class="panel-body">
+							<p>
+							I completed Chapter 6 - 9. Compiled the kernel to add the e1000e drivers for our NIC that caused so many issues for FullOverRide. But before i started the reboot, i began dabbling with BLFS (Beyond Linux From Scratch). I installed OpenSSL, OpenSSH, DHCP, wget, git, cURL, and a lot of other stuff in prep for this coming weekend. I plan on installing XWindows this weekend and if time allows install XFCE before this time next week.<br/>
+							To continue on though, i rebooted the system, selected the 2nd hdd to boot first, and realized that i somehow borked the grub.cfg file. I was greeted with an error saying that the kernel specified, was not found. I could press "e" to edit the grub.cfg or i could press "c" for a commandline. I have dabbled in the "rescue>" menu before, but never in the "grub>" menu. I played around for a bit and realized they ahve added A LOT of options since grub 1.99, so i went back, and tried my hand at directly editing the file. That didnt work so well, i ended up with about 4 boot options but all of them didnt work. So i went back to the commandline, poked around for a bit, found my kernel, and tried to boot it.<br/>
+							Im still not sure what i did, but i somehow booted into debian, but used my 3.16 kernel (debian runs on a 3.2 kernel). I got to the debian login screen, and after entering my credientials the computer froze up. By this point it was nearing 1am so i had to get off the computer and go to bed. I plan to play with it a little bit after work today, but not much. I wont have time to do much with it until friday after work again. So, I probably wont be updateing until then!<br/>
+							</p>
+				     	</div>
+				    </div>
+				</div>
+
+				<!-- EXAMPLE!!!
+				<div class="panel panel-default">
 				    <div class="panel-heading" role="tab" id="headingReplace">
-				      <h4 class="panel-title">
-				        <a data-toggle="collapse" data-parent="#accordion" href="#collapseReplace" aria-expanded="true" aria-controls="collapseReplace">
-				        TITLE
-				        </a>
-				      </h4>
+				        <h4 class="panel-title">
+				        	<a data-toggle="collapse" data-parent="#accordion" href="#collapseReplace" aria-expanded="true" aria-controls="collapseReplace">
+				        	TITLE
+				        	</a>
+				      	</h4>
 				    </div>
 				    <div id="collapseReplace" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingReplace">
-				      <div class="panel-body">
+				      	<div class="panel-body">
 						CONTENT
-				     </div>
+				     	</div>
 				    </div>
-				  </div> 
+				</div> 
 				END EXAMPLE!!! -->
 
 				</div><!-- End Div Tag -->

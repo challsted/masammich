@@ -69,11 +69,37 @@
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1 col-md-12">
 				<h2>Random Information about what I'm doing with my RPi</h2>
+				A place for me to document what im putting on my pi, or what ever im doing with it, not really sure what else to say about it!<br/>
+
+				<h3>Jump Box</h3>
 				<p>
-				So! Due to another project that I have started (Link here soon!) and that one of my partisipants is a few thousand miles away from where I live. I have setup an SSH server on my RPi, I created user accounts for every user, and added them to a "lfs" group. 
+				<strike>So! Due to another project that I have started with <a href="lfs.html">LFS</a> and that one of my partisipants is a few thousand miles away from where I live. I have setup an SSH server on my RPi, I created user accounts for every user, and added them to a "lfs" group. 
 				Then made a rule that anyone in the LFS group was allowed to ssh out of their current home dir into another server (but these new servers have not been setup yet) ((I will post instructions on how i did this soon im just putting down rough notes))<br/>
 				<br/>
-				So im basically creating a jumpbox on my RPi to allow remote persons to login via ssh keys, then via a seperate ssh key jump to the box's we are buildng. At the moment it is untested (it might totally not work.. i have no idea)<br/>
+				So im basically creating a jumpbox on my RPi to allow remote persons to login via ssh keys, then via a seperate ssh key jump to the box's we are buildng. At the moment it is untested (it might totally not work.. i have no idea)<br/></strike>
+				So the above got partially droped, i ended up setting up a dobble router setup with some serious portforwarding to make a series of jumps so each user can only ssh into the box that that user is created on. The whole jump box idea got dropped. But i still did a good bit of research into creating a jump box.<br/>
+				Basically i created a seperate account for each user that i knew would be sshing into the pi, obviosly i changed the port to a non-standard port and though my router i opened another non-standard port and forwarded it to my internal non-standard port. I did this so that when persons or scripts scan my IP address for open ports, they only see ports that dont corilate to specific applications. For example, if i see that port 22 is open on your IP, i know you have SSH open and listening for a connection, so if i was some kind of a bad person i would attempt to brute force a connection. A very simple and far from fool proof method of preventing this is to change to a non-standard port! (Im also looking into port knocking, which i'll explain below).<br/>
+				So, once you have your box (in my case my Pi) on a non-standard port, reachable from the outside world, and users created.<br/>
+				You then need every user to have a ~/.ssh/config file with a hostname of "lfs" (or what every want them to ssh to). They would simply type "<code class="codeInput">ssh lfs</code> and each user would go to a differnt box (assuming you setup ssh on each of the box's and on seperate ports also)... yea, this is a lot of work, lots of sshd files being anually configured. Hense why i scrapped this idea and went with a huge series of static IP's and port forwarding to the internal debian OS.<br/>
+				The bigest issue with this, each user has to connect to my exernal IP with a seperate port (not a big deal if they use a config file). The other issue is that every OS they create, needs to have SSH installed (which also requires openSSL), and it needs to run on the same port. Which requires them to manually update the /etc/ssh/sshd_config file.<br/>
+				</p>
+				<h3>Port Knocking</h3>
+				<p>
+				Port knocking (to my understanding, it would be best if you research this more if you wnt more info until i do a full article on it)<br/>
+				Requies that a series of ports be open on your router, that dont forward to anywhere.<br/>
+				Just to make numbers easy, but you would obviously want to do this in a different way<br/>
+				You would have port 1001 open, you send a TCP packet to hit the port.<br/>
+				3 seconds later you hit port 1002 with another TCP packet<br/>
+				Then 2 seconds later you hit ports 1003, 1004, 1005 with UDP packets.<br/>
+				On the router side, you have been listening for this combo of ports to be hit with these specific packets in this specific order, and after all of this is completed, you open up port 1010 for 8 seconds.<br/>
+				Then assuming you send a valid ssh connection to port 1010 during those 8 seconds you are acceted. But port 1010 wouldnt even be open until after you preformed the corect "knock" sequence.<br/>
+				Its pretty darn neat! And i plan on implementing it when i build my PFSence box's later.<br/>
+				</p>
+				<h3>Nethack</h3>
+				<p>
+				I have gotten into "Nethack" and installed it on the Pi, at the moment i can ssh into my pi with the user "nethack" and it imediatly launches nethack! But i cant do it from my external IP (i think i know why... havnt played with it yet).<br/>
+				I found a simple (and kind of fun) hack online to make a user auto launch a script or program when they login! Its not even dificult to preform!<br/>
+				To make a user do this, you need to change the login shell to be the full path (not relative) to the script/program. For example, by default on my pi, a new users shell is set to "/bin/bash", if you open /etc/passwd and set it to "/full/path/to/script" when the user logs in (remotely or localy) it will auto launch the script. So in my case, i created a script that launches nethack, and i put it inside of the users home dir. Then I updated the shell line to "/home/nethack/nethack", i named the script nethack.<br/>
 				</p>
 
 				<div id="disqus_thread"></div>

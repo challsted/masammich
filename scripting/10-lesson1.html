@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<meta name="description" content="A homegrown blog about Linux and Learning">
+    <meta name="author" content="Chase Hallsted">
+	<title>Questions for End of Lesson 1</title>
+	<!-- Bootstrap Core CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap-dark.css">
+    <!-- Custom CSS -->
+    <link type="text/css" rel="stylesheet" href="../css/clean-blog-dark.css">
+    <link type="text/css" rel="stylesheet" href="../css/custom.css">
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Custom Favicon -->
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		$(function(){
+			$('#header').load('../content/header.html');
+			$('#footer').load('../content/footer.html');
+			$('#list').load('101-list.html');
+		});
+	</script>
+	<script>
+		jQuery(document).ready(function() {
+		    var offset = 220;
+		    var duration = 500;
+		    jQuery(window).scroll(function() {
+		        if (jQuery(this).scrollTop() > offset) {
+		            jQuery('.back-to-top').fadeIn(duration);
+		        } else {
+		            jQuery('.back-to-top').fadeOut(duration);
+		        }
+		    });
+		    
+		    jQuery('.back-to-top').click(function(event) {
+		        event.preventDefault();
+		        jQuery('html, body').animate({scrollTop: 0}, duration);
+		        return false;
+		    })
+		});
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		    $('[data-toggle="popover"]').popover({
+		        placement : 'bottom'
+		    });
+		});
+	</script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('../img/header.png')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1 class="textoutline" style="color: white">End of Lesson 1!</h1>
+                        <hr class="small">
+                        <span class="subheading textoutline">Now lets do some exercises</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 col-md-12">
+            	<div id="list"></div>
+				<h3>Welcome To the End of Lesson 1!</h3>
+				Please answer the following questions, you are not scored on the below, it will simply tell you if you are right or wrong. Feel free to click again if you get it wrong. I will do what I can to tell you why you are wrong also.<br/><br/><br/>
+
+
+
+				1&#41; What command do you use if you needed to remove a directory that is not empty?<br/>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="rmdir is removed to remove a directory, but only if the directory is empty">rmdir</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="The command your looking for is shorthand for this, but this is not the command">remove</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="This command preforms a long listing of all files and folders in a folder in reverse time order">ls -lart</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Correct" data-content="Correct, rm is remove, and -r is for directorys. You can use rm -rf to remove directorys with 'force' also">rm -r</button>
+					
+					<br/><br/>
+
+				2&#41; If you want to make a directory inside of a directory inside of an existing directory, which command would you run?<br/>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="This will fail due to /dir1 already exists in this example">mkdir /dir1/dir2/dir3</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="you cant create a directory inside of a directory that dosnt exist with out -p 'parent'">cd dir 1 &amp;&amp; mkdir dir2/dir3</button>
+					<br/>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Correct" data-content="The '-p' on mkdir allows for 'parent' directorys to be used and not touched if they exist">mkdir -p /dir1/dir2/dir3</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="Dir1 already exists, you cant create a directory that already exists">mkdir dir1; mkdir dir2; mkdir dir3</button>
+
+					<br/><br/>
+				
+				3&#41; Which of the following will redirect output to a text file called "stdio.txt"?<br/>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Correct" data-content="This sends the output of 'cat $FILE to a file called stdio.txt!">cat $FILE > stdio.txt</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="This sends the output of 'cat $FILE' to the end of a file called .stdio.txt which is a hidden file">cat $FILE >> .stdio.txt</button>
+					<br/>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="his sends the output of 'cat $FILE' to a file called stdio.txt">cat $FILE > stdio.tar</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="his sends the output of 'cat $FILE' to the end of a file called stdout.txt">cat $FILE >> stdout.txt</button>
+
+				<br/><br/>
+
+				4&#41; If you need to filter text to now show you "something", which of the commands do you use?<br/>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="cat is use to display the contents of a text file">cat "something"</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="exec is used for doing math">exec "something"</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Correct" data-content="Correct! -v is used to not show something">grep -v "something"</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="-i is used to be case 'insinsitive'">grep -i "someting"</button>
+
+				<br/><br/>
+
+				5&#41; True or False: printf come from the origional C++ function?<br/>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Wrong" data-content="Wrong">True</button>
+					<button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="Correct" data-content="Correct! It comes from the origional 'C' Function!">False</button>
+
+				<ul class="pager">
+					<li class="previous"><a href="13-userinput.html">Previous - User Input</a></li>
+					<li class="next"><a href="21-shellloops-if.html">Next - Shell Loops "if"</a></li>
+				</ul>
+				<div id="disqus_thread"></div>
+				<script type="text/javascript">
+					var disqus_shortname = 'masammich';
+					(function() {
+						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+						dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					})();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+				<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+			</div>
+		</div>
+	</div>
+    <!-- Footer -->
+    <div id="footer"></div>
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../js/clean-blog.min.js"></script>
+    <!-- <button class="btn btn-custom-darken" data-toggle="popover" tabindex="0" data-trigger="focus" title="TOPTEXT" data-content="BOTTOM_TEXT">BUTTON_WORD</button>  -->
+</body>
+</html>

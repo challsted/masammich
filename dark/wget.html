@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 
-	<meta charset="utf-8">
-  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<meta name="description" content="A homegrown blog about Linux and Learning">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A homegrown blog about Linux and Learning">
     <meta name="author" content="Chase Hallsted">
-	<title>wget</title>
-	<!-- Bootstrap Core CSS -->
+    <title>wget</title>
+    <!-- Bootstrap Core CSS -->
     <link type="text/css" rel="stylesheet" href="../css/bootstrap-dark.css">
     <!-- Custom CSS -->
     <link type="text/css" rel="stylesheet" href="../css/clean-blog-dark.css">
@@ -20,33 +20,33 @@
     <!-- Custom Favicon -->
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script>
-		$(function(){
-			$('#header').load('../content/header.html');
-			$('#footer').load('../content/footer.html');
-			$('#content').load('../content/wget.html');
-		});
-	</script>
-	<script>
-		jQuery(document).ready(function() {
-		    var offset = 220;
-		    var duration = 500;
-		    jQuery(window).scroll(function() {
-		        if (jQuery(this).scrollTop() > offset) {
-		            jQuery('.back-to-top').fadeIn(duration);
-		        } else {
-		            jQuery('.back-to-top').fadeOut(duration);
-		        }
-		    });
-		    
-		    jQuery('.back-to-top').click(function(event) {
-		        event.preventDefault();
-		        jQuery('html, body').animate({scrollTop: 0}, duration);
-		        return false;
-		    })
-		});
-	</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('#header').load('../content/header.html');
+            $('#footer').load('../content/footer.html');
+            $('#content').load('../content/wget.html');
+        });
+    </script>
+    <script>
+        jQuery(document).ready(function() {
+            var offset = 220;
+            var duration = 500;
+            jQuery(window).scroll(function() {
+                if (jQuery(this).scrollTop() > offset) {
+                    jQuery('.back-to-top').fadeIn(duration);
+                } else {
+                    jQuery('.back-to-top').fadeOut(duration);
+                }
+            });
+
+            jQuery('.back-to-top').click(function(event) {
+                event.preventDefault();
+                jQuery('html, body').animate({scrollTop: 0}, duration);
+                return false;
+            })
+        });
+    </script>
 </head>
 
 <body>
@@ -69,21 +69,21 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1 col-md-12">
-				<div id="content"></div>
-				<div id="disqus_thread"></div>
-				<script type="text/javascript">
-					var disqus_shortname = 'masammich';
-					(function() {
-						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-						dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-					})();
-				</script>
-				<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-				<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-			</div>
-		</div>
-	</div>
+                <div id="content"></div>
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    var disqus_shortname = 'masammich';
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <div id="footer"></div>
